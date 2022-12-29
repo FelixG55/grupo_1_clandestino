@@ -43,6 +43,7 @@ h4{
     color: #E6C625;
     margin: 7px;
     padding-top: 15px;
+    font-size: 22px;
 }
 
 .containers{
@@ -51,6 +52,9 @@ h4{
     background-color: rgba(0, 0, 0, 0.6);
     margin: 25px auto;
     border-radius: 10px; 
+}
+.containers:hover{
+    box-shadow: 0px 0px 10px #CDCDCD;
 }
 
 section div article img{
@@ -72,23 +76,25 @@ section div article img{
 .container-lista{
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     width: 100%;
+    
 }
-/* .lista {
-    height: 50%;
+.lista {
     background-color: rgba(0, 0, 0, 0.6);
     margin: 10px auto;
     width: 250px;
-    border-radius: 10px;
+    border: 2px  #CDCDCD groove;
+    justify-content: flex-start;
    
-} */
-.lista-in{
-    height: 50%;
+}
+/* .lista-in{
+   
     background-color: rgba(0, 0, 0, 0.6);
     margin: 10px auto;
     width: 250px;
     border-radius: 10px;
-    align-self: flex-start;
+    justify-items: flex-start;
 }
 .lista-par{
     height: 50%;
@@ -97,7 +103,7 @@ section div article img{
     width: 250px;
     border-radius: 10px;
     align-self: flex-end;
-}
+} */
 
 .cervezas{
     text-align: start;
@@ -123,4 +129,17 @@ section div article img{
     color: #BEA83E;
     padding: 1px 4px;
   
+}
+
+/* BEBIDAS */
+
+.container-bebida{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+}
+.bebida{
+ display: flex;
+ justify-content: space-between;
 }
