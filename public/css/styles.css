@@ -2,6 +2,8 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
 }
 main{
     text-align: center;
@@ -25,7 +27,7 @@ h1 {
 .menu{
     color: #BEA83E;
     padding: 10px 20px 20px 20px;
-     text-align:start;
+     text-align:end;
 }
 
 .titulo{
@@ -66,4 +68,59 @@ section div article img{
 .descripciones{
     color: #CDCDCD;
     margin: 0px 5px 7px 5px;
+}
+.container-lista{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+/* .lista {
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px auto;
+    width: 250px;
+    border-radius: 10px;
+   
+} */
+.lista-in{
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px auto;
+    width: 250px;
+    border-radius: 10px;
+    align-self: flex-start;
+}
+.lista-par{
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px auto;
+    width: 250px;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+.cervezas{
+    text-align: start;
+    padding: 2px 4px;
+    font-size: 25px;
+    color: #E6C625;
+}
+
+.container-parrafo-precio{
+    display: flex;
+    justify-content: space-between;
+}
+.parrafos{
+    font-size: 15px;
+    color: #CDCDCD;
+    padding: 1px 4px;
+   
+    
+}
+
+.precio-cerveza{  
+
+    color: #BEA83E;
+    padding: 1px 4px;
+  
 }
