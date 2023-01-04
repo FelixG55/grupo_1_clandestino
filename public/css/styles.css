@@ -1,39 +1,118 @@
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Prosto One', cursive; */
+    
 }
-
-.container-principal{
-    width: 100%;
-    height: 400px;
-
-    background-image: url(../images/logo.png) ;
-    /* background-repeat: no-repeat; */
-    background-position: center  ;
-    background-attachment: scroll ;
-    background-size: cover;
-}  
-.container-principal div{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+main{
+    width: 100vw;
+    height: 100vh;
   
     
 }
 
+/* url(../images/fondo8\,png.jpg )  url("https://fabricsushi.com.ar/files/imagen_medium/attachment/25/16/96/6399e0d9-c600-4f11-b378-0a774b7f662b.jpg")*/
+.container-principal{
+    width: 100vw;
+    height: 500px;
+    text-align: center; 
+    background-image: url(../images/fondo9.png ) ;
+    background-position-x: 50%;
+    background-position-y: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+
+
+}  
+.container-principal div{
+    width: 100%;
+    height:  100%;
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+    font-family: 'Lato', sans-serif;
+    
+
+}
+
+
+.container-principal div h1{
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    color: #fff;
+  
+}
 .container-nosotros{
     width: 100%;
+    height: 300px;
     text-align: center;
     background-color: black;
     color: #fff;
-}
+    display:flex ;
+    
+    
+} 
 
-.container-nosotros div{
-    width: 50%;
+ .container-nosotros div{
+    width: 30%;
     margin: auto;
   
+}
+
+ .home{
+    width: 100%;
+   display: flex;
+
+} 
+.menu{
+    /* background-image: url(../images/fondo-menu.png );
+    background-repeat: no-repeat;
+    background-size: cover;
+     background-position: center top;  */
+     background-color: rgb(34, 34, 34);
+}
+.tragos{
+    /* background-image: url(../images/fondo-tragos.png );
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: rgb(34, 34, 34);
+}
+.delivery{
+    background-color: rgb(34, 34, 34)
+}
+
+.ubicacion{
+    background-color: rgb(34, 34, 34);
+}
+.home article{
+    
+    border: 2px solid rgba(255, 255, 255, 0.488);
+    width: 50%;
+    height: 400px;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   
+    
+
+}
+
+.home article div p {
+  display: flex;
+ justify-content: center;
+ color: aliceblue;
+}
+.home article div a{
+    display: flex;
+   justify-content: center;
+   color: rgb(117, 117, 182);
+  }
+  .home article div h4{
+   color: #fff;
 }
