@@ -7,8 +7,25 @@ font-family: 'Source Sans Pro', sans-serif; */
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    display: flex;
+    border:solid 1px black;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.caja{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    margin: 1px;
+}
 body{
-    background-color: black;
+    background-color: #212121;
     color: #ffff;
     width: 100%;
     height: 100%;
@@ -18,7 +35,7 @@ body{
 .title{
     text-align: center;
     font-size: 40px;
-    color: yellow;
+    color: #f7bd00;
     margin-top:  100px; ;
 }
 .container{
