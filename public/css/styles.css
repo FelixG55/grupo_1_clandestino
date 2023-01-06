@@ -71,23 +71,22 @@ main{
     margin: auto;
   
 }
+.container-nosotros div h2{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
 
  .home{
     width: 100%;
-   display: flex;
-
+    display: flex;
+    border-top: 2px solid rgba(255, 255, 255, 0.488);
+    border-left: 2px solid rgba(255, 255, 255, 0.488);
+    border-right: 2px solid rgba(255, 255, 255, 0.488);
 } 
 .menu{
-    /* background-image: url(../images/fondo-menu.png );
-    background-repeat: no-repeat;
-    background-size: cover;
-     background-position: center top;  */
      background-color: rgb(34, 34, 34);
 }
 .tragos{
-    /* background-image: url(../images/fondo-tragos.png );
-    background-repeat: no-repeat;
-    background-size: cover; */
     background-color: rgb(34, 34, 34);
 }
 .delivery{
@@ -95,31 +94,105 @@ main{
 }
 
 .ubicacion{
-    background-color: rgb(34, 34, 34);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
-.home article{
+section article{
     
-    border: 2px solid rgba(255, 255, 255, 0.488);
+   
     width: 50%;
     height: 400px;
     display: flex;
    align-items: center;
    justify-content: center;
-   
+   border-bottom: 2px solid rgba(225, 224, 224, 0.488);
     
 
 }
+.container-img{
+    width: 100%;
+    height: 400px;
+}
+.img{
+   width: 100%;
+   height: 400px;
+   position: relative;
+   z-index: 1;
+}
+.container-descripcion{
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(9, 9, 9, 0.645);
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+}
 
+section article div h4{
+
+    color: rgb(255, 255, 255);
+    z-index: 10;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 7px;
+    padding-top: 4px;
+}
 .home article div p {
-  display: flex;
- justify-content: center;
+
  color: aliceblue;
 }
 .home article div a{
-    display: flex;
+  display: flex;
    justify-content: center;
-   color: rgb(117, 117, 182);
+   color: yellow;
   }
-  .home article div h4{
-   color: #fff;
+
+
+@media (max-width: 480px){
+    .container-principal div h1{
+        font-family: 'Oswald', sans-serif;
+        font-size: 60px;
+        color: rgb(255, 255, 255);
+      
+    }
+   
+    .home{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid rgba(255, 255, 255, 0.488);
+        border-left: 2px solid rgba(255, 255, 255, 0.488);
+        border-right: 2px solid rgba(255, 255, 255, 0.488);
+    } 
+
+    .home article{
+        width: 100%;
+        height: 400px;
+        display: flex;
+       align-items: center;
+    
+       
+        
+    
+    }
+    section article div h4{
+        font-size: 20px;
+    }
+    .container-descripcion{
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(9, 9, 9, 0.645);
+        flex-direction: column;
+        justify-content: center;
+       align-items: center;
+    }
 }
