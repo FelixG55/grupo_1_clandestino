@@ -116,4 +116,10 @@ i{
 .pay-cart{
     padding-left:28px;
 }
+.my-shoppingcart{
+    align-items: right;
+    position: absolute;
+    right: 10px;
+}
+
 

@@ -5,8 +5,12 @@ const app = express();
 
 app.use(express.static('public'));
 
+
 app.get('/productCart', (req,res) => {
     res.sendFile(path.join(__dirname, './views/productCart.html'))
+})
+app.get('/index', (req,res) => {
+    res.sendFile(path.join(__dirname, './views/index.html'))
 })
 
 app.get('/productCart2', (req,res) => {
