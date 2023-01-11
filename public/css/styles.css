@@ -72,3 +72,6 @@ body{
     font-size: 30px;
     padding-bottom: 25px;
 }
+.container .card p{
+    font-size: 12px;
+}
