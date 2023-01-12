@@ -17,6 +17,7 @@ header{
     height: 100%;
     justify-content: space-around;
     align-items: center;
+<<<<<<< HEAD
 =======
 >>>>>>> 54a010fff92ee89103c2d54b54e8cf7d14e37935
 
@@ -28,6 +29,8 @@ header{
     font-family: 'Oswald', sans-serif;
     font-family: 'Prosto One', cursive; */
     
+=======
+>>>>>>> ee98c045356747ebb51fba2e0288feaf6f18ee37
 }
 main{
     width: 100vw;    
