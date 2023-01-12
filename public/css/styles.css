@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
 /* font-family: 'Fira Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Source Sans Pro', sans-serif; */
@@ -10,40 +7,17 @@ font-family: 'Source Sans Pro', sans-serif; */
     padding: 0;
     box-sizing: border-box;
 }
->>>>>>> fe50a4753b5b6a51eafca93e7933c3420ac85652
 header{
     display: flex;
     border:solid 1px black;
     height: 100%;
     justify-content: space-around;
     align-items: center;
-<<<<<<< HEAD
-=======
->>>>>>> 54a010fff92ee89103c2d54b54e8cf7d14e37935
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* font-family: 'Lato', sans-serif;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Prosto One', cursive; */
-    
-=======
->>>>>>> ee98c045356747ebb51fba2e0288feaf6f18ee37
 }
-main{
-    width: 100vw;    
-}
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
->>>>>>> fe50a4753b5b6a51eafca93e7933c3420ac85652
 .caja{
     font-size: 20px;
-=======
-
+}
 .container-principal{
     width: 100vw;
     height: 550px;
@@ -64,18 +38,13 @@ main{
     height:  100%;
     display: flex;
     flex-direction: column;
->>>>>>> 54a010fff92ee89103c2d54b54e8cf7d14e37935
     justify-content: center;
     align-items: center;
     font-family: 'Lato', sans-serif;
     background-color: rgba(9, 9, 9, 0.553);
     position: relative;
     z-index: 10;
-
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 body{
     background-color: #212121;
     color: #ffff;
@@ -127,8 +96,6 @@ body{
 .container .card p{
     font-size: 12px;
 }
->>>>>>> fe50a4753b5b6a51eafca93e7933c3420ac85652
-=======
 
 .img-principal{
     position:absolute;
@@ -511,4 +478,4 @@ section article div h4{
         min-width: 176px;
     }
 } 
->>>>>>> 54a010fff92ee89103c2d54b54e8cf7d14e37935
+
