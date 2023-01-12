@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+/* font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+>>>>>>> fe50a4753b5b6a51eafca93e7933c3420ac85652
 header{
     display: flex;
     border:solid 1px black;
@@ -6,7 +18,10 @@ header{
     align-items: center;
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe50a4753b5b6a51eafca93e7933c3420ac85652
 .caja{
     font-size: 20px;
     justify-content: center;
@@ -16,3 +31,57 @@ header{
     width: 100%;
     margin: 1px;
 }
+<<<<<<< HEAD
+=======
+body{
+    background-color: #212121;
+    color: #ffff;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.3rem;
+    font-family:'Fira Sans', sans-serif'
+}
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: #f7bd00;
+    margin-top:  100px; ;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.container .card{
+    width: 330px;
+    height: 430px;
+    border-radius: 5px;
+    /* box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.11); */
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.11);
+}
+
+.container .card img{
+    width: 330px;
+    height: 220px;
+}
+.container .card h4{
+    color: #FFCB00;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    padding-bottom: 25px;
+}
+.container .card p{
+    font-size: 12px;
+}
+>>>>>>> fe50a4753b5b6a51eafca93e7933c3420ac85652
