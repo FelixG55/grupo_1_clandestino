@@ -17,6 +17,12 @@ header{
 
 .caja{
     font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    margin: 1px;
 }
 .container-principal{
     width: 100vw;
@@ -29,10 +35,7 @@ header{
    background-size: cover;
    background-position: center center;
    
-
 }  
-
-
  .principal{
     width: 100%;
     height:  100%;
