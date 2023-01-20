@@ -1,18 +1,29 @@
-
+ @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+/* font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Lato', sans-serif;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Prosto One', cursive; */
-    
 }
-main{
-    width: 100vw;    
+header{
+    display: flex;
+    border:solid 1px black;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
 }
 
-
+.caja{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    margin: 1px;
+}
 .container-principal{
     width: 100vw;
     height: 550px;
@@ -24,10 +35,7 @@ main{
    background-size: cover;
    background-position: center center;
    
-
 }  
-
-
  .principal{
     width: 100%;
     height:  100%;
@@ -39,7 +47,57 @@ main{
     background-color: rgba(9, 9, 9, 0.553);
     position: relative;
     z-index: 10;
+}
+body{
+    background-color: #212121;
+    color: #ffff;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.3rem;
+    font-family:'Fira Sans', sans-serif'
+}
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: #f7bd00;
+    margin-top:  100px; ;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.container .card{
+    width: 330px;
+    height: 430px;
+    border-radius: 5px;
+    /* box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.11); */
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.11);
+}
 
+.container .card img{
+    width: 330px;
+    height: 220px;
+}
+.container .card h4{
+    color: #FFCB00;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    padding-bottom: 25px;
+}
+.container .card p{
+    font-size: 12px;
 }
 
 .img-principal{
@@ -423,3 +481,4 @@ section article div h4{
         min-width: 176px;
     }
 } 
+
