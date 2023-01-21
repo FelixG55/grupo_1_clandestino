@@ -12,6 +12,9 @@ font-family: 'Source Sans Pro', sans-serif; */
     color: grey;
     font-family: 'Source Sans Pro', sans-serif;
 }
+a:link{
+    color: #FFC900;
+}
 header{
         display: flex;
         border:solid 1px black;
