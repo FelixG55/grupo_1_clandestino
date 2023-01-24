@@ -7,4 +7,4 @@ routerUser.get('/register', register);
 routerUser.get('/reservation,', reservation);
 routerUser.get('/login', login);
 
-module.export = routerUser;
+module.exports = routerUser;

@@ -6,4 +6,4 @@ const routerProduct = express.Router();
 routerProduct.get ('/productCart', productCart);
 routerProduct.get ('/productDetail', productDetail);
 
-module.export = routerProduct;
+module.exports = routerProduct;
