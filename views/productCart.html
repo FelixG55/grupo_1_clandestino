@@ -16,19 +16,73 @@
 </head>
 <body>
 <header>
-    <div class="caja "><img src="/images/cladestino-logo.png" alt="" height="100%" width="100%"></div>
-    <h5 class="caja"><a href="/index">Home</a></h5>
+    <div class="caja "><img src="/images/cladestino-logo.png" alt="" height="150%" width="200%"></div>
+    <h5 class="caja"><a href="/">Home</a></h5>
     <h5 class="caja">¿Como llegar?</h5>
     <h5 class="caja"><a href="/productCart">Delivery</a></h5>
     <h5 class="caja"><a href="/productDetail">Menu</a></h5>
     <h5 class="caja">Reservas</h5>
     <h5 class="caja">Login</h5>
     <h5 class="caja">Sign-up</h5>
-    <h5 class="caja"><div class="container-icon"><a href="/productCart2"><i class="fas fa-shopping-bag"></i></a>
+    <h5 class="caja"><div class="container-icon"><a href="#"><i class="fas fa-shopping-bag">3</i></a>
     </div></h5>
-    <div class="boton caja"></div>
-    <div class="boton caja"></div>
 </header>
+<aside class="my-shoppingcart">
+    <h1> <i class="fas fa-truck" id="truck"></i> Mi Orden</h1>
+        <div class="cart-container">
+            <div class="cart-item">
+                <figure>
+                    <img src="/images/delivery-products/hamburguesas/mediterranea.jpg" alt="Mediterránea">
+                </figure>
+                <div class="info-product">
+                    <h4>Mediterránea</h4>
+                    <p class="price-cart">$27,000</p>
+                    <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i> 
+                    <button id="trash"><i class="fas fa-trash-alt"></i></button>		
+                </div>
+            </div>
+            <div class="cart-item">
+                <figure>
+                    <img src="/images/delivery-products/acompañamientos/papas-amarilas.jpg" alt="Papas Amarillas">
+                </figure>
+                <div class="info-product">
+                    <h4>Papas Amarillas</h4>
+                    <p class="price-cart">$5,000</p>
+                    <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i>
+                    <button id="trash"><i class="fas fa-trash-alt"></i></button>	
+                </div>
+            </div>
+            <div class="cart-item">
+                <figure>
+                    <img src="/images/delivery-products/cervezas/stella-artois.jpg" alt="Stella Artois">
+                </figure>
+                <div class="info-product">
+                    <h4>Stella Artois</h4>
+                    <p class="price-cart">$12,000</p>
+                    <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i>
+                    <button id="trash"><i class="fas fa-trash-alt"></i></button>		
+                </div>
+            </div>
+        </div>
+        <div class="cart-total">
+            <h5>Total:</h5>
+            <span class="total-payable"> $44,000 </span>
+            <p class="payment-method">
+            <label>Metodo de Pago:<br>
+            <input type="radio" name="payment-method">Efectivo
+                <input type="radio" name="payment-method">Tarjeta Débito/Crédito
+                </label>
+            </p>
+            <form action="#" method="GET"></form>
+                    <label for="search" id="coupon">
+                        <input type="text" placeholder="¿Tienes un cupón de descuento?">
+                    </label>    
+        </div>
+            <div class="pay-cart">
+                <button id="add"><i class="fas fa-cart-plus"></i> añadir productos</button> 
+                <button id="pay"><i class="fas fa-coins"></i> PAGAR</button> 
+            </div>				
+</aside>
 <main>
     <h2>Sánduches</h2>
         <div class="product-container">
@@ -52,9 +106,7 @@
                 <p class="description">Pan brioche artesanal relleno de cabecero de lomo acompañado de aros de cebolla, queso mozarela, rúgula y BBQ de café.</p>
                 <p class="price">$19,900</p>
                 <button> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
-            </div>
-        </div>    
-        <div class="product-container">    
+            </div> 
             <div class="item">
                 <h3>Choricheto</h3>
                 <img src="/images/delivery-products/sanduches/choricheto.jpg" alt="Choricheto">
