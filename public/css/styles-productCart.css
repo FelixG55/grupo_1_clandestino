@@ -139,7 +139,7 @@ header i{
     flex-wrap: wrap;
     align-items: stretch;
     flex-direction: column;
-    height: 100%;
+    /* height: 100%; */
     width:30%;
 }
 #truck {
