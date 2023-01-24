@@ -6,7 +6,7 @@ const routerMain = express.Router();
 routerMain.get ('/', index);
 routerMain.get ('/location', location);
 
-module.export = routerMain;
+module.exports = routerMain;
 
 
 
