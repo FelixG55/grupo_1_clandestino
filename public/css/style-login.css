@@ -8,17 +8,17 @@ body{
 
 }
 
-form p input{
+form div input{
+
 width: 200px;
 height: 30px;
+color: white;   
 display: flex;
-flex-direction: column;
-color: white;
-display: flex;
-flex-direction: column;
 border: solid 1px #FFC800;
 border-radius: 5px;
 background-color: #FFC800;
+align-items: center;
+margin: 15px auto;
 
 }
 form ::placeholder{
@@ -28,25 +28,30 @@ form ::placeholder{
 
 }
 
-
-
 h1{
     font-family: "Roboto";
     color: white;
+    text-align: center;
 }
 h2{
     font-family: "Roboto";
     color: white;
     font-size: 1rem;
+    text-align: center;
 }
 
 h3{
     font-family: "Roboto";
     color: white;
     font-size: 1rem;
+    text-align: center;
 }
 
-p button{
+.button{
+    text-align: center;
+}
+
+div button{
     width: 200px;
     height: 30px;
     font-family: "Roboto";
@@ -57,5 +62,5 @@ p button{
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
-
+    margin: 0 auto;
 }

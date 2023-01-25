@@ -140,7 +140,11 @@ header i{
     align-items: stretch;
     flex-direction: column;
     /* height: 100%; */
-    width:30%;
+    width:1%;
+    transition: width 1s linear 0.2s;
+}
+.my-shoppingcart:hover{
+    width: 30%;
 }
 #truck {
     color: black;
