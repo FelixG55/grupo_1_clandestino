@@ -1,41 +1,99 @@
-body{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-    background-color:black;
-    width: 50%;
-margin-top: 2%;
-margin-right: 40%;
-margin-left: 25%;
-margin-bottom: 10%;
-padding-left: 12px;
-padding-top: 50px;
-padding-bottom: 50px;
-text-align: center;
-box-sizing: border-box; 
+* {
+    margin: 0px;
+    padding: 0px;
+    background-color: #040404 ;
+    box-sizing: border-box;
+}
 
-}
-div{
-    margin-bottom: 35px;
-}
 .imagen{
-    width: 500px;
-    height: 200px;
-    margin-top: 2%;
+    width: 50%;
+    max-width: 300px;
+
 }
 
-form p {
-    width: 100%;
+.logo{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    display: block;
+}
+
+.container-form {
     font-family: "Roboto";
     font-size: 1rem;
-    color: white;
+    text-align: center;
+    justify-content: center;
+    background-color: #FFC800;
+    border-radius: 5px;
+    display: flex;
+    max-width: 300px;
+    padding: 8px;
+    margin: 20px;
+  
+
+}
+
+.container-form input{
+ text-align: left;
 }
 
 form{
-    padding: 30px 20px;
+    text-align: center;
 }
 
-div button{
+form p {
+    font-family: "Roboto";
+    font-size: 1rem;
+    color: #FFC800;
+    text-align: center;
+    padding: 5px;
+   
+}
+
+
+form ::placeholder{
+    font-family: "Roboto";
+    font-size: 1rem;
+    color: white;
+    background-color: #FFC800;
+    border: solid 1px #FFC800;
+
+
+
+}
+
+input{
+    border: solid 1px #FFC800;
+}
+
+.enviar button{
+    width: 200px;
+    height: 30px;
+    font-family: "Roboto";
+    font-size: 1rem;
+    color: white;
+    border: solid 1px #FFC800;
+    background-color: #FFC800;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+
+}
+
+
+
+/*.enviar button{
+    font-family: "Roboto";
+    font-size: 1rem;
+    color: white;
+    background-color: #FFC800;
+    text-align: center;
+    border: solid 1px #FFC800;
+ }/*
+
+
+.enviar button{
     width: 200px;
     height: 30px;
     font-family: "Roboto";
@@ -47,18 +105,11 @@ div button{
     font-weight: bold;
     text-align: center;
 
-}
-form ::placeholder{
-    font-family: "Roboto";
-    font-size: 1rem;
-    color: white;
-}
+}/*
 
-form div input{
-    font-family: "Roboto";
-    font-size: 1rem;
+/* form p input{
     padding: 12px;
-    align-items: center;
+    align-items:center;
     width: 350px;
     justify-content: center;
     display: flex;
@@ -70,5 +121,6 @@ form div input{
     border: solid 1px #FFC800;
     border-radius: 5px;
     font-weight: bold;
+    justify-content: center;
 
-}
+}/*

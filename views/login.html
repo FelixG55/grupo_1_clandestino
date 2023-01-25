@@ -5,13 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <link rel="stylesheet" href="/css/style-login.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
         <title>principal</title>
 
     </head>
     <body>
+
+        <div>
+            <img class="imagen" src="/images/Frame-logo-login-01.png" alt="logo">
+        </div>
+
+
         <form action="/login" method="Post">
-            <h1>Bienvenido</h1>
+            <div class="bienvenido">
+                <h1>Bienvenido</h1>
+            </div>
+         
             <p>
                 <input placeholder="Nombre" type="text" name="Nombre" id="Nombre">
             </p>
@@ -20,12 +29,17 @@
             </p>
             <p>
                 <input placeholder="Login" type="text" name="contraseña">
-            </p>
-            <h2>¿Perdiste tu contraseña?</h2>
-            <h3>¿No tienes cuenta? Registrate</h3>
-            <p>
+                </p>
+            <div class="pregunta1">
+                <h2>¿Perdiste tu contraseña?</h2>
+            </div>
+            <div class="pregunta2">
+                <h3>¿No tienes cuenta? Registrate</h3>  
+            </div>
+            
+            <div class="volver">
                 <button type="submit" value="Volver">Volver</button>
-            </p>
+            </div>
 
 
         </form>
