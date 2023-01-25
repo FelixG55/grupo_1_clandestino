@@ -2,9 +2,10 @@
   "name": "grupo_1_clandestino",
   "version": "1.0.0",
   "description": "Tematica del sitio: Marketplace de comida\r Público objetivo: General",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "nodemon napp.js"
   },
   "repository": {
     "type": "git",
