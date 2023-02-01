@@ -1,32 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>productCart</title>
-    <link rel="stylesheet" href="/css/styles-productCart.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
+<%- include('partials/head.ejs') %>
 <body>
-<header>
-    <div class="caja "><img src="/images/cladestino-logo.png" alt="" height="150%" width="200%"></div>
-    <h5 class="caja"><a href="/">Home</a></h5>
-    <h5 class="caja">¿Como llegar?</h5>
-    <h5 class="caja"><a href="/productCart">Delivery</a></h5>
-    <h5 class="caja"><a href="/productDetail">Menu</a></h5>
-    <h5 class="caja">Reservas</h5>
-    <h5 class="caja">Login</h5>
-    <h5 class="caja">Sign-up</h5>
-    <h5 class="caja"><div class="container-icon"><a href="#"><i class="fas fa-shopping-bag">3</i></a>
-    </div></h5>
-</header>
+<%- include('partials/header.ejs') %>
 <aside class="my-shoppingcart">
     <h1> <i class="fas fa-truck" id="truck"></i> Mi Orden</h1>
         <div class="cart-container">
@@ -250,8 +226,6 @@
             </div>
         </div>
 </main>
-<footer>
-</footer>
-    
+<%- include('partials/footer.ejs') %>
 </body>
 </html>
