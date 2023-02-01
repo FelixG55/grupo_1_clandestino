@@ -1,4 +1,4 @@
-body{
+body {
     font-family: "Roboto";
     padding: 20px;
     border: 15px;
@@ -8,50 +8,52 @@ body{
 
 }
 
-form div input{
+form div input {
 
-width: 200px;
-height: 30px;
-color: white;   
-display: flex;
-border: solid 1px #FFC800;
-border-radius: 5px;
-background-color: #FFC800;
-align-items: center;
-margin: 15px auto;
+    width: 200px;
+    height: 30px;
+    color: white;
+    display: flex;
+    border: solid 1px #FFC800;
+    border-radius: 5px;
+    background-color: #FFC800;
+    align-items: center;
+    margin: 15px auto;
 
 }
-form ::placeholder{
+
+form ::placeholder {
     font-family: "Roboto";
     color: white;
     font-size: 1rem;
 
 }
 
-h1{
+h1 {
     font-family: "Roboto";
     color: white;
-    text-align: center;
-}
-h2{
-    font-family: "Roboto";
-    color: white;
-    font-size: 1rem;
     text-align: center;
 }
 
-h3{
+h2 {
     font-family: "Roboto";
     color: white;
     font-size: 1rem;
     text-align: center;
 }
 
-.button{
+h3 {
+    font-family: "Roboto";
+    color: white;
+    font-size: 1rem;
     text-align: center;
 }
 
-div button{
+.button {
+    text-align: center;
+}
+
+div button {
     width: 200px;
     height: 30px;
     font-family: "Roboto";
