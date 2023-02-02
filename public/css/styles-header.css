@@ -1,0 +1,31 @@
+a:link{
+    color: #FFC900;
+    text-decoration: none;
+}
+header{
+    display: flex;
+    border:solid 1px black;
+    background-color: black;
+    color:white;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+}
+header img{
+    height: 100%; 
+    /* width: 1; */
+    object-fit: fill;
+    
+}
+.caja{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 1px;
+}
+header i{
+    background-color: black;
+}

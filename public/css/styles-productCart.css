@@ -12,15 +12,7 @@ font-family: 'Source Sans Pro', sans-serif; */
     color: grey;
     font-family: 'Source Sans Pro', sans-serif;*/
 }
-header{
-    display: flex;
-    border:solid 1px black;
-    background-color: #212121;
-    color:white;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
+
 main{ 
     background: #212121;
     color: grey;
@@ -82,7 +74,6 @@ h1{
     font-size: larger;
     font-weight: bold;
     color: black;
-    padding-left: 30px;
     padding-top: 1em;
     padding-bottom: 0.5em;
     font-family: 'Roboto', sans-serif;
@@ -119,10 +110,6 @@ button{
 i{
     background-color: #FFC800;
 }
-header i{
-    background-color: #747474;
-    color:white;
-}
 .description{
     color: grey;
 }
@@ -136,8 +123,12 @@ header i{
     flex-wrap: wrap;
     align-items: stretch;
     flex-direction: column;
-    height: 100%;
-    width:30%;
+    /* height: 100%; */
+    width:1%;
+    transition: width 1s linear 0.2s;
+}
+.my-shoppingcart:hover{
+    width: 30%;
 }
 #truck {
     color: black;

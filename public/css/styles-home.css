@@ -7,6 +7,9 @@ font-family: 'Source Sans Pro', sans-serif; */
     padding: 0;
     box-sizing: border-box;
 }
+a:link{
+    color: #FFC900;
+}
 header{
     display: flex;
     border:solid 1px black;
