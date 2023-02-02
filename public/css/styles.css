@@ -2,32 +2,18 @@
 /* font-family: 'Fira Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Source Sans Pro', sans-serif; */
+
+@font-face {
+    font-family: 'Afterglow';
+    src: url('../fonts/Afterglow-Regular.ttf');
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Afterglow';
 }
 
-a:link{
-    color: #FFC900;
-}
-header{
-    display: flex;
-    border:solid 1px black;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.caja{
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 50px;
-    width: 100%;
-    margin: 1px;
-}
 .container-principal{   
     width: 100vw;
     height: 550px;
@@ -113,7 +99,7 @@ body{
     bottom: 10px;
 }
 .container-principal div h1{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Afterglow';
     font-size: 80px;
     color: rgb(196, 196, 196);
   
