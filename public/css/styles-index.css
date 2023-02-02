@@ -2,6 +2,10 @@
 /* font-family: 'Fira Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Source Sans Pro', sans-serif; */
+@font-face {
+    font-family: 'Afterglow';
+    src: url('../fonts/Afterglow-Regular.ttf');
+}
 *{
     margin: 0;
     padding: 0;
@@ -64,6 +68,7 @@ body{
     font-size: 40px;
     color: #f7bd00;
     margin-top:  100px; ;
+    
 }
 .container{
     width: 100%;
@@ -112,13 +117,13 @@ body{
     bottom: 10px;
 }
 .container-principal div h1{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Afterglow';
     font-size: 80px;
-    color: rgb(196, 196, 196);
+    color:#ffc800;
   
 }
 .container-principal div h6{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Afterglow';
     font-size: 25px;
     letter-spacing: 2px;
     color: rgb(255, 255, 255);

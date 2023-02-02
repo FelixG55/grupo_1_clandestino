@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Afterglow';
+    src: url('../fonts/Afterglow-Regular.ttf');
+}
 a:link{
     color: #FFC900;
     text-decoration: none;
