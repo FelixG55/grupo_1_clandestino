@@ -20,18 +20,19 @@ const getIdProducts = (req, res) =>{};
 
 const putProducts = (req, res) =>{};
 
-const productsDetail = (req, res) =>{
+const productDetail = (req, res) =>{
     res.render(path.join(__dirname, '../views/productDetail'),{style: "styles-productDetail"});
 };
 
  
 module.exports = {
-    productCart,
-    productEdit,
+    // productCart,
+    // productEdit,
+    // productDetail, 
     products, 
     postProducts,
     createProducts,
     getIdProducts,
     putProducts,
-    productsDetail 
+   
 };
