@@ -14,13 +14,13 @@ font-family: 'Source Sans Pro', sans-serif; */
 a:link{
     color: #FFC900;
 }
-header{
+/* header{
     display: flex;
     border:solid 1px black;
     height: 100%;
     justify-content: space-around;
     align-items: center;
-}
+} */
 
 .caja{
     font-size: 20px;
@@ -35,13 +35,6 @@ header{
     width: 100vw;
     height: 550px;
     text-align: center; 
-    background-image: url(../images/fondo9.png ) ;
-    background-position-x: 50%;
-    background-position-y: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
-   
 }  
  .principal{
     width: 100%;
@@ -55,8 +48,30 @@ header{
     position: relative;
     z-index: 10;
 }
+.video-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .video-background {
+    background: #000;
+    position: relative;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -100;
+    height: 200%;
+    width: 200%;
+    opacity: 0.5;
+  }
+  .letra-slogan {
+    position:absolute;
+    z-index: 10;
+  }
+
+
 body{
-    background-color: #212121;
+    background-color: #040404;
     color: #ffff;
     width: 100%;
     height: 100%;
@@ -130,14 +145,17 @@ body{
 }
 .container-nosotros{
     width: 100%;
-    height: 300px;
-    background-color: #1b1717;
+    background-color: #040404;
     color: rgb(255, 255, 255);
     display:flex ;
     text-align: center;
     justify-content: center;
+    padding-bottom:30px;
 
 } 
+.container-nosotros div p{
+    font-family: 'Roboto';
+}
 
  .container-nosotros div{
     width: 50%;
@@ -147,6 +165,14 @@ body{
     padding-top: 25px;
     padding-bottom: 55px;
     align-self: start;
+    font-family: "Afterglow";
+    display:flex;
+    justify-content: center;
+    align-items: baseline;
+    color: #ffc800;
+}
+#question{
+    font-family:'Source Sans Pro', sans-serif;
 }
 
  .home{
@@ -225,13 +251,13 @@ section article div h4{
 .home article div a{
   display: flex;
    justify-content: center;
-   color: yellow;
+   color: #ffc800;
   }
 
   footer{
     width: 100%  ;
     height: 400px ;
-    background-color:  #FFC900 ;
+    background-color:  #ffc800 ;
   }
   .container-footer{
     width: 100%  ;
@@ -371,7 +397,9 @@ section article div h4{
 }
 
 .copyright{
-    background-color:#FFC900;
+    background-color:#ffc800;
+    padding-left: 20px;
+    margin-top:#ffc800;
 }
 
 @media (max-width: 480px){
