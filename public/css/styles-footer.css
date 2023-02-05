@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+/* font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
+@font-face {
+    font-family: 'Afterglow';
+    src: url('../fonts/Afterglow-Regular.ttf');
+}
+
+  footer{
+    width: 100%  ;
+    height: 400px ;
+    background-color:  #ffc800 ;
+  }
+  .container-footer{
+    width: 100%  ;
+    height: 390px ;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container-logo-footer{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    /* cambie el width de arriba */
+   /*flex-grow: 1;*/
+  }
+  .logo-footer{
+    width: 80%;
+    max-width: fit-content;
+    height: 150px ; 
+    flex-grow: 1;
+}
+
+.container-contacto{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+    flex-grow: 2;
+}
+.contactos{
+    width: 100%;
+    /* height: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 18px;
+    font-family: 'Roboto';
+    letter-spacing: 0.1rem;
+}
+.mail-contacto{
+    margin-bottom: 12px;
+    align-self: center;
+}
+
+.container-redes{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    flex-grow: 2;
+
+}
+.container-footer article div h2{
+    font-size: 25px;  
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-iconos{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 28px;
+    /* margin-left:70px; */
+}
+/* .container-redes .container-iconos a i{
+    padding:8px;
+    color: black;
+    text-decoration: none;
+} */
+.fa-instagram{
+    color: rgb(255, 255, 255); 
+    width: 25px;
+    height: 27px;
+    background: linear-gradient(to bottom right, 
+      red, orange, yellow, green, blue, indigo, violet);
+    border-radius: 25%;
+}
+.fa-spotify{
+    color: green;
+    background-color: white;
+    border-radius: 50%;
+    background-size: contain;
+    letter-spacing:0; 
+}
+.fa-facebook-square{
+    color: blue;
+    background-color: white;
+    border-radius: 25%;
+    width: 24px;
+    height: 26px;
+    letter-spacing:0; 
+}
+.container-redes .container-iconos {
+   align-self: flex-start;
+}
+.buho-blanco{
+ height:100px;
+}
+
+
+.container-footer article  form div label{
+    font-size: 25px;  
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold
+}
+.container-form-footer{
+    width: 25%;
+}
+.form-footer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 18px;
+}
+.container-inputs{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-footer article  form div input,textarea{
+    width: 60%;
+    padding: 4px;
+    margin: 6px;
+    border-radius: 3px;
+    border: #fff 1px solid;
+}
+
+.copyright{
+    background-color:#ffc800;
+    padding-left: 20px;
+    margin-top:#ffc800;
+}
+
+@media (max-width: 574px){
+    .container-form-footer{
+        display: none;
+    }
+    .container-footer article div h2{
+        font-size: 20px;  
+    }
+    .container-redes,.container-contacto{
+        width: 50%;
+        min-width: 140px;
+    }
+    .container-iconos, .contactos{
+        font-size: 15px;
+        width: 50%;
+        /* min-width: none; */
+    }
+}
+@media (max-width: 773px){
+    .logo-footer, .container-logo-footer{
+       display: none;
+    }
+    .container-contacto, .container-redes, .container-form-footer{
+        width: 33%;
+        min-width: 176px;
+    }
+} 
+
+
+
