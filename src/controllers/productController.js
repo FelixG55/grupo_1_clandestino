@@ -1,65 +1,54 @@
 const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../database/productos.json');
-const allProducts = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 
 
-const productCart= (req, res) => {
-
-    req.
-    res.render(path.join(__dirname, '../views/productCart'),{style: "styles-productCart"});
-};
-
-const productEdit = (req, res) => {
-
-    res.render(path.join(__dirname, '../views/productEdit'),{style: "styles-productEdit"});
-};
-const products = (req, res) =>{
-
+const allProducts = (req, res) =>{
     res.render(path.join(__dirname, '../views/productDetail'),{style: "styles-productDetail"})
 };
 
 const postProducts = (req, res) =>{};
 
 const createProducts = (req, res) =>{
-
     res.render(path.join(__dirname, '../views/createProduct'),{style: "styles-createProduct"});
 };
 
-const getProduct = (req, res) =>{
+const getOneProduct = (req, res) =>{
     const {id} = req.params;
-    const product = allProducts.find(elem => elem.id == id);
+    const product = products.find(elem => elem.id == id);
     res.render(path.join(__dirname, '../views/productIdDetail'),{product ,style: "styles-productIdDetail"});
 
 };
 
+const formProduct = (req, res) => {
 
-const putProducts = (req, res) =>{};
-
-const productDetail = (req, res) =>{
-    res.render(path.join(__dirname, '../views/productDetail'),{style: "styles-productDetail"});
 };
 
 const editProduct = (req, res) => {
+    res.render(path.join(__dirname, '../views/productEdit'),{style: "styles-productEdit"});
+};
 
-};
+const deleteProducts = (req, res) =>{};
+
 const delivery = (req, res) => {
-    res.render  (path.join(__dirname, '../views/productCart'),{style: "styles-productCart"})
+    res.render  (path.join(__dirname, '../views/productCart'),{products: products, style: "styles-productCart"})
 };
+
 
 module.exports = {
     // productCart,
     // productEdit,
     // productDetail, 
-    products, 
+    allProducts, 
     postProducts,
     createProducts,
-    getProduct,
-    putProducts,
+    getOneProduct,
+    formProduct,
     editProduct,
-    delivery,
-
+    deleteProducts,
+    delivery
    
 };
