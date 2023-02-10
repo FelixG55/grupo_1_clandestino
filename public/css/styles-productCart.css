@@ -55,6 +55,9 @@ body{
     text-align: center;
     transition: all 0.25s;
 }
+a{
+    text-decoration: none;
+}
 .product-container .item img{
     width: auto;
     height: 220px;
