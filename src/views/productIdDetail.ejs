@@ -4,14 +4,21 @@
 <body>
 <%- include('partials/header.ejs') %>
 
-    <h2>Sánduches</h2>
+    
+    <h2><%= product.category %></h2>
         <div class="product-container">
             <div class="item">
-                <h3>Calamarada</h3>
-                <img src="/images/delivery-products/sanduches/calamarada.jpg" alt="Calamarada">
-                <p class="description">Pan brioche artesanal negro relleno de calamares en panko acompañados de rúgula, tomates cherry, queso mozarela y salsa alioli.</p>
-                <p class="price">$21,000</p>
-                <button> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
+                <h3><%= product.productName %></h3>
+                <img src= <%= product.image %>>
+                <p class="description"><%= product.description %></p>
+                <p class="price">$<%= product.price %></p>
+                <div>
+                    <button> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
+                    <a href="/products/<%= product.id %>/edit">
+                        <button> Editar Producto  <i class="fas fa-shopping-bag"></i></button>
+                    </a>
+        
+                </div>
             </div>      
         </div>
         <div class="principal"> 
@@ -20,7 +27,6 @@
                 <source src="/images/videos/calamaradaId.mp4" type="video/mp4">
                 </video>
             </div>
-            
             <div class="letra-slogan">         
                 <h1>clandestino</h1>
                 <h6>Calamarada</h6>

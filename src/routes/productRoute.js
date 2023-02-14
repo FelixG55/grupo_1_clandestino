@@ -1,17 +1,17 @@
 const express= require('express');
 
-const {products, postProducts,createProducts,getIdProducts,putProducts, editProduct, delivery, getProduct} = require ('../controllers/productController');
+const {allProducts, postProducts,createProducts,getOneProduct,formProduct, editProduct,deleteProducts, delivery} = require ('../controllers/productController');
 const routerProduct = express.Router();
 
-routerProduct.get('/products', products);
+routerProduct.get('/products', allProducts);
 routerProduct.post('/products', postProducts);
 routerProduct.get('/products/create', createProducts);
-routerProduct.get('/products/:id', getProduct);
-routerProduct.get('/products/:id/edit',editProduct);
-routerProduct.put('/products/:id', putProducts);
-routerProduct.delete('/products/:id', putProducts);
+routerProduct.get('/products/:id', getOneProduct);
+routerProduct.get('/products/:id/edit',formProduct);
+routerProduct.put('/products/:id', editProduct);
+routerProduct.delete('/products/:id', deleteProducts);
 
-routerProduct.get('/productCart', delivery)
+routerProduct.get('/productDelivery', delivery)
 
 // routerProduct.get('/productCart', productCart);
 // routerProduct.get('/productDetail', productDetail);
