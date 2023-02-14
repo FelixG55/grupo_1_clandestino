@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const allProducts = (req, res) =>{
-    res.render(path.join(__dirname, '../views/productDetail'),{style: "styles-productDetail"})
+    res.render(path.join(__dirname, '../views/products'),{style: "styles-productDetail"})
 };
 
 const postProducts = (req, res) =>{};
@@ -24,17 +24,20 @@ const getOneProduct = (req, res) =>{
 };
 
 const formProduct = (req, res) => {
+    const {id} = req.params;
+    const product = products.find(elem => elem.id == id);
+    res.render(path.join(__dirname, '../views/productEdit'),{product, style: "styles-productEdit"});
 
 };
 
 const editProduct = (req, res) => {
-    res.render(path.join(__dirname, '../views/productEdit'),{style: "styles-productEdit"});
+    // res.render(path.join(__dirname, '../views/productEdit'),{style: "styles-productEdit"});
 };
 
 const deleteProducts = (req, res) =>{};
 
 const delivery = (req, res) => {
-    res.render  (path.join(__dirname, '../views/productCart'),{products: products, style: "styles-productCart"})
+    res.render  (path.join(__dirname, '../views/productsDelivery'),{products: products, style: "styles-productCart"})
 };
 
 

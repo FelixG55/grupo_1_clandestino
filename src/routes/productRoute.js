@@ -11,7 +11,7 @@ routerProduct.get('/products/:id/edit',formProduct);
 routerProduct.put('/products/:id', editProduct);
 routerProduct.delete('/products/:id', deleteProducts);
 
-routerProduct.get('/productCart', delivery)
+routerProduct.get('/productDelivery', delivery)
 
 // routerProduct.get('/productCart', productCart);
 // routerProduct.get('/productDetail', productDetail);
