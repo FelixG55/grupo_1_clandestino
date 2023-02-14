@@ -1,0 +1,116 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+/* font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*background: #212121;
+    color: grey;
+    font-family: 'Source Sans Pro', sans-serif;*/
+}
+
+main{ 
+    background: #212121;
+    color: grey;
+}
+.caja{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    margin: 1px;
+}   
+.logo{
+    width: 300px;
+    height: 128px;
+    display:flex;
+    text-align: justify;
+}
+body{
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.1rem;
+    font-family:'Fira Sans', sans-serif;
+}
+.product-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;   
+}
+.product-container .item{
+    width: 330px;
+    height: 100%;
+    border-radius: 5px;
+    margin: 20px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+}
+.product-container .item img{
+    width: auto;
+    height: 220px;
+    transition: all 0.3s ease-out;
+	position: relative;
+	z-index: 2;
+}
+.product-container .item:hover{
+    transform: translateY(-15px);
+    box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.11);
+}
+.product-container .item img:hover{
+    transform: scale(1.2, 1.2);
+	z-index: 9;
+}
+h1{
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    font-family: 'Roboto', sans-serif;
+}
+h2{
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+h3{
+    color: #FFC800;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding-bottom: 25px;
+}
+.price{
+    color: #FFC800;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding-bottom: 20px;
+    padding-top: 4px;
+}
+button{
+    background-color:#FFC800;
+    opacity:0.8;
+    color: black;
+    border-radius: 0.4em;
+    width: 200px;
+    font-weight: 800;
+    font-size:medium;
+}
+i{
+    background-color: #FFC800;
+}
+.description{
+    color: grey;
+}
+
+
+
