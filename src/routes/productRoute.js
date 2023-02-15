@@ -1,6 +1,6 @@
 const express= require('express');
 
-const {allProducts, postProducts,createProducts,getOneProduct,formProduct, editProduct,deleteProducts, delivery} = require ('../controllers/productController');
+const {allProducts, postProducts,createProducts,getOneProduct,formProduct, editProduct,deleteProducts, delivery, addProductCart} = require ('../controllers/productController');
 const routerProduct = express.Router();
 
 routerProduct.get('/products', allProducts);
@@ -12,6 +12,7 @@ routerProduct.put('/products/:id', editProduct);
 routerProduct.delete('/products/:id', deleteProducts);
 
 routerProduct.get('/productDelivery', delivery)
+routerProduct.get('/products/addProductCart/:id', addProductCart)
 
 // routerProduct.get('/productCart', productCart);
 // routerProduct.get('/productDetail', productDetail);

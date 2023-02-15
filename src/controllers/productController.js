@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../database/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const productsCart = [];
 
 
 
@@ -37,10 +38,23 @@ const editProduct = (req, res) => {
 const deleteProducts = (req, res) =>{};
 
 const delivery = (req, res) => {
-    res.render  (path.join(__dirname, '../views/productsDelivery'),{products: products, style: "styles-productCart"})
+    let productsCart = [];
+    res.render  (path.join(__dirname, '../views/productsDelivery'),{productsCart: productsCart, products: products, style: "styles-productCart"})
 };
 
+const addProductCart = (req, res) => {
+        const {id} = req.params;
+        const product = products.find(elem => elem.id == id);
+        const productCart = {
+            productName: product.productName,
+            price: product.price,
+            image: product.image
+        }
+        let newProductsCart = productsCart.push(productCart);
+        console.log(productsCart);
+    res.render(path.join(__dirname, '../views/productsDelivery'),{productsCart: productsCart, products: products, style: "styles-productCart"})
 
+};
 module.exports = {
     // productCart,
     // productEdit,
@@ -52,6 +66,7 @@ module.exports = {
     formProduct,
     editProduct,
     deleteProducts,
-    delivery
+    delivery,
+    addProductCart
    
 };

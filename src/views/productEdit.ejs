@@ -28,15 +28,13 @@
           <label for="category">Categoria</label>
           <select id="category" name="category" required>
               <option value="">Elige Categoria</option>
-              <option value="Sánduches">Sánduches</option>
-              <option value="Hamburguesa">Hamburguesa</option>
-              <option value="Acompañamientos">Acompañamientos</option>
-              <option value="Bebidas">Bebidas</option>
-              <option value="Cervezas artesanales">Cervezas artesanales</option>
-              <option value="Cervezas del mundo">Cervezas del mundo</option>
-              <option value="Entradas">Entradas</option>
-              <option value="Postres">Postres</option>
-              <option value="Fuertes">Fuertes</option>
+              <% let categories = ['Sánduches', 'Hamburguesa', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
+              <% for( const oneCategory of categories) { %>
+                <option value="<%= oneCategory %>"
+                  <%= oneCategory === product.category ? 'selected' : null %> 
+                   ><%= oneCategory %></option>        
+              <% } %>
+
           </select>
           <div class="elem-group">
           <label for="category">Delivery</label>

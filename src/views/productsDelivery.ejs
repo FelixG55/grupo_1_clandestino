@@ -7,41 +7,21 @@
 <!-- Acá empieza el carrito -->
 <aside class="my-shoppingcart">
     <h1> <i class="fas fa-truck" id="truck"></i> Mi Orden</h1>
-        <div class="cart-container">
-            <div class="cart-item">
-                <figure>
-                    <img src="/images/delivery-products/hamburguesas/mediterranea.jpg" alt="Mediterránea">
-                </figure>
-                <div class="info-product">
-                    <h4>Mediterránea</h4>
-                    <p class="price-cart">$27,000</p>
-                    <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i> 
-                    <button id="trash"><i class="fas fa-trash-alt"></i></button>		
+        <% for( let i = 0; i < productsCart.length; i++ ) { %>
+            <div class="cart-container">
+                <div class="cart-item">
+                    <figure>
+                        <img src="<%= productsCart[i].image %>" alt="<%= productsCart[i].productName %>">
+                    </figure>
+                    <div class="info-product">
+                        <h4><%= productsCart[i].productName %></h4>
+                        <p class="price-cart">$<%= productsCart[i].price %></p>
+                        <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i> 
+                        <button id="trash"><i class="fas fa-trash-alt"></i></button>		
+                    </div>
                 </div>
+        <% } %>
             </div>
-            <div class="cart-item">
-                <figure>
-                    <img src="/images/delivery-products/acompañamientos/papas-amarilas.jpg" alt="Papas Amarillas">
-                </figure>
-                <div class="info-product">
-                    <h4>Papas Amarillas</h4>
-                    <p class="price-cart">$5,000</p>
-                    <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i>
-                    <button id="trash"><i class="fas fa-trash-alt"></i></button>	
-                </div>
-            </div>
-            <div class="cart-item">
-                <figure>
-                    <img src="/images/delivery-products/cervezas/stella-artois.jpg" alt="Stella Artois">
-                </figure>
-                <div class="info-product">
-                    <h4>Stella Artois</h4>
-                    <p class="price-cart">$12,000</p>
-                    <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i>
-                    <button id="trash"><i class="fas fa-trash-alt"></i></button>		
-                </div>
-            </div>
-        </div>
         <div class="cart-total">
             <h5>Total:</h5>
             <span class="total-payable"> $44,000 </span>
@@ -76,7 +56,9 @@
                             <p class="description"><%= products[i].description %></p>
                             <p class="price">$<%= products[i].price %></p>
                     </a>    
+                    <a href="/products/addProductCart/<%= products[i].id %>">
                             <button> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
+                    </a>    
                         </div>
                 <% } %>                          
             <% } %>
