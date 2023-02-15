@@ -1,7 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head.ejs') %>
+  <%- include('partials/head.ejs') %>
 <body>
-    
+  <div class="container-reservation">
+    <div class="logo">
+      <a href="/"><img src="/images/buho.png" alt="logo"></a>
+    </div>
+    <div class="reservation-text">
+        <p>
+            Formulario de edición de productos
+        </p>
+    </div> 
+    <form action="" method="POST">
+        <div class="elem-group">
+          <label for="productName">Nombre del producto</label>
+          <input type="text" id="productName" name="productName" value="<%= product.productName %>" pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+        <div class="elem-group">
+          <label for="text">Descripción del producto</label>
+          <textarea type="text" id="description" name="description" required> <%= product.description %> </textarea>
+        </div>
+        <div class="elem-group">
+          <label for="price">Precio</label>
+          <input type="text" id="price" name="price" value="<%= product.price %>" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        </div>
+        <div class="elem-group">
+          <label for="category">Categoria</label>
+          <select id="category" name="category" required>
+              <option value="">Elige Categoria</option>
+              <option value="Sánduches">Sánduches</option>
+              <option value="Hamburguesa">Hamburguesa</option>
+              <option value="Acompañamientos">Acompañamientos</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Cervezas artesanales">Cervezas artesanales</option>
+              <option value="Cervezas del mundo">Cervezas del mundo</option>
+              <option value="Entradas">Entradas</option>
+              <option value="Postres">Postres</option>
+              <option value="Fuertes">Fuertes</option>
+          </select>
+          <div class="elem-group">
+          <label for="category">Delivery</label>
+          <select name="delivery" id="delivery">
+            <option value="true">Si</option>
+            <option value="false">No</option>
+          </select>
+            </div>
+        </div>
+        <div class="elem-group">
+          <label for="image">Sube la imagen del producto</label>
+          <input type="file" id="image" name="image"  required>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>   
+  </div>    
 </body>
+<footer>
+<%- include('partials/footer.ejs') %>
+</footer>
 </html>
