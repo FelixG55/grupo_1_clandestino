@@ -1,15 +1,4 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    background-color: #040404 ;
-    box-sizing: border-box;
-}
-
-
-
-body{
-    width: 270px;
-    height: 460px;
+body {
     font-family: "Roboto";
     margin: 40px;
     padding: 40px;
@@ -25,23 +14,21 @@ body{
     height: 300px; 
 }
 
-form p input{
-font-family: "Roboto";
-font-weight: bold;
-font-size: 1rem;
-padding: 8px;
-width: 280px;
-height: 30px;
-display:flex;
-flex-direction: column;
-color: white;
-border: solid 1px #FFC800;
-border-radius: 5px;
-background-color: #FFC800;
-margin: 20px;
+form div input {
+
+    width: 200px;
+    height: 30px;
+    color: white;
+    display: flex;
+    border: solid 1px #FFC800;
+    border-radius: 5px;
+    background-color: #FFC800;
+    align-items: center;
+    margin: 15px auto;
 
 }
-form ::placeholder{
+
+form ::placeholder {
     font-family: "Roboto";
     color: white;
     font-size: 1rem;
@@ -50,40 +37,31 @@ form ::placeholder{
 
 }
 
-
-
-.bienvenido{
-    font-family: "Playfair Display";
-    font-style: normal;
-    font-size: 1.5rem;
-    color: #FFC800;
-    margin: 20px;
-    padding: 20px;
-   
-}
-.pregunta1{
-    width: 280px;
-    height: 30px;
+h1 {
     font-family: "Roboto";
     color: white;
-    font-size: 0.5rem;
-    font-weight: bold;
-    margin: 20px;
-    padding: 20px;
+    text-align: center;
 }
 
-.pregunta2{
-    width: 280px;
-    height: 30px;
+h2 {
     font-family: "Roboto";
     color: white;
-    font-size: 0.9rem;
-    font-weight: normal;
-    margin: 20px;
-    padding: 20px;
+    font-size: 1rem;
+    text-align: center;
 }
 
-.volver button{
+h3 {
+    font-family: "Roboto";
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+}
+
+div button {
     width: 200px;
     height: 30px;
     font-family: "Roboto";
@@ -94,6 +72,5 @@ form ::placeholder{
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
-    margin: 20px;
-
+    margin: 0 auto;
 }
