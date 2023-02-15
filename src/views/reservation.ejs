@@ -1,33 +1,15 @@
 é<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation</title>
-    <link rel="stylesheet" href="/css/styles-reservation.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+  <%- include('partials/head.ejs') %>
 <body>
+  <div class="container-reservation">
     <div class="logo">
-      <a href="/"><img src="/images/Cladestino _Logo-02.png" alt="logo"></a>
+      <a href="/"><img src="/images/buho.png" alt="logo"></a>
     </div>
     <div class="reservation-text">
         <p>Clandestino Gastropub es el lugar perfecto para celebrar tu evento especial, 
            ya sea una pequeña reunión o un espacio privado para grupos grandes, 
            estamos listos satisfacer todas tus necesidades.
-        </p><br>    
-        <p>Para reservar, contactanos en el correo reservas@clandestinogastropub.com.co, 
-           llámanos al 3208992468 o completa el formulario que aparece a continuación.
-        </p><br>    
-        <p class="bold">
-           Si quieres reservar el mismo día, 
-           por favor contactanos directamente a nuestra línea de atención al cliente 3208992468.            
         </p>
     </div> 
     <form action="#" method="post">
@@ -76,6 +58,9 @@
         </div>
         <button type="submit">Reserva Ya</button>
       </form>
-    
+  </div>    
 </body>
+<footer>
+<%- include('partials/footer.ejs') %>
+</footer>
 </html>
