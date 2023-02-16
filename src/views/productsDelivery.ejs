@@ -16,15 +16,23 @@
                     <div class="info-product">
                         <h4><%= productsCart[i].productName %></h4>
                         <p class="price-cart">$<%= productsCart[i].price %></p>
-                        <i class="fas fa-arrow-circle-left" id="arrow"></i> <button id="number"> 1 </button> <i class="fas fa-arrow-circle-right" id="arrow"></i> 
-                        <button id="trash"><i class="fas fa-trash-alt"></i></button>		
+                        <a href=""><i class="fas fa-arrow-circle-left" id="arrow"></i></a>
+                        <button id="number"> <%= productsCart[i].quantity %> </button> 
+                        <a href=""><i class="fas fa-arrow-circle-right" id="arrow"></i></a> 
+                        <a href="/products/deleteProductCart/<%= productsCart[i].id %>">   
+                        <button id="trash" class="fas fa-trash-alt"></button>
+                        </a>		
                     </div>
                 </div>
-        <% } %>
             </div>
-        <div class="cart-total">
-            <h5>Total:</h5>
-            <span class="total-payable"> $44,000 </span>
+        <% } %>
+        <% let totalPrice = 0 %>
+        <% for( let i = 0; i < productsCart.length; i++ ) { %>
+           <%   totalPrice = totalPrice + productsCart[i].price*productsCart[i].quantity; %>
+        <% } %>  
+            <div class="cart-total">
+                <h5>Total:</h5>
+                <span class="total-payable"><%= totalPrice %></span>
             <p class="payment-method">
             <label>Metodo de Pago:<br>
             <input type="radio" name="payment-method">Efectivo
@@ -53,12 +61,13 @@
                         <div class="item">
                             <h3><%= products[i].productName %></h3>
                             <img src= <%= products[i].image %> alt= <%= products[i].name %>>
+                     </a>    
                             <p class="description"><%= products[i].description %></p>
                             <p class="price">$<%= products[i].price %></p>
-                    </a>    
                     <a href="/products/addProductCart/<%= products[i].id %>">
-                            <button> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
-                    </a>    
+                        
+                            <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                    </a>
                         </div>
                 <% } %>                          
             <% } %>
