@@ -133,7 +133,7 @@ i{
     animation-delay: 3s;
     animation-duration: 4s;
     animation-fill-mode: forwards;
-    transition: width 1s lineal ;
+    transition: width 1s linear 0.2s;
 }
 @keyframes esconder {
     0% {width: 20% }
