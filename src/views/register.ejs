@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <link rel="stylesheet" href="/css/style-register.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        
+        <title>principal</title>
+    
+
+    </head>
+    <body>
+        <div>
+            <a href="/"><img class="imagen" src="/images/imagen-register.jpg" alt="logo"></a>
+
+        </div>
+        <form action="/register" method="Post">
+            <p class="container-form">
+                <label for="nombre"></label>
+                <input placeholder="Nombre" type="text" name="nombre" id="nombre">
+            </p>
+            <p class="container-form">
+                <label for="email"></label>
+                <input placeholder="Email" type="email" name="email" id="email">
+            </p>
+            <p class="container-form">
+                <label for="Contraseña"></label>
+                <input placeholder="Contraseña" type="text" name="usuario">
+            </p>
+            <p class="container-form">       
+                <label for="Confirmar Contraseña"></label>
+                <input placeholder="Confirmar Contraseña" type="text" name="usuario">
+            </p>
+            <p class="container-form">
+                <label for="Acepto los terminos y condiciones"></label>
+                <input placeholder="Acepto los terminos y condiciones" type="text" name="usuario">
+            </p>
+
+        </form>
+            <div class="enviar">
+                <button type="submit">Enviar</button>
+            </div>
+               
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs') %>
+    <body>
+        <div class="logo">
+            <img class="imagen" src="/images/imagen-register.jpg" alt="logo">
+
+        </div>
+        <form action="/register" method="Post">
+            <p class="container-form">
+                <label for="nombre"></label>
+                <input placeholder="Nombre" type="text" name="nombre" id="nombre">
+            </p>
+            <p class="container-form">
+                <label for="email"></label>
+                <input placeholder="Email" type="email" name="email" id="email">
+            </p>
+            <p class="container-form">
+                <label for="Contrase単a"></label>
+                <input placeholder="Contrase単a" type="text" name="usuario">
+            </p>
+            <p class="container-form">       
+                <label for="Confirmar Contrase単a"></label>
+                <input placeholder="Confirmar Contrase単a" type="text" name="usuario">
+            </p>
+            <p class="container-form">
+                <label for="Acepto los terminos y condiciones"></label>
+                <input placeholder="Acepto los terminos y condiciones" type="text" name="usuario">
+            </p>
+
+        </form>
+            <div class="enviar">
+                <button type="submit">Enviar</button>
+            </div>
+               
+    </body>
+</html>

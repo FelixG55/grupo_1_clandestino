@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <section class="container-principal">
+            <div class="principal"> 
+                <div class="video-background">
+                    <video class="video-foreground" muted autoplay loop>
+                    <source src="/images/videos/dron.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="letra-slogan">         
+                    <h1>clandestino</h1>
+                    <h6>"slogan" 2023</h6>
+                </div>
+            </div>           
+        </section>
+    
+        <section class="container-nosotros">
+             <div class="nosotros">
+                 <h2><p id="question">¿</p>Quiénes somos<p id="question">?</p> </h2>
+                 <p>Somos un Gastropub moderno en el corazón del eje cafetero en la vibrante ciudad de Manizales, donde combinamos la pasión por la gastronomía y la coctelería en un ambiente único. Ofrecemos cervezas artesanales de emprendimientos locales y apoyamos a los músicos de la región, permitiendo a nuestros invitados conocer artistas independientes en nuestras pantallas y disfrutar de mini conciertos. En nuestra casa también encontrarás una taza de café de la mejor calidad, procuramos apoyar a nuestros campesinos y contribuir a la sostenibilidad de nuestro entorno. Ven a Clandestino Gastropub y descubre una experiencia diferente llena de sabor, música y  conciencia social.</p>
+             </div>
+        </section>
+    
+        <section class="home">
+            <article class="menu">
+                    <div class="container-img">
+                        <img src="images/fondo10.png" alt="" class="img">
+                    </div>
+                    <div class="container-descripcion">
+                        <p>Menú</p>
+                        <h4>Nuestros platos</h4>
+                        <a href="#">menu</a>
+                    </div>
+                
+            </article>
+
+            <article class="tragos">
+                <div class="container-img">
+                    <img src="images/fondo10.png" alt="" class="img">
+                </div>
+                <div class="container-descripcion">
+                    <p>Bebidas</p>
+                    <h4>Tragos y Cervezas</h4>
+                    <a href="#">bebidas</a>
+                </div>
+            </article>
+      </section>
+      <section class="home">
+            <article class="delivery">
+                <div class="container-img">
+                    <img src="images/fondo10.png" alt="" class="img">
+                </div>
+                <div class="container-descripcion">
+                    <p></p>
+                    <h4>Take away y Delivery</h4>
+                    <a href="#">leer mas...</a>
+                </div>
+                
+            </article>
+
+            <article class="ubicacion">
+                <div class="container-img">
+                    <img src="images/fondo10.png" alt="" class="img">
+                </div>
+                <div class="container-descripcion">
+                    <p></p>
+                    <h4>¿Como llegar?</h4>
+                    <a href="#">leer mas...</a>
+                </div>
+            </article>
+        </section>
+        <%- include('partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+/* font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
+@font-face {
+    font-family: 'Afterglow';
+    src: url('../fonts/Afterglow-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #747474;
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;   
+}
+h1{
+    color:#ffc800;
+    margin-bottom: 60px;
+}
+iframe{
+    width:80%;
+    height: 500px;
+}
+
