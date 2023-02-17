@@ -1,19 +1,8 @@
-<<<<<<< HEAD
-* {
-    margin: 0px;
-    padding: 0px;
-    background-color: #040404 ;
-    box-sizing: border-box;
-}
-
-.imagen{
-=======
 /* body{
     width: 100px;
     height: 100px;
     margin: 5px;
     background-color:black;
->>>>>>> 2d4e873c3aee7c33dbbb7faea8372becb52e664d
     width: 50%;
     max-width: 300px;
 
@@ -131,9 +120,6 @@ input{
     font-weight: bold;
     justify-content: center;
 
-<<<<<<< HEAD
-}/*
-=======
 } */
 
 * {
@@ -144,8 +130,8 @@ input{
 }
 
 .imagen{
-    width: 50%;
-    max-width: 300px;
+    width: 70%;
+    max-width: 400px;
 
 }
 
@@ -165,14 +151,21 @@ input{
     background-color: #FFC800;
     border-radius: 5px;
     display: flex;
-    max-width: 40%;
+    max-width: 22%;
     padding: 8px;
     margin: 20px auto;
 
 }
-
+/* Texto dentro de caja */
 .container-form input{
  text-align: left;
+}
+.label{
+    display: flex;
+    max-width: 22%;
+    padding: 8px;
+    margin: 20px auto;
+
 }
 
 form{
@@ -183,7 +176,7 @@ form p {
     font-family: "Roboto";
     font-size: 1rem;
     color: #FFC800;
-    text-align: center;
+    text-align: left;
     padding: 5px;
    
 }
@@ -217,4 +210,3 @@ input{
     text-align: center;
     margin: 20px;
 }
->>>>>>> 2d4e873c3aee7c33dbbb7faea8372becb52e664d
