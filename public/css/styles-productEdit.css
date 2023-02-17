@@ -26,7 +26,12 @@ p{
   color:#040404;
   padding-bottom: 20px;
 }
-
+#category{
+  color: white;
+}
+#delivery{
+  color: white;
+}
 .container-reservation {
   width: 50%; 
   margin: 0 auto;
