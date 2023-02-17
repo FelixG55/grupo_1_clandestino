@@ -82,8 +82,7 @@ const addProductCart = (req, res) => {
                     res.redirect('/productDelivery');
                 }
             } );
-        }
-            
+        }  
     };
 
 const deleteProductCart = (req,res) =>  {
@@ -101,7 +100,47 @@ const deleteProductCart = (req,res) =>  {
                 res.redirect('/productDelivery');
 			}
 		} );
+}
 
+const restProductCart = (req,res) =>{
+    const productsFilePath = path.join(__dirname, '../database/productos.json');
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
+    const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
+    rutaJson = path.join(__dirname,'../database/productsCart.json');
+
+        const {id} = req.params;
+        const productCart = productsCart.find(elem => elem.id == id);
+            productCart.quantity = productCart.quantity - 1;
+            let data = JSON.stringify(productsCart);
+            fs.writeFile(rutaJson, data, err => {
+                if (err) {
+                    console.error(err);
+                } else{
+                    res.redirect('/productDelivery');
+                }
+            } );
+
+}
+const sumProductCart = (req,res) =>{
+    const productsFilePath = path.join(__dirname, '../database/productos.json');
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
+    const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
+    rutaJson = path.join(__dirname,'../database/productsCart.json');
+
+        const {id} = req.params;
+        const productCart = productsCart.find(elem => elem.id == id);
+            productCart.quantity = productCart.quantity + 1;
+            let data = JSON.stringify(productsCart);
+            fs.writeFile(rutaJson, data, err => {
+                if (err) {
+                    console.error(err);
+                } else{
+                    res.redirect('/productDelivery');
+                }
+            } );
+    
 }
 module.exports = {
     // productCart,
@@ -116,6 +155,8 @@ module.exports = {
     deleteProducts,
     delivery,
     addProductCart,
-    deleteProductCart
+    deleteProductCart,
+    restProductCart,
+    sumProductCart
    
 };

@@ -1,6 +1,6 @@
 const express= require('express');
 
-const {allProducts, postProducts,createProducts,getOneProduct,formProduct, editProduct,deleteProducts, delivery, addProductCart, deleteProductCart} = require ('../controllers/productController');
+const {allProducts, postProducts,createProducts,getOneProduct,formProduct, editProduct,deleteProducts, delivery, addProductCart, deleteProductCart, restProductCart ,sumProductCart} = require ('../controllers/productController');
 const routerProduct = express.Router();
 
 routerProduct.get('/products', allProducts);
@@ -14,6 +14,8 @@ routerProduct.delete('/products/:id', deleteProducts);
 routerProduct.get('/productDelivery', delivery);
 routerProduct.get('/products/addProductCart/:id', addProductCart);
 routerProduct.get('/products/deleteProductCart/:id', deleteProductCart);
+routerProduct.get('/products/restProductCart/:id', restProductCart);
+routerProduct.get('/products/sumProductCart/:id', sumProductCart);
 
 // routerProduct.get('/productCart', productCart);
 // routerProduct.get('/productDetail', productDetail);

@@ -83,7 +83,7 @@ h1{
     font-family: 'Roboto', sans-serif;
 }
 h2{
-    text-align: left;
+    text-align:justify;
     padding-top: 40px;
     padding-left: 525px;
     font-family: 'Roboto', sans-serif;
@@ -130,17 +130,21 @@ i{
     /* height: 100%; */
     width:20%;
     animation-name: esconder;
-    animation-delay: 3s;
-    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
-    transition: width 1s linear 0.2s;
+    animation-direction: normal;
 }
 @keyframes esconder {
     0% {width: 20% }
-    100% {width: 1%;}
+    100% {width: 5%;}
+}
+@keyframes aparecer {
+    0% {width: 5% }
+    100% {width: 20%;}
 }
 .my-shoppingcart:hover {
-    width: 20%;
+    animation-name: aparecer;
 }
 #truck {
     color: black;
