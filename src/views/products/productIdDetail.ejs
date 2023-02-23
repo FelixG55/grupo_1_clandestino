@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+<%- include('../partials/header.ejs') %>
+<main>
+<div class="container-detail">
+        <div class="product-container">
+            <div class="item">
+                <h3><%= product.productName %></h3>
+                <img src= <%= product.image %>>
+                <p class="description"><%= product.description %></p>
+                <p class="price">$<%= product.price %></p>
+                <div>
+                    <button class="manito"> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
+                    <br><br>
+                    <a href="/products/<%= product.id %>/edit">
+                        <button class="manito"> Editar Producto  <i class="fas fa-shopping-bag"></i></button>
+                    </a>
+                    <br><br>
+                    <a href="/products/<%= product.id %>/">
+                        <button class="manito"> Eliminar Producto  <i class="fas fa-shopping-bag"></i></button>
+                    </a>
+
+        
+                </div>
+            </div>      
+        </div>
+        <div class="video-container"> 
+            <div class="video-background">
+                <video  class="video-foreground video" muted autoplay loop>
+                <source src="<%= product.video %>" type="video/mp4">
+                </video>
+            </div>
+            <div class="letra-slogan">         
+                <h1>clandestino</h1>
+                <h6>Calamarada</h6>
+            </div>
+        </div>
+</div>     
+</main>
+<%- include('../partials/footer.ejs') %>
+</body>
+</html>
