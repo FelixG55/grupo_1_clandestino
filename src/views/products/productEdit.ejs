@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+<body>
+  <div class="container-reservation">
+    <div class="logo">
+      <a href="/"><img src="/images/buho.png" alt="logo"></a>
+    </div>
+    <div class="reservation-text">
+        <p>
+            Formulario de edición de productos
+        </p>
+    </div> 
+    <form action="/products/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+      <div class="elem-group">
+        <input type="hidden" id="id" name="id" value="<%= product.id %>" pattern=[A-Z\sa-z]{3,20} required>
+      </div>
+        <div class="elem-group">
+          <label for="productName">Nombre del producto</label>
+          <input type="text" id="productName" name="productName" value="<%= product.productName %>" pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+        <div class="elem-group">
+          <label for="text">Descripción del producto</label>
+          <textarea type="text" id="description" name="description" required> <%= product.description %> </textarea>
+        </div>
+        <div class="elem-group">
+          <label for="price">Precio</label>
+          <input type="number" id="price" name="price" value="<%= product.price %>" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        </div>
+        <div class="elem-group">
+          <label for="category">Categoria</label>
+          <select id="category" name="category" required>
+              <option value="">Elige Categoria</option>
+              <% let categories = ['Sánduches', 'Hamburguesa', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
+              <% for( const oneCategory of categories) { %>
+                <option value="<%= oneCategory %>"
+                  <%= oneCategory === product.category ? 'selected' : null %> 
+                   ><%= oneCategory %></option>        
+              <% } %>
+
+          </select>
+          <div class="elem-group">
+          <label for="category">Delivery</label>
+          <select name="delivery" id="delivery">
+            <option value="true">Si</option>
+            <option value="false">No</option>
+          </select>
+            </div>
+        </div>
+        <div class="elem-group">
+          <label for="image">Sube la imagen del producto</label>
+          <input type="file" id="image" name="image"  required>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>   
+  </div>    
+</body>
+<footer>
+<%- include('../partials/footer.ejs') %>
+</footer>
+</html>
