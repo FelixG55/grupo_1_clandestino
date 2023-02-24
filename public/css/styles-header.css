@@ -2,29 +2,53 @@
     font-family: 'Afterglow';
     src: url('../fonts/Afterglow-Regular.ttf');
 }
-header img{
-    height: 100px; 
-    object-fit: fill; 
-}
-.caja{
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
+
+.container-header {
     display: flex;
-    height: 100%;
-    width: 100%;
-    margin: 1px;
+    border: solid 1px black;
+    background-color: black;
+    color: white;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
 }
-.nav-bar{
+.container-icon{
+    width: 30px;
+    margin-left: 10px;
+    padding-left: 5px;
+}
+#anchor-header{
+    color: #FFC900;
+    text-decoration: none;
+}
+.nav-bar {
     display: none;
 }
-header{
-    background-color: black;
-    width: 100%;
+.container-nav-fija{
+    order: solid 1px black;
+    display: flex;
+    color: #FFC900;
+    text-decoration: none;
+    font-size: 12px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;   
 }
+
+header img {
+    height: 95px;
+    object-fit: fill;
+}
+
+.container-burguer {
+    width: 100px;
+    text-align: center;
+    object-fit: fill;
+}
+
 .burguer-button {
     display: block;
-    background-color: #1259c3;
+    background-color: #FFC900;
     color: white;
     padding: 15px 0;
     max-width: 50px;
@@ -34,37 +58,8 @@ header{
     margin: auto;
 }
 
-@media(min-width:760px){
+@media(min-width:760px) {
     .burguer-button {
         display: none;
     }
-#anchor-header{
-    color: #FFC900;
-    text-decoration: none;
-}
-header{
-    display: flex;
-    border:solid 1px black;
-    background-color: black;
-    color:white;
-    height: 100px;
-    justify-content: space-around;
-    align-items: center;
-}
-header img{
-    height: 100px; 
-    object-fit: fill; 
-}
-.nav-bar{
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    margin: 1px;
-}
-header i{
-    background-color: black;
-}
 }
