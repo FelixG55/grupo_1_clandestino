@@ -22,8 +22,6 @@ font-family: 'Source Sans Pro', sans-serif; */
     display: flex;
     align-items: center;
     width: 50%;
-    /* cambie el width de arriba */
-   /*flex-grow: 1;*/
   }
   .logo-footer{
     width: 80%;
@@ -82,13 +80,8 @@ font-family: 'Source Sans Pro', sans-serif; */
     align-items: center;
     justify-content: space-evenly;
     font-size: 28px;
-    /* margin-left:70px; */
 }
-/* .container-redes .container-iconos a i{
-    padding:8px;
-    color: black;
-    text-decoration: none;
-} */
+
 .fa-instagram{
     color: rgb(255, 255, 255); 
     width: 25px;
@@ -164,33 +157,3 @@ font-family: 'Source Sans Pro', sans-serif; */
     padding-left: 20px;
     margin-top:#ffc800;
 }
-
-@media (max-width: 574px){
-    .container-form-footer{
-        display: none;
-    }
-    .container-footer article div h2{
-        font-size: 20px;  
-    }
-    .container-redes,.container-contacto{
-        width: 50%;
-        min-width: 140px;
-    }
-    .container-iconos, .contactos{
-        font-size: 15px;
-        width: 50%;
-        /* min-width: none; */
-    }
-}
-@media (max-width: 773px){
-    .logo-footer, .container-logo-footer{
-       display: none;
-    }
-    .container-contacto, .container-redes, .container-form-footer{
-        width: 33%;
-        min-width: 176px;
-    }
-} 
-
-
-

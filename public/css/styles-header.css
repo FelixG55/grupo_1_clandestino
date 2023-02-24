@@ -2,6 +2,42 @@
     font-family: 'Afterglow';
     src: url('../fonts/Afterglow-Regular.ttf');
 }
+header img{
+    height: 100px; 
+    object-fit: fill; 
+}
+.caja{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 1px;
+}
+.nav-bar{
+    display: none;
+}
+header{
+    background-color: black;
+    width: 100%;
+}
+.burguer-button {
+    display: block;
+    background-color: #1259c3;
+    color: white;
+    padding: 15px 0;
+    max-width: 50px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+}
+
+@media(min-width:760px){
+    .burguer-button {
+        display: none;
+    }
 #anchor-header{
     color: #FFC900;
     text-decoration: none;
@@ -17,10 +53,9 @@ header{
 }
 header img{
     height: 100px; 
-    /* width: 1; */
     object-fit: fill; 
 }
-.caja{
+.nav-bar{
     font-size: 20px;
     justify-content: center;
     align-items: center;
@@ -31,4 +66,5 @@ header img{
 }
 header i{
     background-color: black;
+}
 }
