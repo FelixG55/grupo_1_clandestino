@@ -177,12 +177,13 @@
  }
 
  .container-nosotros div h2 {
+   
      font-size: 25px;
      padding-top: 25px;
      padding-bottom: 55px;
      align-self: start;
      /* font-family: "Afterglow"; tuve que ponerlo asi porque no entra el primer "¿" */
-     display: flex;
+     display: none;
      justify-content: center;
      align-items: baseline;
      color: #ffc800;
@@ -273,6 +274,17 @@
      color: #ffc800;
  }
  @media (min-width: 768px) {
+    .container-nosotros div h2 {
+        font-size: 25px;
+        padding-top: 25px;
+        padding-bottom: 55px;
+        align-self: start;
+        /* font-family: "Afterglow"; */
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        color: #ffc800;
+    }
     .container-nosotros div p{
         font-family: 'Roboto';
         font-size: 12px;

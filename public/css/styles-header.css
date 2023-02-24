@@ -12,19 +12,24 @@
     justify-content: space-between;
     align-items: center;
 }
-.container-icon{
+
+.container-icon {
     width: 30px;
     margin-left: 10px;
     padding-left: 5px;
 }
-#anchor-header{
+
+#anchor-header {
     color: #FFC900;
     text-decoration: none;
+    font-size: 14px;
 }
+
 .nav-bar {
     display: none;
 }
-.container-nav-fija{
+
+.container-nav-fija {
     order: solid 1px black;
     display: flex;
     color: #FFC900;
@@ -32,16 +37,90 @@
     font-size: 12px;
     justify-content: space-between;
     align-items: center;
-    padding: 3px;   
+    padding: 3px;
 }
 
 header img {
     height: 95px;
     object-fit: fill;
 }
+/*PRUEBA DE LISTA DESPLEGABLE*/
+
+/* menu */
+
+#menu ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+   }
+   
+   /* items del menu */
+   
+   #menu ul li {
+    background-color:#2e518b;
+   }
+   
+   /* enlaces del menu */
+   
+   #menu ul a {
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+   }
+   
+   /* items del menu */
+   
+   #menu ul li {
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+   }
+   
+   /* efecto al pasar el ratón por los items del menu */
+   
+   #menu ul li:hover {
+    background:#5b78a7;
+   }
+   /* menu desplegable */
+
+#menu ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+   }
+   
+   /* items del menu desplegable */
+   
+   #menu ul ul li {
+    float:none;
+    width:150px
+   }
+   
+   /* enlaces de los items del menu desplegable */
+   
+   #menu ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+   }
+   
+   /* items del menu desplegable al pasar el ratón */
+   
+   #menu ul li:hover > ul {
+    display:block;
+   }
 
 .container-burguer {
-    width: 100px;
+    width: 80px;
     text-align: center;
     object-fit: fill;
 }
@@ -51,15 +130,35 @@ header img {
     background-color: #FFC900;
     color: white;
     padding: 15px 0;
-    max-width: 50px;
+    max-width: 45px;
     border-radius: 8px;
     text-align: center;
     font-size: 18px;
+    align-items: center;
     margin: auto;
 }
 
 @media(min-width:760px) {
     .burguer-button {
         display: none;
+    }
+
+    .nav-bar {
+        display: flex;
+        width: 75px;
+    }
+
+    #anchor-header {
+        color: #FFC900;
+        text-decoration: none;
+        font-size: 10px;
+    }
+}
+
+@media(min-width:1200px) {
+    #anchor-header {
+        color: #FFC900;
+        text-decoration: none;
+        font-size: 14px;
     }
 }
