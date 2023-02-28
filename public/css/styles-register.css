@@ -4,109 +4,61 @@
     margin: 5px;
     background-color:black;
     width: 50%;
-    max-width: 300px;
+margin-top: 2%;
+margin-right: 40%;
+margin-left: 25%;
+margin-bottom: 10%;
+padding-left: 12px;
+padding-top: 50px;
+padding-bottom: 50px;
+text-align: center;
+box-sizing: border-box; 
 
 }
-
-.logo{
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    display: block;
+div{
+    margin-bottom: 35px;
 }
-
-.container-form {
-    font-family: "Roboto";
-    font-size: 1rem;
-    text-align: center;
-    justify-content: center;
-    background-color: #FFC800;
-    border-radius: 5px;
-    display: flex;
-    max-width: 300px;
-    padding: 8px;
-    margin: 20px;
-  
-
-}
-
-.container-form input{
- text-align: left;
-}
-
-form{
-    text-align: center;
+.imagen{
+    width: 500px;
+    height: 200px;
+    margin-top: 2%;
 }
 
 form p {
+    width: 100%;
     font-family: "Roboto";
     font-size: 1rem;
-    color: #FFC800;
-    text-align: center;
-    padding: 5px;
-   
+    color: white;
 }
 
+form{
+    padding: 30px 20px;
+}
 
+div button{
+    width: 200px;
+    height: 30px;
+    font-family: "Roboto";
+    font-size: 1rem;
+    color: white;
+    border: solid 1px #FFC800;
+    background-color: #FFC800;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+
+}
 form ::placeholder{
     font-family: "Roboto";
     font-size: 1rem;
     color: white;
-    background-color: #FFC800;
-    border: solid 1px #FFC800;
-
-
-
 }
 
-input{
-    border: solid 1px #FFC800;
-}
-
-.enviar button{
-    width: 200px;
-    height: 30px;
+form div input{
     font-family: "Roboto";
     font-size: 1rem;
-    color: white;
-    border: solid 1px #FFC800;
-    background-color: #FFC800;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    margin: 20px;
-
-}
-
-
-
-/*.enviar button{
-    font-family: "Roboto";
-    font-size: 1rem;
-    color: white;
-    background-color: #FFC800;
-    text-align: center;
-    border: solid 1px #FFC800;
- }/*
-
-
-.enviar button{
-    width: 200px;
-    height: 30px;
-    font-family: "Roboto";
-    font-size: 1rem;
-    color: white;
-    border: solid 1px #FFC800;
-    background-color: #FFC800;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-
-}/*
-
-/* form p input{
     padding: 12px;
-    align-items:center;
+    align-items: center;
     width: 350px;
     justify-content: center;
     display: flex;
@@ -118,7 +70,6 @@ input{
     border: solid 1px #FFC800;
     border-radius: 5px;
     font-weight: bold;
-    justify-content: center;
 
 } */
 
@@ -210,3 +161,5 @@ input{
     text-align: center;
     margin: 20px;
 }
+
+
