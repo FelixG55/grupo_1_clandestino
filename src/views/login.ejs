@@ -2,20 +2,24 @@
 <html lang="en">
     <%- include('partials/head.ejs') %>
     <body>
-        <form action="/login" method="Post">
+        <div class="logo-clandestino">
+            <img src="/images/buho.png" alt="logo">
             <h1>Bienvenido</h1>
-            <div>
-            <div>
-                <input placeholder="Nombre" type="text" name="Nombre" id="Nombre">
+        </div>
+        <form action="/login" method="Post">
+            <div class="nombre-login">
+                <i class="fas fa-user-plus"></i>
+                <input placeholder= "Nombre"  type="text" name="Nombre" id="Nombre"> 
             </div>
-            <div>
+            <div class="contraseña-login">
+                <i class="fas fa-eye-slash"></i>
                 <input placeholder="Contraseña" type="password" name="password" id="password">
             </div>
             <div>
-                <input placeholder="Login" type="text" name="contraseña">
+                <button type="submit" value="Ingresar">Ingresar</button>
             </div>
-            <h2>¿Perdiste tu contraseña?</h2>
-            <h3>¿No tienes cuenta? Registrate</h3>
+            <a id="" href=""><h2>¿Perdiste tu contraseña?</h2></a>
+            <a id="" href=""><h3>¿No tienes cuenta? Registrate</h3></a>
             <div class="button">
                 <button type="submit" value="Volver">Volver</button>
             </div>

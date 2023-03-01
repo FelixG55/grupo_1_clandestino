@@ -2,37 +2,48 @@ body {
     font-family: "Roboto";
     padding: 20px;
     border: 15px;
-    background-color: rgb(186, 183, 190);
+    background-color: #040404;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-
+    
+}
+img {
+    width:200px;
+    height:150px;
+    margin-bottom: 0px;
 }
 
-form div input {
 
+
+form input {
     width: 200px;
-    height: 30px;
-    color: white;
-    display: flex;
+    height: 90%;
     border: solid 1px #FFC800;
     border-radius: 5px;
     background-color: #FFC800;
     align-items: center;
     margin: 15px auto;
+    margin-left:10px;
+    order: 1;    
+}
 
+form input:focus { 
+    border: 1px solid #FFC800;
 }
 
 form ::placeholder {
     font-family: "Roboto";
     color: white;
     font-size: 1rem;
-
 }
 
 h1 {
     font-family: "Roboto";
     color: white;
     text-align: center;
+    margin-top: 0px;
 }
 
 h2 {
@@ -53,9 +64,9 @@ h3 {
     text-align: center;
 }
 
-div button {
+button {
     width: 200px;
-    height: 30px;
+    height: 40px;
     font-family: "Roboto";
     font-size: 1rem;
     color: white;
@@ -65,4 +76,51 @@ div button {
     font-weight: bold;
     text-align: center;
     margin: 0 auto;
+    transition: all 0.5s;
+
 }
+button:hover{
+    background-color: #aa8500;
+    cursor: pointer;
+
+} 
+
+.nombre-login {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC800;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #FFC800;
+    margin-bottom: 12px;
+
+}
+.fa-user-plus{
+    color:white;
+    border: solid 1px #FFC800;
+    order:2;
+    margin-right:10px;
+}
+.contraseña-login {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC800;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #FFC800;
+    margin-bottom: 12px;
+}
+
+.fa-eye-slash{
+    color:white;
+    border: solid 1px #FFC800;
+    order:2;
+    margin-right:10px;
+}
+
+
+
