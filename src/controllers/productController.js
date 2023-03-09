@@ -1,6 +1,7 @@
 const { constants } = require('buffer');
 const fs = require('fs');
 const path = require('path');
+const Product = require('../models/Product')
 let productsFilePath = path.join(__dirname, '../database/productos.json');
 let productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
 
@@ -8,7 +9,44 @@ const allProducts = (req, res) =>{
     res.render(path.join(__dirname, '../views/products/products'),{style: "styles-productDetail"})
 };
 
-const postProducts = (req, res) =>{};
+const postProducts = (req, res) =>{
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    rutaJson = path.join(__dirname,'../database/productos.json');
+
+    const {
+        productName,
+        description,
+        price,
+        category,
+        delivery,
+    } = req.body;
+
+    const img = req.file ? req.file.filename : '';
+		let newImage;
+		if(img.length > 0 ){
+			newImage = `/images/delivery-products/${img}`;
+        };
+        const newId = products[products.length - 1].id + 1;
+        const newProduct ={
+			id: newId,
+			productName,
+			description,
+			price: parseInt(price),
+			image: newImage,
+			category,
+			delivery,
+		}
+		products.push(newProduct);
+		let data = JSON.stringify(products);
+		console.log(data);
+		fs.writeFile(rutaJson, data, err => {
+			if (err) {
+				console.error(err);
+			} else{
+				res.redirect('/productDelivery');
+			}
+		} );
+};
 
 const createProducts = (req, res) =>{
     res.render(path.join(__dirname, '../views/products/createProduct'),{style: "styles-createProduct"});
@@ -53,7 +91,24 @@ const editProduct = (req, res) => {
     } );
 };
 
-const deleteProducts = (req, res) =>{};
+const deleteProducts = (req, res) =>{
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    rutaJson = path.join(__dirname,'../database/productos.json');
+
+    const {id} = req.params;
+    const newProducts = products.filter(elem => elem.id != id);
+
+    let data = JSON.stringify(newProducts);
+    fs.writeFile(rutaJson, data, err => {
+        if (err) {
+            console.error(err);
+        } else{
+            res.redirect('/productDelivery');
+        }
+    } );
+
+
+};
 
 const delivery = (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));

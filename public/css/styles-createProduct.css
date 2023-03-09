@@ -35,6 +35,7 @@ p{
 }
 .elem-group {
   margin: 10px 0;
+  color: white;
 }
 .elem-group.inlined {
   width: 20%;
@@ -56,6 +57,7 @@ input, select, textarea {
   font-family: sans-serif;
   width: 100%;
   padding: 10px;
+  color: white;
 }
 .elem-group.inlined input {
   width: 95%;

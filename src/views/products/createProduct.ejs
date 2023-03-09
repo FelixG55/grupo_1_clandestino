@@ -11,7 +11,7 @@
             Formulario de creación de producto
         </p>
     </div> 
-    <form action="#" method="post">
+    <form action="/products" method="POST" enctype="multipart/form-data">
         <div class="elem-group">
           <label for="productName">Nombre del producto</label>
           <input type="text" id="productName" name="productName" placeholder="Escribe el nombre del producto" pattern=[A-Z\sa-z]{3,20} required>
@@ -22,7 +22,7 @@
         </div>
         <div class="elem-group">
           <label for="price">Precio</label>
-          <input type="text" id="price" name="price" placeholder="Escribe el precio del producto" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+          <input type="number" id="price" name="price" placeholder="Escribe el precio del producto" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
         </div>
         <div class="elem-group">
           <label for="category">Categoria</label>

@@ -898,5 +898,14 @@
         "contraseña": "m2TRu4iVJ4H",
         "categoria": true,
         "imagen": "https://robohash.org/omnisquisquamsit.png?size=50x50&set=set1"
+    },
+    {
+        "id": 101,
+        "nombre": "Félix",
+        "apellido": "Gutierrez",
+        "email": "fei556@gmail.com",
+        "contrEncriptada": "$2a$10$6wCYxLF3yx6/XDzvqfkM9uB2PqDXOJfnRQJghUpVCYeWm2DRr.9p2",
+        "categoria": "false",
+        "image": "/images/users/1678389976497_img_.jpg"
     }
 ]

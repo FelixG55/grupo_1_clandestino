@@ -154,3 +154,6 @@ input{
     text-align: center;
     margin: 20px;
 }
+.error-msg{
+    color: #FFC800;
+}

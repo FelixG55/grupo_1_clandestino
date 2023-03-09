@@ -7,7 +7,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 img {
     width:200px;
@@ -112,9 +111,15 @@ button:hover{
     height: 40px;
     border-radius: 5px;
     background-color: #FFC800;
-    margin-bottom: 12px;
 }
-
+.recuerdame{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 200px;
+    height: 100%;
+}
 .fa-eye-slash{
     color:white;
     border: solid 1px #FFC800;
