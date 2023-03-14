@@ -6,26 +6,40 @@
             <img src="/images/buho.png" alt="logo">
             <h1>Bienvenido</h1>
         </div>
-        <form action="/login" method="Post">
-            <div class="nombre-login">
+          <form action="/login" method="POST">
+            <div class="nombre-login <%= locals.errors && errors.nombre? 'border-msg' : '' %>">
                 <i class="fas fa-user-plus"></i>
-                <input placeholder= "Nombre"  type="text" name="Nombre" id="Nombre"> 
+                <input placeholder= "Email"  type="text" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>"> 
             </div>
-            <div class="contraseña-login">
+            <div class="error-msg">
+                <% if (locals.errors && errors.email) { %>
+                    <%= errors.email.msg %>
+                   <% } %>
+            </div>
+            <div class="contraseña-login <%= locals.errors && errors.nombre? 'border-msg' : '' %>">
                 <i class="fas fa-eye-slash"></i>
-                <input placeholder="Contraseña" type="password" name="password" id="password">
+                <input placeholder="Contraseña" type="password" name="password" id="password" value="<%= locals.oldData ? oldData.password : null %>">
+            </div>
+            <div class="error-msg">
+                <% if (locals.errors && errors.password) { %>
+                    <%= errors.password.msg %>
+                   <% } %>
+            </div>
+            <div class="recuerdame">
+                <input type="checkbox" id="recuerdame" name="recuerdame">
+                <label for="recuerdame">Recuerdame</label>
             </div>
             <div>
                 <button type="submit" value="Ingresar">Ingresar</button>
             </div>
             <a id="" href=""><h2>¿Perdiste tu contraseña?</h2></a>
             <a id="" href=""><h3>¿No tienes cuenta? Registrate</h3></a>
-            <div class="button">
-                <button type="submit" value="Volver">Volver</button>
-            </div>
-            </div>
-
-
-        </form>
+          </form>
+        </div>
+    <div class="button">
+        <a href="/">
+        <button type="submit" value="Volver">Volver</button>
+        </a>
+    </div>
     </body>
 </html>
