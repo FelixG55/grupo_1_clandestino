@@ -12,31 +12,11 @@ font-family: 'Source Sans Pro', sans-serif; */
     color: grey;
     font-family: 'Source Sans Pro', sans-serif;*/
 }
-a:link{
-    color: #FFC900;
-}
-header{
-    display: flex;
-    border:solid 1px black;
-    background-color: #212121;
-    color:white;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
+
 main{ 
     background: #212121;
     color: grey;
 }
-.caja{
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 50px;
-    width: 100%;
-    margin: 1px;
-}   
 .logo{
     width: 300px;
     height: 128px;
@@ -50,7 +30,7 @@ body{
     font-family:'Fira Sans', sans-serif;
 }
 .product-container{
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -59,12 +39,16 @@ body{
 }
 .product-container .item{
     width: 330px;
-    height: 430px;
+    height: 100%;
     border-radius: 5px;
     margin: 20px;
     overflow: hidden;
     text-align: center;
     transition: all 0.25s;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
 }
 .product-container .item img{
     width: auto;
@@ -85,13 +69,12 @@ h1{
     font-size: larger;
     font-weight: bold;
     color: black;
-    padding-left: 30px;
     padding-top: 1em;
     padding-bottom: 0.5em;
     font-family: 'Roboto', sans-serif;
 }
 h2{
-    text-align: left;
+    text-align:justify;
     padding-top: 40px;
     padding-left: 525px;
     font-family: 'Roboto', sans-serif;
@@ -122,10 +105,6 @@ button{
 i{
     background-color: #FFC800;
 }
-header i{
-    background-color: #747474;
-    color:white;
-}
 .description{
     color: grey;
 }
@@ -140,7 +119,23 @@ header i{
     align-items: stretch;
     flex-direction: column;
     /* height: 100%; */
-    width:30%;
+    width:20%;
+    animation-name: esconder;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+@keyframes esconder {
+    0% {width: 20% }
+    100% {width: 5%;}
+}
+@keyframes aparecer {
+    0% {width: 5% }
+    100% {width: 20%;}
+}
+.my-shoppingcart:hover {
+    animation-name: aparecer;
 }
 #truck {
     color: black;
@@ -201,6 +196,7 @@ h4{
     text-align: center;
     font-size: 12px;
     width: auto;
+    cursor: pointer;
 }
 .fa-trash-alt{
     background-color: white;
@@ -255,6 +251,16 @@ h5{
 .fa-coins{
     background-color: black;
     color:#FFC800;
+}
+.manito{
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+}
+.manito:hover{
+    color: #747474;
+    transform: scale(1.1, 1.1);
+	z-index: 9;
 }
 
 

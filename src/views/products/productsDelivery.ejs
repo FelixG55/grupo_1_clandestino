@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+<%- include('../partials/header.ejs') %>
+
+<!-- Acá empieza el carrito -->
+<aside class="my-shoppingcart">
+    <h1> <i class="fas fa-truck" id="truck"></i> Mi Orden</h1>
+        <% for( let i = 0; i < productsCart.length; i++ ) { %>
+            <div class="cart-container">
+                <div class="cart-item">
+                    <figure>
+                        <img src="/images/delivery-products/productosDelivery/<%= productsCart[i].image %>" alt="<%= productsCart[i].productName %>">
+                    </figure>
+                    <div class="info-product">
+                        <h4><%= productsCart[i].productName %></h4>
+                        <p class="price-cart">$<%= productsCart[i].price %></p>
+                        <a href="/products/restProductCart/<%= productsCart[i].id %>"><i class="fas fa-arrow-circle-left" id="arrow"></i></a>
+                        <button id="number"> <%= productsCart[i].quantity %> </button> 
+                        <a href="/products/sumProductCart/<%= productsCart[i].id %>"><i class="fas fa-arrow-circle-right" id="arrow"></i></a> 
+                        <a href="/products/deleteProductCart/<%= productsCart[i].id %>">   
+                        <button id="trash" class="fas fa-trash-alt"></button>
+                        </a>		
+                    </div>
+                </div>
+            </div>
+        <% } %>
+        <% let totalPrice = 0 %>
+        <% for( let i = 0; i < productsCart.length; i++ ) { %>
+           <%   totalPrice = totalPrice + productsCart[i].price*productsCart[i].quantity; %>
+        <% } %>  
+            <div class="cart-total">
+                <h5>Total:</h5>
+                <span class="total-payable"><%= totalPrice %></span>
+            <p class="payment-method">
+            <label>Metodo de Pago:<br>
+            <input type="radio" name="payment-method">Efectivo
+                <input type="radio" name="payment-method">Tarjeta Débito/Crédito
+                </label>
+            </p>
+            <form action="#" method="GET"></form>
+                    <label for="search" id="coupon">
+                        <input type="text" placeholder="¿Tienes un cupón de descuento?">
+                    </label>    
+        </div>
+            <div class="pay-cart">
+                <button id="add"><i class="fas fa-cart-plus"></i> añadir productos</button> 
+                <button id="pay"><i class="fas fa-coins"></i> PAGAR</button> 
+            </div>				
+</aside>
+<!-- Acá termina el carrito -->
+
+<!-- Acá empieza la sección de todos los productos -->
+<main>
+    <h2>Sánduches</h2>
+        <div class="product-container">
+            <% for( let i = 0; i < products.length; i++ ) { %>
+                <% if (products[i].category == 'Sánduches') { %>                    
+                    <a href="/products/<%= products[i].id %>">
+                        <div class="item">
+                            <h3><%= products[i].productName %></h3>
+                            <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+                     </a>    
+                            <p class="description"><%= products[i].description %></p>
+                            <p class="price">$<%= products[i].price %></p>
+                    <a href="/products/addProductCart/<%= products[i].id %>">
+                        
+                            <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                    </a>
+                        </div>
+                <% } %>                          
+            <% } %>
+        </div>
+    <h2>Hamburguesas</h2>
+    <div class="product-container">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+            <% if (products[i].category == 'Hamburguesa') { %>                    
+                <a href="/products/<%= products[i].id %>">
+                    <div class="item">
+                        <h3><%= products[i].productName %></h3>
+                        <img src="/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+                 </a>    
+                        <p class="description"><%= products[i].description %></p>
+                        <p class="price">$<%= products[i].price %></p>
+                <a href="/products/addProductCart/<%= products[i].id %>">
+                    
+                        <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                </a>
+                    </div>
+            <% } %>                          
+        <% } %>
+    </div>
+    <h2>Acompañamientos</h2>
+    <div class="product-container">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+            <% if (products[i].category == 'Acompañamientos') { %>                    
+                <a href="/products/<%= products[i].id %>">
+                    <div class="item">
+                        <h3><%= products[i].productName %></h3>
+                        <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+                 </a>    
+                        <p class="description"><%= products[i].description %></p>
+                        <p class="price">$<%= products[i].price %></p>
+                <a href="/products/addProductCart/<%= products[i].id %>">
+                    
+                        <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                </a>
+                    </div>
+            <% } %>                          
+        <% } %>
+    </div>
+    <h2>Bebidas</h2>
+    <div class="product-container">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+            <% if (products[i].category == 'Bebidas') { %>                    
+                <a href="/products/<%= products[i].id %>">
+                    <div class="item">
+                        <h3><%= products[i].productName %></h3>
+                        <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+                 </a>    
+                        <p class="description"><%= products[i].description %></p>
+                        <p class="price">$<%= products[i].price %></p>
+                <a href="/products/addProductCart/<%= products[i].id %>">
+                    
+                        <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                </a>
+                    </div>
+            <% } %>                          
+        <% } %>
+    </div>
+    <h2>Cervezas artesanales</h2>
+    <div class="product-container">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+            <% if (products[i].category == 'Cervezas artesanales') { %>                    
+                <a href="/products/<%= products[i].id %>">
+                    <div class="item">
+                        <h3><%= products[i].productName %></h3>
+                        <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+                 </a>    
+                        <p class="description"><%= products[i].description %></p>
+                        <p class="price">$<%= products[i].price %></p>
+                <a href="/products/addProductCart/<%= products[i].id %>">
+                    
+                        <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                </a>
+                    </div>
+            <% } %>                          
+        <% } %>
+    </div>
+    <h2>Cervezas del mundo</h2>
+    <div class="product-container">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+            <% if (products[i].category == 'Cervezas del mundo') { %>                    
+                <a href="/products/<%= products[i].id %>">
+                    <div class="item">
+                        <h3><%= products[i].productName %></h3>
+                        <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+                 </a>    
+                        <p class="description"><%= products[i].description %></p>
+                        <p class="price">$<%= products[i].price %></p>
+                <a href="/products/addProductCart/<%= products[i].id %>">
+                    
+                        <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                </a>
+                    </div>
+            <% } %>                          
+        <% } %>
+    </div>
+    
+<!-- Acá termina la sección de todos los productos -->
+</main>
+<%- include('../partials/footer.ejs') %>
+</body>
+</html>

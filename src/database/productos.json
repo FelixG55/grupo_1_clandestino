@@ -1,0 +1,197 @@
+[
+ {
+  "id": 1,
+  "productName": "Calamarada",
+  "description": "     Pan brioche artesanal negro relleno de calamares en panko acompañados de rúgula, tomates cherry, queso mozarela y salsa alioli.     ",
+  "price": "21000",
+  "image": "calamarada.jpg",
+  "category": "Sánduches",
+  "delivery": true,
+  "video": "/videos/calamaradaId.mp4"
+ },
+ {
+  "id": 2,
+  "productName": "Capitán Cósmico",
+  "description": "Pan brioche artesanal relleno de pollo crocante, tocineta ahumada, acompañado de pepinillos agridulces, queso sabana en salsa ranch de la casa.",
+  "price": 20000,
+  "image": "capitan-cosmico.jpg",
+  "category": "Sánduches",
+  "delivery": true,
+  "video": "videos/817536ce-8518-4bfa-a72c-881c56c3d241.mp4"
+ },
+ {
+  "id": 3,
+  "productName": "Chancho Arriero",
+  "description": "Pan brioche artesanal relleno de cabecero de lomo acompañado de aros de cebolla, queso mozarela, rúgula y BBQ de café.",
+  "price": 19900,
+  "image": "chancho-arriero.jpg",
+  "category": "Sánduches",
+  "delivery": true,
+  "video": "/videos/50309576-818b-4785-8d4b-1209e5b0ce4d.mp4"
+ },
+ {
+  "id": 4,
+  "productName": "Choricheto",
+  "description": "Choripán clásico argentino en pan artesanal suave relleno de chorizo y chimichurri rojo. *ligeramente picante",
+  "price": 15500,
+  "image": "choricheto.jpg",
+  "category": "Sánduches",
+  "delivery": true,
+  "video": "/videos/92a52f6e-2def-4302-a0eb-3d862e556215.mp4"
+ },
+ {
+  "id": 5,
+  "productName": "Habibi",
+  "description": "Sánduche de falafel en pan árabe acompañado de cebolla morada, tomate cherry,  perejil, cilantro, limón y salsa de yogur. *vegetariano",
+  "price": 20500,
+  "image": "habibi.jpg",
+  "category": "Sánduches",
+  "delivery": true,
+  "video": "/videos/86398DC8-BC85-48BC-A364-B99F9ABDEA4D.mov"
+ },
+ {
+  "id": 6,
+  "productName": "La Negra",
+  "description": "Pan brioche artesanal relleno de pollo crocante, tocineta ahumada, acompañado de pepinillos agridulces, queso sabana en salsa ranch de la casa.",
+  "price": 19500,
+  "image": "la-negra.jpg",
+  "category": "Hamburguesa",
+  "delivery": true
+ },
+ {
+  "id": 7,
+  "productName": "Clandestina",
+  "description": "Hamburguesa en pan brioche doble carne de 125 gramos C/U, doble tocineta, doble queso (mozarela y sabana), aros de cebolla, lechuga, BBQ casera de Ron.",
+  "price": 24500,
+  "image": "clandestina.jpg",
+  "category": "Hamburguesa",
+  "delivery": true,
+  "video": "/videos/IMG_0064.mp4"
+ },
+ {
+  "id": 8,
+  "productName": "Francesaa",
+  "description": "Carne artesanal de 200 gramos rellena de nips de tocineta, acompañada de cebollas caramelizadas, queso sabana, rúgula y salsa de queso azul.",
+  "price": 26000,
+  "image": "francesa.jpg",
+  "category": "Hamburguesa",
+  "delivery": true,
+  "video": "/videos/IMG_1642.mov"
+ },
+ {
+  "id": 9,
+  "productName": "Mediterránea",
+  "description": "Carne artesanal de 200 gramos rellena de peperoni, chorizo español y parmesano con rúgula, queso mozarela, tomate cherry al balsámico y pesto de albahaca.",
+  "price": 27000,
+  "image": "mediterranea.jpg",
+  "category": "Hamburguesa",
+  "delivery": true,
+  "video": "/videos/c8ccdb83-0fca-4ee5-84f8-f46d125c7468"
+ },
+ {
+  "id": 10,
+  "productName": "Papas Amarillas",
+  "description": "porción de 85 gramos",
+  "price": 5000,
+  "image": "papas-amarilas.jpg",
+  "category": "Acompañamientos",
+  "delivery": true
+ },
+ {
+  "id": 11,
+  "productName": "Papas Fritas",
+  "description": "porción de 85 gramos",
+  "price": 5000,
+  "image": "papas-fritas.jpg",
+  "category": "Acompañamientos",
+  "delivery": true
+ },
+ {
+  "id": 12,
+  "productName": "Coca Cola",
+  "description": "350 ml",
+  "price": 4500,
+  "image": "coca-cola.jpg",
+  "category": "Bebidas",
+  "delivery": true
+ },
+ {
+  "id": 13,
+  "productName": "Coca Cola Zero",
+  "description": "350 ml",
+  "price": 4500,
+  "image": "cc-zero.jpg",
+  "category": "Bebidas",
+  "delivery": true
+ },
+ {
+  "id": 14,
+  "productName": "Don Fermin 18.34",
+  "description": "IPA. Cerveza dorada con notas rojizas en la cual predominan los aromas a frutas tropicales. (6 % Vol. alcohol - 65 IBU)",
+  "price": 12000,
+  "image": "artesanal-1834-ipa.jpg",
+  "category": "Cervezas artesanales",
+  "delivery": true,
+  "video": "/videos/32633582_256130791599260_7813572279190683648_n_1.mov"
+ },
+ {
+  "id": 15,
+  "productName": "Bilröst",
+  "description": "Hefe Weizenbier. Cerveza de trigo, de color claro, algo turbia, con un característico aroma a plátano. (5.5 Vol. alcohol - 25 IBU)",
+  "price": 12000,
+  "image": "artesanal-bilrost-hefe-weizenbier.jpg",
+  "category": "Cervezas artesanales",
+  "delivery": true,
+  "video": "/videos/videoplayback_3.mp4"
+ },
+ {
+  "id": 16,
+  "productName": "Sulata",
+  "description": "Pale Ale. Cerveza con aromas herbales y resinosos aportados por el lúpulo. (5.7 Vol. alcohol - 40 IBU)",
+  "price": 12000,
+  "image": "artesanal-sulata-pale-ale.jpg",
+  "category": "Cervezas artesanales",
+  "delivery": true,
+  "video": "/videos/131968410_1051852225319740_6022274343382499332_n.mp4"
+ },
+ {
+  "id": 17,
+  "productName": "Grolsch",
+  "description": "Paises Bajos - Pilsner premium lager",
+  "price": 9500,
+  "image": "grolsch.jpg",
+  "category": "Cervezas del mundo",
+  "delivery": true,
+  "video": "/videos/videoplayback_5.mov"
+ },
+ {
+  "id": 18,
+  "productName": "Heineken",
+  "description": "Paises Bajos - Pilsner premium lager",
+  "price": 7000,
+  "image": "heineken.jpg",
+  "category": "Cervezas del mundo",
+  "delivery": true,
+  "video": "/videos/videoplayback_1.mp4"
+ },
+ {
+  "id": 19,
+  "productName": "Peroni",
+  "description": "Italia - Pilsner premium lager",
+  "price": 9000,
+  "image": "peroni.jpg",
+  "category": "Cervezas del mundo",
+  "delivery": true,
+  "video": "/videos/TASTE_OF_ITALY_PERONI-vimeo-247386979-dash-akfire_interconnect_quic_sep-video-3f806b1a-sub-0.0-60.0.mp4"
+ },
+ {
+  "id": 20,
+  "productName": "Stella Artois",
+  "description": "Bélgica - Pilsner premium lager",
+  "price": 9000,
+  "image": "stella-artois.jpg",
+  "category": "Cervezas del mundo",
+  "delivery": true,
+  "video": "/videos/videoplayback_2.mp4"
+ }
+]

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+/* font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #040404;
+}
+.logo{
+  text-align: center;
+}
+.logo img{
+  max-width: 25%;
+  max-height: 25%;
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  color:#ffc800;
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+}
+.bold{
+  color:#040404;
+  padding-bottom: 20px;
+}
+#category{
+  color: white;
+}
+#delivery{
+  color: white;
+}
+.container-reservation {
+  width: 50%; 
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #040404;
+}
+.elem-group {
+  margin: 10px 0;
+  color: white;
+}
+.elem-group input {
+    color: white;
+  }
+  .elem-group textarea {
+    color: white;
+  }
+  .elem-group option {
+    color: white;
+  }
+  .elem-group form{
+    color: white;
+  }
+.elem-group.inlined {
+  width: 20%;
+  display: inline-block;
+  margin-left: 1%;
+}
+label {
+  display: block;
+  font-family: 'Fira Sans', sans-serif;
+  padding-bottom: 10px;
+  font-size: 1em;
+  color:white;
+}  
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #747474;
+  box-sizing: border-box;
+  font-size: 0.8em;
+  font-family: sans-serif;
+  width: 100%;
+  padding: 10px;
+}
+.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+textarea {
+  height: 100px;
+}
+hr {
+  border: 1px dotted #747474;
+}
+button {
+  height: 40px;
+  width: 20%;
+  background: #ffc800;
+  border: none;
+  color: white;
+  font-size: 1.em;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  border: 2px solid white;
+}
+
+.error-msg{
+  color: #ffc800;
+text-align: center;}
+.error-style{
+  border-color: #ffc800;
+}
