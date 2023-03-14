@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const {validationResult}= require('express-validator');
+const User = require('../models/User');
 let usersFilePath = path.join(__dirname, '../database/users.json');
 
 const login = (req, res) => {
@@ -26,53 +27,83 @@ const writeFormRegister = (req, res) => {
             oldData: req.body,
             style: "styles-register"
         });
-}else{
+    }else{
+        let newImage = req.file ? req.file.filename : '';
+        if(newImage.length > 0 ){
+          image = `/images/users/${newImage}`;
+        }else{
+          image = `/images/users/defaultAvatar.jpg`
+        };
+        let password = bcrypt.hashSync(req.body.password,10);
+        
+    let userInDB = User.findByField('email',req.body.email)
 
-    const {
-        nombre,
-        apellido,
-        email,
-        password,
-        categoria,
-    } = req.body;
-    
-    const img = req.file ? req.file.filename : '';
-    let newImage;
-    if(img.length > 0 ){
-        newImage = `/images/users/${img}`;
-    };
-    
-    const newId = users[users.length - 1].id + 1;
-    
-    let contrEncriptada = bcrypt.hashSync(password,10);
-    
-    const newUser ={
-        id: newId,
-        nombre,
-        apellido,
-        email,
-        contrEncriptada,
-        categoria,
-        image: newImage,
+    if (userInDB) {
+       return res.render(path.join(__dirname, '../views/register'),{
+            errors: {
+                email: {
+                    msg: 'Este mail ya esta registrado'
+                }
+            },
+            oldData: req.body,
+            style: "styles-register"
+        });
     }
-    users.push(newUser);
-    let data = JSON.stringify(users);
-    console.log(data);
-    fs.writeFile(rutaJson, data, err => {
-        if (err) {
-            console.error(err);
-        } else{
-            res.redirect('/productDelivery');
-        }
-    } );
+        
+    let userToCreate = {
+        ...req.body,
+        password,
+        image
+    } 
+       let userCreated = User.create(userToCreate); 
+       return res.redirect('/login');
 };
     
+};
 
+const writeFormLogin = function(req,res){
+
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        res.render(path.join(__dirname, '../views/login'),{
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            style: "styles-login"
+        });
+    }else{
+        
+        let userToLogin = User.findByField('email',req.body.email);
+        
+        if (userToLogin) {
+
+            let okPassword = bcrypt.compareSync(req.body.password,userToLogin.password);
+            if (okPassword) {
+                req.session.userLogged = userToLogin;
+                return res.redirect('/')
+            }
+        }
+
+        return res.render(path.join(__dirname, '../views/login'),{
+            errors:{
+                password:{
+                    msg: 'Usuario o contraseña no vaálidos'
+                }
+            },
+            style: "styles-login"
+        }
+    )}
+}
+
+const logout = function(req,res){
+req.session.destroy();
+res.redirect('/');
 }
 
 module.exports = {
     login,
     reservation,
     register,
-    writeFormRegister
+    writeFormRegister,
+    writeFormLogin,
+    logout
 };

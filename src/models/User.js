@@ -4,12 +4,12 @@
 // 4. Eliminar un producto 
 
 const fs = require('fs');
-
-rename
+const path = require('path');
+const { fields } = require('../middleware/multerUsersMiddelware');
 
 const User = {
 
-    fileName: '../database/users',
+    fileName: path.join(__dirname, '../database/users.json'),
 
     getData: function () {
         
@@ -31,6 +31,12 @@ const User = {
         let allUsers = this.findAll();
         let userFind = allUsers.find(oneUser => oneUser.id == id)
         return userFind;
+    },
+
+    findByField: function(field,text){
+        let allUsers = this.findAll();
+        let userFound = allUsers.find(oneUser => oneUser[field] === text);
+        return userFound;
     },
 
     create: function (userData){

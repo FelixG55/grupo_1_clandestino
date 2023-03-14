@@ -4,10 +4,11 @@
 // 4. Eliminar un producto 
 
 const fs = require('fs');
+const path = require('path');
 
 const Product = {
 
-    fileName: '../database/productos',
+    fileName: path.join(__dirname, '../database/productos.json'),
 
     getData: function () {
         
@@ -45,29 +46,23 @@ const Product = {
 
     update: function (productData) {
         let allProducts = this.findAll();
-
         allProducts.forEach(elem => {
             if(elem.id == productData.id){
-                elem.productName = productData.productName;
-                elem.description = productData.description;
-                elem.price = productData.price;
-                elem.category = productData.category;
+                Object.assign(elem,productData)
             }
-            fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, ' '));
-            return true;
         });
-
-
+        
+        fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, ' '));
+        return true; 
     },
 
     delete: function (id){
         let allProducts = this.findAll();
-        let newProducts = allProucts.filter(oneUser => oneUser.id != id);
+        let newProducts = allProducts.filter(oneUser => oneUser.id != id);
         fs.writeFileSync(this.fileName, JSON.stringify(newProducts, null, ' '));
         return true;
     }
 
 
 }
-
 module.exports = Product;

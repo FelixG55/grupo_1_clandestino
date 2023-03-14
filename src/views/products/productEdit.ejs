@@ -13,23 +13,41 @@
     </div> 
     <form action="/products/:id?_method=PUT" method="POST" enctype="multipart/form-data">
       <div class="elem-group">
-        <input type="hidden" id="id" name="id" value="<%= product.id %>" pattern=[A-Z\sa-z]{3,20} required>
+        <input type="hidden" id="id" name="id" value="<%= product.id %>" pattern=[A-Z\sa-z]{3,20} >
       </div>
         <div class="elem-group">
           <label for="productName">Nombre del producto</label>
-          <input type="text" id="productName" name="productName" value="<%= product.productName %>" pattern=[A-Z\sa-z]{3,20} required>
+          <input type="text" id="productName" name="productName" value="<%= locals.oldData ? oldData.productName : product.productName %>" 
+          class="<%= locals.errors && errors.productName ? 'error-style': null %>">
+        </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.productName) { %>
+              <%= errors.productName.msg %>
+             <% } %>
         </div>
         <div class="elem-group">
           <label for="text">Descripción del producto</label>
-          <textarea type="text" id="description" name="description" required> <%= product.description %> </textarea>
+          <input type="text" id="description" name="description" value="<%= locals.oldData ? oldData.description : product.description %>"
+          class="<%= locals.errors && errors.description ? 'error-style': null %>"> 
+        </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.description) { %>
+              <%= errors.description.msg %>
+             <% } %>
         </div>
         <div class="elem-group">
           <label for="price">Precio</label>
-          <input type="number" id="price" name="price" value="<%= product.price %>" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+          <input type="number" id="price" name="price" value="<%= locals.oldData ? oldData.price :product.price %>" 
+          class="<%= locals.errors && errors.price ? 'error-style': null %>">
         </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.price) { %>
+              <%= errors.price.msg %>
+             <% } %>
+       </div>
         <div class="elem-group">
           <label for="category">Categoria</label>
-          <select id="category" name="category" required>
+          <select id="category" name="category" class="<%= locals.errors && errors.category ? 'error-style': null %>" >
               <option value="">Elige Categoria</option>
               <% let categories = ['Sánduches', 'Hamburguesa', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
               <% for( const oneCategory of categories) { %>
@@ -37,20 +55,34 @@
                   <%= oneCategory === product.category ? 'selected' : null %> 
                    ><%= oneCategory %></option>        
               <% } %>
-
           </select>
+          <div class="error-msg">
+            <% if (locals.errors && errors.category) { %>
+                <%= errors.category.msg %>
+               <% } %>
+         </div>
           <div class="elem-group">
-          <label for="category">Delivery</label>
-          <select name="delivery" id="delivery">
+          <label for="delivery">Delivery</label>
+          <select name="delivery" id="delivery" class="<%= locals.errors && errors.delivery ? 'error-style': null %>">
             <option value="true">Si</option>
             <option value="false">No</option>
           </select>
             </div>
+            <div class="error-msg">
+              <% if (locals.errors && errors.delivery) { %>
+                  <%= errors.delivery.msg %>
+                 <% } %>
+            </div>
         </div>
         <div class="elem-group">
           <label for="image">Sube la imagen del producto</label>
-          <input type="file" id="image" name="image"  required>
+          <input type="file" id="image" name="image" class="<%= locals.errors && errors.image ? 'error-style': null %>" >
         </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.image) { %>
+              <%= errors.image.msg %>
+             <% } %>
+       </div>
         <button type="submit">Enviar</button>
       </form>   
   </div>    

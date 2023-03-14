@@ -14,7 +14,9 @@ img {
     margin-bottom: 0px;
 }
 
-
+form{
+    display: contents;
+}
 
 form input {
     width: 200px;
@@ -93,7 +95,6 @@ button:hover{
     height: 40px;
     border-radius: 5px;
     background-color: #FFC800;
-    margin-bottom: 12px;
 
 }
 .fa-user-plus{
@@ -127,5 +128,11 @@ button:hover{
     margin-right:10px;
 }
 
-
+.error-msg{
+    color: #FFC800;
+    margin-bottom: 20px;
+}
+.border-msg{
+    border: solid 1px white;
+}
 

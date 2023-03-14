@@ -34,7 +34,7 @@ p{
   background-color: #040404;
 }
 .elem-group {
-  margin: 10px 0;
+  margin: 5px 0;
   color: white;
 }
 .elem-group.inlined {
@@ -84,3 +84,9 @@ button:hover {
   border: 2px solid white;
 }
 
+.error-msg{
+  color: #ffc800;
+text-align: center;}
+.error-style{
+  border-color: #ffc800;
+}

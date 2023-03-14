@@ -8,37 +8,37 @@
 
         </div>
         <form action="/register" method="POST" enctype="multipart/form-data">
-            <p class="container-form">
+            <div class="container-form <%= locals.errors && errors.nombre? 'border-msg' : '' %>" >
                 <label for="nombre"></label>
-                <input placeholder="Nombre" type="text" name="nombre" id="nombre" value="<%= locals.oldData ? oldData.nombre : null %>">
-            </p>
+                <input placeholder="Nombre" type="text" name="nombre" id="nombre" value="<%= locals.oldData ? oldData.nombre : null %>" >
+            </div>
             <div class="error-msg">
                 <% if (locals.errors && errors.nombre) { %>
                  <%= errors.nombre.msg %>
                 <% } %>
             </div>
-            <p class="container-form">
+            <div class="container-form <%= locals.errors && errors.nombre? 'border-msg' : '' %>">
                 <label for="apellido"></label>
                 <input placeholder="apellido" type="text" name="apellido" id="apellido" value="<%= locals.oldData ? oldData.apellido : null %>">
-            </p>
+            </div>
             <div class="error-msg">
                 <% if (locals.errors && errors.apellido) { %>
                     <%= errors.apellido.msg %>
                    <% } %>
             </div>
-            <p class="container-form">
+            <div class="container-form <%= locals.errors && errors.nombre? 'border-msg' : '' %>">
                 <label for="email"></label>
                 <input placeholder="Email" type="text" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>">
-            </p>
+            </div>
             <div class="error-msg">
                 <% if (locals.errors && errors.email) { %>
                     <%= errors.email.msg %>
                    <% } %>
             </div>
-            <p class="container-form">
+            <div class="container-form <%= locals.errors && errors.nombre? 'border-msg' : '' %>">
                 <label for="password"></label>
                 <input placeholder="Contraseña" type="password" name="password" id="password" value="<%= locals.oldData ? oldData.password : null %>">
-            </p>
+            </div>
             <div class="error-msg">
                 <% if (locals.errors && errors.password) { %>
                     <%= errors.password.msg %>
@@ -52,23 +52,23 @@
                 <label for="Acepto los terminos y condiciones"></label>
                 <input placeholder="Acepto los terminos y condiciones" type="text" name="usuario">
             </p> -->
-            <p class="container-form">
+            <div class="container-form <%= locals.errors && errors.nombre? 'border-msg' : '' %>">
                 <label for="categoria">Usuario administrador</label>
                 <select name="categoria" id="categoria">
                     <option value="">Elige una opción</option>
                     <option value="true" <%= locals.oldData && (oldData.categoria == 'true') ? 'selected': null %>>Si</option>
                     <option value="false"<%= locals.oldData && (oldData.categoria == 'false') ? 'selected': null %>>No</option>
                 </select>
-            </p>
+            </div>
             <div class="error-msg">
                 <% if (locals.errors && errors.categoria) { %>
                     <%= errors.categoria.msg %>
                    <% } %>
             </div>
-            <p class="container-form">
+            <div class="container-form <%= locals.errors && errors.nombre? 'border-msg' : '' %>">
                 <label for="userImage">Sube la imagen del producto</label>
                 <input type="file" id="userImage" name="userImage">
-            </p>
+            </div>
             <div class="error-msg">
                 <% if (locals.errors && errors.userImage) { %>
                     <%= errors.userImage.msg %>

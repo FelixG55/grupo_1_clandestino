@@ -11,7 +11,11 @@ const routerUser = require ('./routes/userRoute');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-app.use(session({secret: 'Mensaje super secreto'}));
+app.use(session({
+    secret: 'Mensaje super secreto',
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.set('view engine','ejs');
 
