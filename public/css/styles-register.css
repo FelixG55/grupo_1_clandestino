@@ -73,6 +73,11 @@ form div input{
 
 } */
 
+@font-face {
+    font-family: Roboto;
+    src: url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -135,7 +140,7 @@ form p {
 
 form ::placeholder{
     font-family: "Roboto";
-    font-size: 1rem;
+    font-size: 1.2em;
     color: white;
     background-color: #FFC800;
     border: solid 1px #FFC800;
@@ -143,6 +148,8 @@ form ::placeholder{
 
 input{
     border: solid 1px #FFC800;
+   
+
 }
 
 .enviar{
@@ -152,7 +159,7 @@ input{
     width: 200px;
     height: 30px;
     font-family: "Roboto";
-    font-size: 1rem;
+    font-size: 1.2em;
     color: white;
     border: solid 1px #FFC800;
     background-color: #FFC800;

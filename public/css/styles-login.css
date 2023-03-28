@@ -7,6 +7,11 @@ body {
     flex-direction: column;
 
 }
+@font-face {
+    font-family: Roboto;
+    src: url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+    src: url ('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300;400&display=swap');
+}
 
 form div input {
 
@@ -36,7 +41,7 @@ h1 {
 }
 
 h2 {
-    font-family: "Roboto";
+    font-family: "Roboto", regular;
     color: white;
     font-size: 1rem;
     text-align: center;
