@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "id": 2,
+        "productName": "Capitán Cósmico",
+        "price": 20000,
+        "image": "capitan-cosmico.jpg",
+        "quantity": 2
+    }
+]
