@@ -3,7 +3,7 @@ const path = require('path');
 
 
 let validateFormProduct = [
-    check('productName')
+    check('name')
         .notEmpty().withMessage('Tienes que escribir el nombre el producto'),
     check('description')
         .notEmpty().withMessage('Tienes que escribir la descripción del producto'),
