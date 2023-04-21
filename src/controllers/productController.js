@@ -1,111 +1,170 @@
 const { constants } = require('buffer');
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const {validationResult}= require('express-validator');
+const { DataTypes } = require('sequelize');
 
+let productsFilePath = path.join(__dirname, '../database/productos.json');
+let productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
 
+// Renderiza la vista de Menu 
 const allProducts = (req, res) =>{
-    res.render(path.join(__dirname, '../views/products'),{style: "styles-productDetail"})
+    let profile = req.session.userLogged;
+    res.render(path.join(__dirname, '../views/products/products'),{profile: profile,style: "styles-productDetail"})
 };
 
-const postProducts = (req, res) =>{};
-
+// Renderiza el formulario de creación de productos
 const createProducts = (req, res) =>{
-    res.render(path.join(__dirname, '../views/createProduct'),{style: "styles-createProduct"});
+    res.render(path.join(__dirname, '../views/products/createProduct'),{style: "styles-createProduct"});
 };
 
+// Crea un producto a partir del formulario de creación de productos
+const postProducts = (req, res) =>{
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        res.render(path.join(__dirname, '../views/products/createProduct'),{
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            style: "styles-createProduct"
+        });
+    }else{
+        db.Category.findAll({
+            where: {
+                name: req.body.category
+            }
+        }).then(category => {
+            db.Product.create({
+                name: req.body.productName,
+                description: req.body.description,
+                price: req.body.price,
+                categories_id: category[0].id,
+                image: req.file ? req.file.filename: '',
+            })
+            .then(category => {
+                return res.redirect('/productDelivery');
+            });
+        });
+    }
+};
+
+// Renderiza la vista de detalle de un producto
 const getOneProduct = (req, res) =>{
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let profile = req.session.userLogged;
     const {id} = req.params;
-    const product = products.find(elem => elem.id == id);
-    res.render(path.join(__dirname, '../views/productIdDetail'),{product ,style: "styles-productIdDetail"});
-
+    db.Product.findByPk(id)
+    .then(product => {
+        res.render(path.join(__dirname, '../views/products/productIdDetail'), {product,profile,style: "styles-productIdDetail"});
+    });
 };
 
+// Renderiza el formulario de edición de un producto
 const formProduct = (req, res) => {
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     const {id} = req.params;
-    const product = products.find(elem => elem.id == id);
-    res.render(path.join(__dirname, '../views/productEdit'),{product, style: "styles-productEdit"});
+    db.Product.findByPk(id,{
+        include: [{association: "categories"}]
+    })
+    .then(product => {
+        console.log(product);
+        res.render(path.join(__dirname, '../views/products/productEdit'),{product, style: "styles-productEdit"});
+    });
 
 };
 
+// Edita un producto a partir del formulario de edición
 const editProduct = (req, res) => {
-    // res.render(path.join(__dirname, '../views/productEdit'),{style: "styles-productEdit"});
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        res.render(path.join(__dirname, '../views/products/productEdit'),{
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            style: "styles-createProduct",
+            product: req.body
+        });
+    }else{
+        db.Category.findAll({
+            where: {
+                name: req.body.category
+            }
+        }).then(category => {
+            db.Product.update(
+                {
+                    name: req.body.name,
+                    description: req.body.description,
+                    price: req.body.price,
+                    image: req.file ? req.file.filename: '',
+                    delivery: req.body.delivery,
+                    categories_id: category[0].id 
+                },
+                {
+                    where: {id: req.body.id}
+                })
+            return res.redirect('/productDelivery');
+        })
+    }
+}
+const deleteProducts = (req, res) =>{
+    
+    db.Product.destroy({
+        where: {id: req.params.id}
+    })
+    return res.redirect('/productDelivery');
+
 };
 
-const deleteProducts = (req, res) =>{};
-
+// Remderiza la vista de delivery de productos
 const delivery = (req, res) => {
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
-    const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
-        res.render(path.join(__dirname, '../views/productsDelivery'),{productsCart: productsCart, products: products, style: "styles-productCart"})
+    let profile = req.session.userLogged;
+    db.Product.findAll({
+        include: [{association: "categories"}]
+    })
+    .then(products => {
+        db.DetailSale.findAll({
+            attributes: ['product_id',[sequelize.fn('COUNT',sequelize.col('product_id')),'total_p']],
+            group: ['product_id']
+        }).then(detailSale =>{
+            res.render(path.join(__dirname, '../views/products/productsDelivery'), {products,profile,detailSale,style:"styles-productCart"})
+            })
+    })
 };
+
+//Carrito de compras//
 
 const addProductCart = (req, res) => {
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
-    const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
-    rutaJson = path.join(__dirname,'../database/productsCart.json');
-
-        const {id} = req.params;
-        if (productsCart.find(elem => elem.id == id) == undefined) {
-            const product = products.find(elem => elem.id == id);
-            const productCart = {
-                id: product.id,
-                productName: product.productName,
-                price: product.price,
-                image: product.image,
-                quantity:  1
-            }
-            productsCart.push(productCart);
-            let data = JSON.stringify(productsCart);
-            fs.writeFile(rutaJson, data, err => {
-                if (err) {
-                    console.error(err);
-                } else{
-                    res.redirect('/productDelivery');
+        let userid = null;
+        let profile = req.session.userLogged;
+        if (profile) {
+            userid = profile.id
+        }
+        db.Sale.create(
+        {
+            user_id: userid,
+            date: Date()
+        }).then(sale =>{
+            db.DetailSale.create(
+                {
+                   sale_id: sale.id, 
+                   product_id: req.params.id
                 }
-            } );
-        }else{
-            const productCart = productsCart.find(elem => elem.id == id);
-            productCart.quantity = productCart.quantity + 1;
-            let data = JSON.stringify(productsCart);
-            fs.writeFile(rutaJson, data, err => {
-                if (err) {
-                    console.error(err);
-                } else{
-                    res.redirect('/productDelivery');
-                }
-            } );
-        }  
+            ).then(detailSale => {
+                res.redirect('/productDelivery');
+        })
+        })
     };
 
 const deleteProductCart = (req,res) =>  {
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
-    const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
-    rutaJson = path.join(__dirname,'../database/productsCart.json');
-    const {id} = req.params;
-    const newProductsCart = productsCart.filter(elem => elem.id != id);
-    console.log(newProductsCart);
-    let data = JSON.stringify(newProductsCart);
-        fs.writeFile(rutaJson, data, err => {
-			if (err) {
-				console.error(err);
-			} else{
-                res.redirect('/productDelivery');
-			}
-		} );
+
+    db.DetailSale.destroy({
+        where: {product_id: req.params.id}
+    }).then(deleteProduct =>{
+        console.log(req.params.id);
+        res.redirect('/productDelivery');
+    })
 }
 
 const restProductCart = (req,res) =>{
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
+
     const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
     rutaJson = path.join(__dirname,'../database/productsCart.json');
 
@@ -123,29 +182,29 @@ const restProductCart = (req,res) =>{
 
 }
 const sumProductCart = (req,res) =>{
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
-    const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
-    rutaJson = path.join(__dirname,'../database/productsCart.json');
 
-        const {id} = req.params;
-        const productCart = productsCart.find(elem => elem.id == id);
-            productCart.quantity = productCart.quantity + 1;
-            let data = JSON.stringify(productsCart);
-            fs.writeFile(rutaJson, data, err => {
-                if (err) {
-                    console.error(err);
-                } else{
-                    res.redirect('/productDelivery');
+    let userid = null;
+        let profile = req.session.userLogged;
+        if (profile) {
+            userid = profile.id
+        }
+        db.Sale.create(
+        {
+            user_id: userid,
+            date: Date()
+        }).then(sale =>{
+            db.DetailSale.create(
+                {
+                   sale_id: sale.id, 
+                   product_id: req.params.id
                 }
-            } );
-    
+            ).then(detailSale => {
+                res.redirect('/productDelivery');
+        })
+        })
 }
 module.exports = {
-    // productCart,
-    // productEdit,
-    // productDetail, 
+    
     allProducts, 
     postProducts,
     createProducts,

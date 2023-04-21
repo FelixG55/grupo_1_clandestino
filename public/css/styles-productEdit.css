@@ -100,3 +100,9 @@ button:hover {
   border: 2px solid white;
 }
 
+.error-msg{
+  color: #ffc800;
+text-align: center;}
+.error-style{
+  border-color: #ffc800;
+}
