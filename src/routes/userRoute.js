@@ -8,7 +8,7 @@ const validationLog = require('../middleware/validateLogin')
 const guestMiddelware = require('../middleware/guestMiddelware')
 
 routerUser.get('/register',guestMiddelware, register);
-routerUser.post('/register',uploadUserFile.single('userImage'),validationsReg, writeFormRegister);
+routerUser.post('/register',uploadUserFile.single('image'),validationsReg, writeFormRegister);
 
 routerUser.get('/reservation', reservation);
 
