@@ -3,7 +3,7 @@
 <html lang="en">
     <%- include('partials/head.ejs') %>
     <body>
-        <script src="../validationsFront/validationRegister.js"></script>
+        <script src="/validationsFront/validationRegister.js"></script>
         <div class="logo">
             <img class="imagen" src="/images/imagen-register.jpg" alt="logo">
 
@@ -13,7 +13,7 @@
                 <label for="name"></label>
                 <input placeholder="Nombre" type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null %>" >
             </div>
-            <section class="errores">
+            <section class="error-msg">
                 <ul>
 
                 </ul>
