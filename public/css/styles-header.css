@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Afterglow';
     src: url('../fonts/Afterglow-Regular.ttf');
@@ -28,7 +29,53 @@ header img{
     height: 100%;
     width: 100%;
     margin: 1px;
+    font-family: 'Afterglow';
+    src: url('../fonts/Afterglow-Regular.ttf');
 }
 header i{
     background-color: black;
 }
+
+.profile-disp{
+    font-size: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.profile-disp img{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    }
+
+    .dropdown-li {
+        position: relative;
+      }
+      
+      .dropdown-li:hover .dropdown {
+        display: block;
+        opacity: 1;
+        
+      }
+      
+      .dropdown {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        opacity: 0;
+        display: none;
+        background: #FFC900;
+
+      }
+    
+      .dropdown li {
+        list-style: none;
+        margin-top: 5px;
+      }
+      .dropdown a {
+        text-decoration: none;
+      }
