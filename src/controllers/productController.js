@@ -1,54 +1,90 @@
 const { constants } = require('buffer');
 const fs = require('fs');
 const path = require('path');
+const Product = require('../models/Product')
+const {validationResult}= require('express-validator');
 
+let productsFilePath = path.join(__dirname, '../database/productos.json');
+let productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
 
 const allProducts = (req, res) =>{
-    res.render(path.join(__dirname, '../views/products'),{style: "styles-productDetail"})
+    console.log(req.session.userLogged);
+    let profile = req.session.userLogged;
+    res.render(path.join(__dirname, '../views/products/products'),{profile: profile,style: "styles-productDetail"})
 };
 
-const postProducts = (req, res) =>{};
+const postProducts = (req, res) =>{
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        res.render(path.join(__dirname, '../views/products/createProduct'),{
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            style: "styles-createProduct"
+        });
+    }else{
+        let productToCreate = {
+            ...req.body,
+            image: req.file ? req.file.filename: ''
+        }
+        Product.create(productToCreate)
+        return res.redirect('/productDelivery');
+    }
+};
 
 const createProducts = (req, res) =>{
-    res.render(path.join(__dirname, '../views/createProduct'),{style: "styles-createProduct"});
+    res.render(path.join(__dirname, '../views/products/createProduct'),{style: "styles-createProduct"});
 };
 
 const getOneProduct = (req, res) =>{
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let profile = req.session.userLogged;
     const {id} = req.params;
-    const product = products.find(elem => elem.id == id);
-    res.render(path.join(__dirname, '../views/productIdDetail'),{product ,style: "styles-productIdDetail"});
+    const product = Product.findByPk(id);
+    res.render(path.join(__dirname, '../views/products/productIdDetail'),{profile:profile, product ,style: "styles-productIdDetail"});
 
 };
 
 const formProduct = (req, res) => {
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     const {id} = req.params;
-    const product = products.find(elem => elem.id == id);
-    res.render(path.join(__dirname, '../views/productEdit'),{product, style: "styles-productEdit"});
+    const product = Product.findByPk(id)
+    res.render(path.join(__dirname, '../views/products/productEdit'),{product: product, style: "styles-productEdit"});
 
 };
 
 const editProduct = (req, res) => {
-    // res.render(path.join(__dirname, '../views/productEdit'),{style: "styles-productEdit"});
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        res.render(path.join(__dirname, '../views/products/productEdit'),{
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            style: "styles-createProduct",
+            product: req.body
+        });
+    }else{
+        let productToUpdate = {
+            ...req.body,
+            image: req.file ? req.file.filename: ''
+        }
+        Product.update(productToUpdate)
+        return res.redirect('/productDelivery');
+    
+    }
+}
+const deleteProducts = (req, res) =>{
+    
+    Product.delete(req.params.id)
+    return res.redirect('/productDelivery');
+
 };
 
-const deleteProducts = (req, res) =>{};
-
 const delivery = (req, res) => {
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
+    let profile = req.session.userLogged;
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
     const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
-        res.render(path.join(__dirname, '../views/productsDelivery'),{productsCart: productsCart, products: products, style: "styles-productCart"})
+    res.render(path.join(__dirname, '../views/products/productsDelivery'),{profile: profile,productsCart: productsCart, products: products, style: "styles-productCart"})
 };
 
 const addProductCart = (req, res) => {
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
     const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
     rutaJson = path.join(__dirname,'../database/productsCart.json');
 
@@ -86,12 +122,11 @@ const addProductCart = (req, res) => {
     };
 
 const deleteProductCart = (req,res) =>  {
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
+
     const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
     rutaJson = path.join(__dirname,'../database/productsCart.json');
     const {id} = req.params;
     const newProductsCart = productsCart.filter(elem => elem.id != id);
-    console.log(newProductsCart);
     let data = JSON.stringify(newProductsCart);
         fs.writeFile(rutaJson, data, err => {
 			if (err) {
@@ -103,9 +138,7 @@ const deleteProductCart = (req,res) =>  {
 }
 
 const restProductCart = (req,res) =>{
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
+
     const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
     rutaJson = path.join(__dirname,'../database/productsCart.json');
 
@@ -123,10 +156,9 @@ const restProductCart = (req,res) =>{
 
 }
 const sumProductCart = (req,res) =>{
-    const productsFilePath = path.join(__dirname, '../database/productos.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    const productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
+
     const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
+
     rutaJson = path.join(__dirname,'../database/productsCart.json');
 
         const {id} = req.params;
@@ -143,9 +175,7 @@ const sumProductCart = (req,res) =>{
     
 }
 module.exports = {
-    // productCart,
-    // productEdit,
-    // productDetail, 
+    
     allProducts, 
     postProducts,
     createProducts,

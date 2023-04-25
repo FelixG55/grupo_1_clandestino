@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+<body>
+  <div class="container-reservation">
+    <div class="logo">
+      <a href="/"><img src="/images/buho.png" alt="logo"></a>
+    </div>
+    <div class="reservation-text">
+        <p>
+            Formulario de creación de producto
+        </p>
+    </div> 
+    <form action="/products" method="POST" enctype="multipart/form-data">
+        <div class="elem-group">
+          <label for="productName">Nombre del producto</label>
+          <input type="text" id="productName" name="productName" placeholder="Escribe el nombre del producto" pattern=[A-Z\sa-z]{3,20} 
+          class="<%= locals.errors && errors.productName ? 'error-style': null %>" value="<%= locals.oldData ? oldData.productName : null %>">
+        </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.productName) { %>
+              <%= errors.productName.msg %>
+             <% } %>
+        </div>
+        <div class="elem-group">
+          <label for="text">Descripción del producto</label>
+          <input type="text" id="description" name="description" placeholder="Escribe la descripción del producto" 
+          class="<%= locals.errors && errors.description ? 'error-style': null %>" style="height: 70px;" value="<%= locals.oldData ? oldData.description : null %>">
+        </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.description) { %>
+              <%= errors.description.msg %>
+             <% } %>
+        </div>
+        <div class="elem-group">
+          <label for="price">Precio</label>
+          <input type="text" id="price" name="price" placeholder="Escribe el precio del producto"
+          class="<%= locals.errors && errors.price ? 'error-style': null %>" value="<%= locals.oldData ? oldData.price : null %>">
+        </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.price) { %>
+              <%= errors.price.msg %>
+             <% } %>
+       </div>
+        <div class="elem-group">
+          <label for="category">Categoria</label>
+          <select id="category" name="category" class="<%= locals.errors && errors.category ? 'error-style': null %>">
+            <option value="">Elige Categoria</option>
+            <% let categories = ['Sánduches', 'Hamburguesa', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
+            <% for( const oneCategory of categories) { %>
+              <option value="<%= oneCategory %>"
+                <%= locals.oldData && (oneCategory === oldData.category) ? 'selected' : null %> 
+                 ><%= oneCategory %></option>        
+            <% } %>
+        </select>
+          <div class="error-msg">
+            <% if (locals.errors && errors.category) { %>
+                <%= errors.category.msg %>
+               <% } %>
+         </div>
+          <div class="elem-group">
+          <label for="delivery">Delivery</label>
+          <select name="delivery" id="delivery" class="<%= locals.errors && errors.delivery ? 'error-style': null %>" value="<%= locals.oldData ? oldData.delivery : null %>">
+            <option value="">Elgie una opción</option>
+            <option value="true" <%= locals.oldData && (oldData.delivery == 'true') ? 'selected': null %>>Si</option>
+            <option value="false" <%= locals.oldData && (oldData.delivery == 'false') ? 'selected': null %>>No</option>
+          </select>
+          <div class="error-msg">
+            <% if (locals.errors && errors.delivery) { %>
+                <%= errors.delivery.msg %>
+               <% } %>
+          </div>
+            </div>
+        </div>
+        <div class="elem-group">
+          <label for="image">Sube la imagen del producto</label>
+          <input type="file" id="image" name="image" class="<%= locals.errors && errors.image ? 'error-style': null %>">
+        </div>
+        <div class="error-msg">
+          <% if (locals.errors && errors.image) { %>
+              <%= errors.image.msg %>
+             <% } %>
+       </div>
+        <button type="submit">Enviar</button>
+      </form>   
+  </div>    
+</body>
+<footer>
+<%- include('../partials/footer.ejs') %>
+</footer>
+</html>
