@@ -3,18 +3,18 @@ const path = require('path');
 
 
 let validateRegister = [
-    check('nombre')
+    check('name')
         .notEmpty().withMessage('Tienes que escribir un nombre'),
-    check('apellido')
+    check('lastname')
         .notEmpty().withMessage('Tienes que escribir el apellido'),
     check('email')
         .notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
         .isEmail().withMessage('Tienes que escribir un mail válido'),    
     check('password')
         .notEmpty().withMessage('Tienes que escribir una contraseña'),
-    check('categoria')
+    check('admin')
         .notEmpty().withMessage('Tienes que escoger una categoria'),
-    check('userImage').custom((value, {req}) => {
+    check('image').custom((value, {req}) => {
         let file = req.file; 
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
         if (!file) {

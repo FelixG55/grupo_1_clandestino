@@ -13,13 +13,13 @@
     </div> 
     <form action="/products" method="POST" enctype="multipart/form-data">
         <div class="elem-group">
-          <label for="productName">Nombre del producto</label>
-          <input type="text" id="productName" name="productName" placeholder="Escribe el nombre del producto" pattern=[A-Z\sa-z]{3,20} 
-          class="<%= locals.errors && errors.productName ? 'error-style': null %>" value="<%= locals.oldData ? oldData.productName : null %>">
+          <label for="name">Nombre del producto</label>
+          <input type="text" id="name" name="name" placeholder="Escribe el nombre del producto" pattern=[A-Z\sa-z]{3,20} 
+          class="<%= locals.errors && errors.name ? 'error-style': null %>" value="<%= locals.oldData ? oldData.name : null %>">
         </div>
         <div class="error-msg">
-          <% if (locals.errors && errors.productName) { %>
-              <%= errors.productName.msg %>
+          <% if (locals.errors && errors.name) { %>
+              <%= errors.name.msg %>
              <% } %>
         </div>
         <div class="elem-group">
@@ -46,7 +46,7 @@
           <label for="category">Categoria</label>
           <select id="category" name="category" class="<%= locals.errors && errors.category ? 'error-style': null %>">
             <option value="">Elige Categoria</option>
-            <% let categories = ['Sánduches', 'Hamburguesa', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
+            <% let categories = ['Sánduches', 'Hamburguesas', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
             <% for( const oneCategory of categories) { %>
               <option value="<%= oneCategory %>"
                 <%= locals.oldData && (oneCategory === oldData.category) ? 'selected' : null %> 
