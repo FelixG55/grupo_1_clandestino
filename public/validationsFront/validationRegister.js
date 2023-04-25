@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    let formRegister = document.querySelector('formRegister');
+    let formRegister = document.getElementById('formRegister');
     let errores =[]
     formRegister.addEventListener('submit',function (event){
         
@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
         }    
         if(errores.length > 0){
             event.preventDefault();
-            let ulErrores = document.querySelector(".errores ul");
+            let ulErrores = document.querySelector(".error-msg ul");
             errores.forEach(error =>{
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
