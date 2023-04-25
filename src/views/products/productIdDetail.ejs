@@ -7,14 +7,14 @@
 <div class="container-detail">
         <div class="product-container">
             <div class="item">
-                <h3><%= product.productName %></h3>
+                <h3><%= product.name %></h3>
                 <img src= "/images/delivery-products/productosDelivery/<%= product.image %>">
                 <p class="description"><%= product.description %></p>
                 <p class="price">$<%= product.price %></p>
                 <div>
                     <button class="manito"> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
                     <br><br>
-                    <% if (profile && profile.categoria == 'true') { %>
+                    <% if (profile && profile.admin == '1') { %>
                         <a href="/products/<%= product.id %>/edit">
                             <button class="manito"> Editar Producto  <i class="fas fa-shopping-bag"></i></button>
                         </a>
