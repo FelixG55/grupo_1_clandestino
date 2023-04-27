@@ -11,6 +11,16 @@ Stop Doing: Dejar de hacer reuniones si no esta la cantidad de personas necesari
 
 Sprint 3
 
+Start-doing: Un mayor compromiso de trabajo, se estan realizando las ejercitaciones muy sobre la marcha, no nos estamos enfocando bien con las prioridades del proyecto.
+
+More of: Sacarle mas provecho a las consultas durante las clases, quizas seria mejor consultar a los profes durante los horarios del breakroom custiones referidas al proyecto integrador.
+
+Keep doing: coordinar las reuniones y tratar de dividir un poco el trabajo. Mayor comunicacion
+
+Less of: Dedicarle tiempo a las ejercitaciones en el horario de reunión para el proyecto.
+
+Stop Doing: Reuniones que haya menos de el 50% de los integrantes.
+
 Sprint 4 
 
 Start-doing: Empezar las reuniones dos días a la semana en vez de un día, como se esta haciendo en este momento.
@@ -19,9 +29,33 @@ More of: Definir objetivos para lograr estar al día en los temas del curso todo
 
 Keep doing: Cumplir las tareas asignadas, seguir cumpliendo las fechas de las reuniones. El trabajo y la colaboración entre los integrantes del grupo.  
 
-Less of: Dedicarle tiempo a las ejercitaciones en el horario de reunión para el proyecto.
+Less of: perder mucho tiempo con cuestiones de git hub durante las reuniones.
 
 Stop Doing: No estar actualizado con las tareas que se realizan durante la semana en las reuniones grupales.
+
+Sprint 5
+
+Start-doing: Las reunion que establecemos deben cumplir por lo menos una hora y media, y debemos anticipar la tematica a resolver un dia antes.
+
+More of: Trabajar mas con el tablera de trello, poder darle un uso como tablero de control y a su vez trabajar con las fechas, estamos entregando muy sobre la marcha.
+
+Keep doing: Cumplir las tareas asignadas, seguir cumpliendo las fechas de las reuniones. El trabajo y la colaboración entre los integrantes del grupo. 
+
+Less of: Dedicarle tiempo a las ejercitaciones en el horario de reunión para el proyecto.
+
+Stop Doing: Reuniones los fines de semana.
+
+Sprint 6
+
+Start-doing: Reuniones por la tarde los dias Jueves, enfocarnos mas en el aprendizaje de la base de datos.
+
+More of: lograr una mayor comunicacion, no esta costando coordinar algunos puntos del proyecto.
+
+Keep doing: Cumplir las tareas asignadas, seguir cumpliendo las fechas de las reuniones. El trabajo y la colaboración entre los integrantes del grupo. 
+
+Less of: dedicarle mucho tiempo a la ejercitacion en clase en vivo, si bien es importante pero nos demanda mucho tiempo para resolver cuestiones del proyecto integrador.
+
+Stop Doing: hacerse cargo de muchas tareas una sola persona.
 
 Sprint 7
 
