@@ -81,6 +81,11 @@
                     <option value="0"<%= locals.oldData && (oldData.admin == '0') ? 'selected': null %>>No</option>
                 </select>
             </div>
+            <section class="error-msg-admin">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.admin) { %>
                     <%= errors.admin.msg %>

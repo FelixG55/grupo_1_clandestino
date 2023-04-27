@@ -183,6 +183,10 @@ option{
     color: #FFC800;
     margin-bottom: 20px;
 }
+.error-msg-admin{
+    color: #FFC800;
+    margin-bottom: 20px;
+}
 .border-msg{
     border: solid 1px white;
 }
