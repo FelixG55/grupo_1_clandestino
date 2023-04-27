@@ -75,15 +75,36 @@ window.addEventListener('load', function () {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
         }
-        //Campo imagen(falta esto)
-        let erroresImagen = []
-        let campoImagen = document.getElementById('image');
-
-        if (campoImagen.value) {
-            erroresImagen.push("La imagen debe ser en formato JPG, JPEG, PNG, GIF");
+        //Campo Admin
+        let erroresAdmin = []
+        let campoAdmin = document.getElementById('admin');
+        if (campoAdmin.value == ""){
+            erroresAdmin.push("Debe seleccionar tipo de usuario");
+        };
+        if (erroresAdmin.length > 0) {
+            event.preventDefault();
+            let ulErrores = document.querySelector(".error-msg-admin ul");
+            ulErrores.innerHTML = "";
+            erroresAdmin.forEach(error => {
+                ulErrores.innerHTML += `<li> ${error} </li>`
+            });
         }
 
+        //Campo imagen(falta esto)
+        // let erroresImagen = []
+        // let campoImagen = document.getElementById('image');
 
+        // if (campoImagen.value !== ".jpg") {
+        //     erroresImagen.push("La imagen debe ser en formato JPG, JPEG, PNG, GIF");
+        // };
+        // if (erroresImagen.length > 0) {
+        //     event.preventDefault();
+        //     let ulErrores = document.querySelector(".error-msg-image ul");
+        //     ulErrores.innerHTML = "";
+        //     erroresImagen.forEach(error => {
+        //         ulErrores.innerHTML += `<li> ${error} </li>`
+        //     });
+        // }
     })
 })
 
