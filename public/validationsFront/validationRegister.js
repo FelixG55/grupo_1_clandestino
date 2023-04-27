@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
         if (erroresName.length > 0) {
             event.preventDefault();
             let ulErrores = document.querySelector(".error-msg-name ul");
-            console.log(erroresName);
+            ulErrores.innerHTML = "";
             erroresName.forEach(error => {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
@@ -26,12 +26,13 @@ window.addEventListener('load', function () {
 
         if (campoLastname.value == "") {
             erroresLastname.push("El campo apellido es obligatorio");
-        }if (campoLastname.value.length < 2) {
+        } if (campoLastname.value.length < 2) {
             erroresLastname.push("El campo apellido debe tener al menos dos caracteres")
         };
         if (erroresLastname.length > 0) {
             event.preventDefault();
             let ulErrores = document.querySelector(".error-msg-lastname ul");
+            ulErrores.innerHTML = "";
             erroresLastname.forEach(error => {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
@@ -47,12 +48,13 @@ window.addEventListener('load', function () {
         } if (!validEmail.test(campoEmail.value)) {
             erroresEmail.push("El campo Email debe ser valido");
 
-        if (erroresEmail.length > 0) {
-           event.preventDefault();
-           let ulErrores = document.querySelector(".error-msg-Email ul");
-           erroresEmail.forEach(error => {
-           ulErrores.innerHTML += `<li> ${error} </li>`
-           
+            if (erroresEmail.length > 0) {
+                event.preventDefault();
+                let ulErrores = document.querySelector(".error-msg-Email ul");
+                ulErrores.innerHTML = "";
+                erroresEmail.forEach(error => {
+                    ulErrores.innerHTML += `<li> ${error} </li>`
+
                 });
             }
         }
@@ -68,6 +70,7 @@ window.addEventListener('load', function () {
         if (erroresPassword.length > 0) {
             event.preventDefault();
             let ulErrores = document.querySelector(".error-msg-password ul");
+            ulErrores.innerHTML = "";
             erroresPassword.forEach(error => {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
@@ -78,9 +81,10 @@ window.addEventListener('load', function () {
 
         if (campoImagen.value) {
             erroresImagen.push("La imagen debe ser en formato JPG, JPEG, PNG, GIF");
-        } 
-      
-    
-})})
+        }
+
+
+    })
+})
 
 
