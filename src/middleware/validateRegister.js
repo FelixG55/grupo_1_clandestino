@@ -15,7 +15,8 @@ let validateRegister = [
             const existingUser =
                 await db.User.findAll({
                     where: {email: email}
-                }) 
+                })
+                console.log(typeof existingUser);
             if (existingUser.length>0) {
                 throw new Error('Email ya registrado, utilice otro')
             }
