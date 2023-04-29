@@ -19,7 +19,11 @@ window.addEventListener('load', function () {
             erroresName.forEach(error => {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
+        }else{
+            let ulErrores = document.querySelector(".error-msg-name ul");
+            ulErrores.innerHTML = "";
         }
+
         //Campo lastname
         let erroresLastname = []
         let campoLastname = document.getElementById('lastname');
@@ -36,6 +40,9 @@ window.addEventListener('load', function () {
             erroresLastname.forEach(error => {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
+        }else{
+            let ulErrores = document.querySelector(".error-msg-lastname ul");
+            ulErrores.innerHTML = "";
         }
 
         //Campo Email
@@ -47,16 +54,18 @@ window.addEventListener('load', function () {
             erroresEmail.push("El campo Email es obligatorio");
         } if (!validEmail.test(campoEmail.value)) {
             erroresEmail.push("El campo Email debe ser valido");
+        }
+        if (erroresEmail.length > 0) {
+            event.preventDefault();
+            let ulErrores = document.querySelector(".error-msg-Email ul");
+            ulErrores.innerHTML = "";
+            erroresEmail.forEach(error => {
+                ulErrores.innerHTML += `<li> ${error} </li>`
 
-            if (erroresEmail.length > 0) {
-                event.preventDefault();
-                let ulErrores = document.querySelector(".error-msg-Email ul");
-                ulErrores.innerHTML = "";
-                erroresEmail.forEach(error => {
-                    ulErrores.innerHTML += `<li> ${error} </li>`
-
-                });
-            }
+            });
+        }else{
+            let ulErrores = document.querySelector(".error-msg-Email ul");
+            ulErrores.innerHTML = "";
         }
         //Campo contraseña
         let erroresPassword = []
@@ -74,6 +83,9 @@ window.addEventListener('load', function () {
             erroresPassword.forEach(error => {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
+        }else{
+            let ulErrores = document.querySelector(".error-msg-password ul");
+            ulErrores.innerHTML = "";
         }
         //Campo Admin
         let erroresAdmin = []
@@ -88,23 +100,29 @@ window.addEventListener('load', function () {
             erroresAdmin.forEach(error => {
                 ulErrores.innerHTML += `<li> ${error} </li>`
             });
+        }else{
+            let ulErrores = document.querySelector(".error-msg-admin ul");
+            ulErrores.innerHTML = "";
         }
 
-        //Campo imagen(falta esto)
-        // let erroresImagen = []
-        // let campoImagen = document.getElementById('image');
-
-        // if (campoImagen.value !== ".jpg") {
-        //     erroresImagen.push("La imagen debe ser en formato JPG, JPEG, PNG, GIF");
-        // };
-        // if (erroresImagen.length > 0) {
-        //     event.preventDefault();
-        //     let ulErrores = document.querySelector(".error-msg-image ul");
-        //     ulErrores.innerHTML = "";
-        //     erroresImagen.forEach(error => {
-        //         ulErrores.innerHTML += `<li> ${error} </li>`
-        //     });
-        // }
+        // Campo imagen(falta esto)
+        let erroresImagen = ''
+        let campoImagen = document.getElementById('image');
+        var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+        
+            if (!allowedExtensions.test(campoImagen.value)) {
+                erroresImagen ="La imagen debe ser en formato JPG, JPEG, PNG, GIF";
+            }
+        if (erroresImagen.length > 0 ) {
+            event.preventDefault();
+            let ulErrores = document.querySelector(".error-msg-image ul");
+            ulErrores.innerHTML = "";
+                ulErrores.innerHTML += `<li> ${erroresImagen} </li>`
+            ;
+        }else{
+            let ulErrores = document.querySelector(".error-msg-image ul");
+            ulErrores.innerHTML = "";
+        }
     })
 })
 
