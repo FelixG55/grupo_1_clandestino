@@ -1,55 +1,77 @@
 const path = require("path")
 const DB = require("../../database/models")
 const sequelize = require("sequelize")
-const products = (req, res)=>{
-DB.Product.findAll()
-    .then( (product)=>{
+const db = require("../../database/models")
 
-        const countProducts = product.length
-        const products = product.map(product=> {
-            return{
-                id: product.id,
-                name: product.name,
-                description: product.description,
-                relation: "nose todavia",
-                image: "/api/products/" + product.id
-            }})
-        const category = product.map(product=> {
-            return {categories: product.categories_id }
-        } )
-     res.json({
-        countProducts,
-        products,    
-        category,
-      
 
-     })
-    })
-}
+
+const products = (req, res) => {
+    DB.Product.findAll(
+        {include: [{association: "categories"}]}
+    ).then((product) => {
+      const countProducts = product.length;
+      const products = product.map((product) => {
+        return {
+          id: product.id,
+          name: product.name,
+          description: product.description,
+          category: product.categories.name,
+          detail: `http://localhost:3022/api/products/${product.id}`,
+        };
+      });
+     DB.Product.findAll({
+          attributes: [
+            "categories_id",
+            [
+             sequelize.fn("COUNT", sequelize.col("categories_id")),
+                  "total_catgories", 
+                
+            ],
+          ],
+          group: ["categories_id"],
+        }).then((categories) => {
+           res.json({
+          countProducts,
+          categories,
+          products,
+          
+        });
+      });
+    })}
+  
+  
+
+
 const product = (req, res)=> {
-    DB.Product.findByPk(req.params.id)
+    DB.Product.findByPk(req.params.id, {include: [{association: "categories"}]})
     .then( (product)=>{
-     res.json(product)
+     res.json({
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        category: product.categories.name,
+        iamge: `http://localhost:3022/api/products/${product.image}`,
+      })
     })
 }
-const categori = (req, res)=> {
-    const resultado = DB.Product.findAll( { include: [{association: "categories"}]})
-    .then(products => {
-        DB.Product.findAll({
-            attributes: ['categories_id',[sequelize.fn('COUNT',sequelize.col('categories_id')),'total_catgories']],
-            group: ['categories_id']
-        })})
-        // .then(name => {res.json(name)})
-        .then( (product)=>{res.json(product)})
-        .then(
-            (categories )=>{
-                DB.Category.findAll()})
-                .then(name => {res.json(name)})}
+
+
+
+// const categori = (req, res)=> {
+//     const resultado = DB.Product.findAll( { 
+//         include: [{association: "categories"}]       
+//     })
+//     .then(
+//         DB.Product.findAll({
+//             attributes: ['categories_id',[sequelize.fn('COUNT',sequelize.col('categories_id')),'total_catgories']],
+//             group: ['categories_id']
+//         }))
+//     .then((product)=>{res.json(product)})
+//     .then(DB.Category.findAll())
+//     console.log(resultado)   
+// }
+
       
-      
-        // const categories =   
-        //  DB.Category.findAll()
-        //  .then(name => {res.json(name)})
 
 
 
@@ -94,5 +116,6 @@ const categori = (req, res)=> {
 module.exports = {
     products,
     product,
-    categori
+    // categori
+
 }

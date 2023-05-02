@@ -6,11 +6,12 @@ DB.User.findAll()
          res.json({
             count: users.length,
             users: users.map(user=>{
+                
                 return {
                     id: user.id,
                     name: user.name,
                     email: user.email,
-                    detail: "/api/users/"+ user.id
+                    detail: `http://localhost:3022/api/users/${user.id}`,
                 }
             })
          })

@@ -10,5 +10,6 @@ app.use(express.json())
 const usersRoutes = require("./src/routes/userRoutes.js") 
 const productsRoutes = require("./src/routes/productsRoutes.js") 
 
+
 app.use("/api",usersRoutes)
 app.use("/api", productsRoutes)
