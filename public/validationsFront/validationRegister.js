@@ -105,7 +105,7 @@ window.addEventListener('load', function () {
             ulErrores.innerHTML = "";
         }
 
-        // Campo imagen(falta esto)
+        // Campo imagen
         let erroresImagen = ''
         let campoImagen = document.getElementById('image');
         var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
