@@ -2,49 +2,62 @@ const path = require("path")
 const DB = require("../../database/models")
 const sequelize = require("sequelize")
 const products = (req, res)=>{
-DB.Product.findAll()
-    .then( (product)=>{
 
         const countProducts = product.length
-        const products = product.map(product=> {
-            return{
-                id: product.id,
-                name: product.name,
-                description: product.description,
-                relation: "nose todavia",
-                image: "/api/products/" + product.id
-            }})
-        const category = product.map(product=> {
-            return {categories: product.categories_id }
-        } )
-     res.json({
-        countProducts,
-        products,    
-        category,
-      
-
-     })
+        DB.Product.findAll( { 
+        include: [{association: "categories"}]
+         })
+        .then(product => {
+            const products = product.map(product=> {
+                return{
+                    id: product.id,
+                    name: product.name,
+                    description: product.description,
+                    category: product.categories,
+                    image: "/api/products/" + product.id
+                }})
+        DB.Product.findAll({
+            attributes: ['categories_id',[sequelize.fn('COUNT',sequelize.col('categories_id')),'total']],
+            group: ['categories_id']
+        })
+        .then(productsByCategory=>{
+         DB.Category.findAll()
+            .then(categories => {
+                let totalCategories = []
+                for (let i = 0; i < productsByCategory.length; i++) {
+                    for (let j = 0; j < categories.length; j++) {
+                       if (productsByCategory[i].categories_id == categories[j].id) {
+                            totalCategories.push({
+                                category: categories[j].name,
+                                total: productsByCategory[i].get().total
+                            })
+                       } 
+                    }
+                }
+                return totalCategories
+            }).then(countByCategory =>{
+                res.json({countProducts,countByCategory,products})
+            })
+        })
     })
 }
 const product = (req, res)=> {
-    DB.Product.findByPk(req.params.id)
+    DB.Product.findByPk(req.params.id,{
+        include: [{association: "categories"}]
+    })
     .then( (product)=>{
      res.json(product)
     })
 }
 const categori = (req, res)=> {
-    const resultado = DB.Product.findAll( { include: [{association: "categories"}]})
-    .then(products => {
-        DB.Product.findAll({
-            attributes: ['categories_id',[sequelize.fn('COUNT',sequelize.col('categories_id')),'total_catgories']],
-            group: ['categories_id']
-        })})
+   
+}
         // .then(name => {res.json(name)})
-        .then( (product)=>{res.json(product)})
-        .then(
-            (categories )=>{
-                DB.Category.findAll()})
-                .then(name => {res.json(name)})}
+        // .then(
+        //     (categories )=>{
+        //         DB.Category.findAll()})
+        //         .then(name => {res.json(name)})
+            
       
       
         // const categories =   
