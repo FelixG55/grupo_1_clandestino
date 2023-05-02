@@ -39,9 +39,8 @@ const writeFormRegister = (req, res) => {
           image = `/images/users/defaultAvatar.jpg`
         };
         db.User.findAll({
-            where: {email: req.body.email}
+            where: {email: req.body.email}  
         }).then(userInDB =>{
-            console.log(userInDB);
             if (userInDB.length > 0) {
                 return res.render(path.join(__dirname, '../views/register'),{
                     errors: {
