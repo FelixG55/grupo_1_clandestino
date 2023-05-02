@@ -16,13 +16,13 @@
         <input type="hidden" id="id" name="id" value="<%= product.id %>" pattern=[A-Z\sa-z]{3,20} >
       </div>
         <div class="elem-group">
-          <label for="productName">Nombre del producto</label>
-          <input type="text" id="productName" name="productName" value="<%= locals.oldData ? oldData.productName : product.productName %>" 
-          class="<%= locals.errors && errors.productName ? 'error-style': null %>">
+          <label for="name">Nombre del producto</label>
+          <input type="text" id="name" name="name" value="<%= locals.oldData ? oldData.name : product.name %>" 
+          class="<%= locals.errors && errors.name ? 'error-style': null %>">
         </div>
         <div class="error-msg">
-          <% if (locals.errors && errors.productName) { %>
-              <%= errors.productName.msg %>
+          <% if (locals.errors && errors.name) { %>
+              <%= errors.name.msg %>
              <% } %>
         </div>
         <div class="elem-group">
@@ -49,12 +49,18 @@
           <label for="category">Categoria</label>
           <select id="category" name="category" class="<%= locals.errors && errors.category ? 'error-style': null %>" >
               <option value="">Elige Categoria</option>
-              <% let categories = ['Sánduches', 'Hamburguesa', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
+              <% let categories = ['Sánduches', 'Hamburguesas', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
               <% for( const oneCategory of categories) { %>
-                <option value="<%= oneCategory %>"
-                  <%= oneCategory === product.category ? 'selected' : null %> 
-                   ><%= oneCategory %></option>        
-              <% } %>
+                <% if (!product.category) { %>
+                  <option value="<%= oneCategory %>"
+                      <%= oneCategory === product.categories.name ? 'selected' : null %> 
+                      ><%= oneCategory %></option>        
+                      <% } else { %>
+                        <option value="<%= oneCategory %>"
+                          <%= oneCategory === oldData.category ? 'selected' : null %> 
+                          ><%= oneCategory %></option>                  
+                        <% } %>
+                <% } %>
           </select>
           <div class="error-msg">
             <% if (locals.errors && errors.category) { %>
@@ -76,7 +82,8 @@
         </div>
         <div class="elem-group">
           <label for="image">Sube la imagen del producto</label>
-          <input type="file" id="image" name="image" class="<%= locals.errors && errors.image ? 'error-style': null %>" >
+          <input type="file" id="image" name="image" value="<%= locals.oldData ? oldData.image :product.image %>"
+          class="<%= locals.errors && errors.image ? 'error-style': null %>" >
         </div>
         <div class="error-msg">
           <% if (locals.errors && errors.image) { %>
