@@ -75,6 +75,12 @@ window.addEventListener('load', function () {
         //Campo imagen(falta esto)
         let erroresImagen = []
         let campoImagen = document.getElementById('image');
+console.log(campoImagen);
+debugger
+// use the split() method to split the file name into its name and extension
+//const fileExtension = imageFileName.split(".").pop();
+
+
 
         if (campoImagen.value) {
             erroresImagen.push("La imagen debe ser en formato JPG, JPEG, PNG, GIF");
