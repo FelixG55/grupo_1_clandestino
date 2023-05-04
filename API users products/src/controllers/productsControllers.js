@@ -27,9 +27,9 @@ const products = (req, res)=>{
                 for (let i = 0; i < productsByCategory.length; i++) {
                     for (let j = 0; j < categories.length; j++) {
                        if (productsByCategory[i].categories_id == categories[j].id) {
-                            totalCategories.push({
-                                category: categories[j].name,
-                                total: productsByCategory[i].get().total
+                        totalCategories.push({
+                            category: categories[j].name,
+                            total: productsByCategory[i].get().total
                             })
                        } 
                     }
