@@ -11,9 +11,16 @@ module.exports= (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             not_null: true
          },
+         lastname:{
+            type: DataTypes.STRING,
+            not_null: true
+         },
         email:{
             type: DataTypes.STRING,
             not_null: true
+         },
+         admin:{
+            type: DataTypes.INTEGER,  
          },
          image:{
             type: DataTypes.STRING

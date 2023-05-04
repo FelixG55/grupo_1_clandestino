@@ -5,11 +5,12 @@ DB.User.findAll()
     .then( (users)=>{
          res.json({
             count: users.length,
-            users: users.map(user=>{
-                
+            users: users.map(user=>{                 
                 return {
                     id: user.id,
                     name: user.name,
+                    lastname: user.lastname,
+                    admin : user.admin,
                     email: user.email,
                     detail: `http://localhost:3022/api/users/${user.id}`,
                 }
