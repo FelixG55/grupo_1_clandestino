@@ -50,7 +50,7 @@ const product = (req, res)=> {
         name: product.name,
         description: product.description,
         category: product.categories.name,
-        iamge: `http://localhost:3022/api/products/${product.image}`,
+        image: `http://localhost:3022/api/products/${`../../../public/images/delivery-products/${product.image}`}`,
       })
     })
 }
