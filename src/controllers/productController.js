@@ -6,8 +6,6 @@ const sequelize = db.sequelize;
 const {validationResult}= require('express-validator');
 const { DataTypes } = require('sequelize');
 
-let productsFilePath = path.join(__dirname, '../database/productos.json');
-let productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
 
 // Renderiza la vista de Menu 
 const allProducts = (req, res) =>{
