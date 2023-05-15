@@ -51,6 +51,9 @@ header i{
 
     .dropdown-li {
         position: relative;
+        z-index: 11;
+      
+        
       }
       
       .dropdown-li:hover .dropdown {
@@ -70,12 +73,17 @@ header i{
         opacity: 0;
         display: none;
         background: #FFC900;
+      
 
       }
     
       .dropdown li {
         list-style: none;
         margin-top: 5px;
+        border-color:#040404;
+        border-style: solid;
+        margin: 0;
+        padding: 0;
       }
       .dropdown a {
         text-decoration: none;

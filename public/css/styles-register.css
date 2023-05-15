@@ -157,8 +157,13 @@ option{
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 }
+button:hover{
+    background-color: #aa8500;
+    cursor: pointer;
+
+} 
 .error-msg{
     color: #FFC800;
     margin-bottom: 20px;
@@ -180,6 +185,10 @@ option{
     margin-bottom: 20px;
 }
 .error-msg-image{
+    color: #FFC800;
+    margin-bottom: 20px;
+}
+.error-msg-admin{
     color: #FFC800;
     margin-bottom: 20px;
 }

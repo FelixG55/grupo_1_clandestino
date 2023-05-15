@@ -3,7 +3,6 @@
 <html lang="en">
     <%- include('partials/head.ejs') %>
     <body>
-        <script src="/validationsFront/validationRegister.js"></script>
         <div class="logo">
             <img class="imagen" src="/images/imagen-register.jpg" alt="logo">
 
@@ -81,6 +80,11 @@
                     <option value="0"<%= locals.oldData && (oldData.admin == '0') ? 'selected': null %>>No</option>
                 </select>
             </div>
+            <section class="error-msg-admin">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.admin) { %>
                     <%= errors.admin.msg %>
@@ -104,6 +108,11 @@
                 <button type="submit">Enviar</button>
             </div>
         </form>
-            
+        <div class="enviar">
+            <a href="/">
+            <button type="submit" value="Volver">Volver</button>
+            </a>
+        </div>
     </body>
+    <script src="/validationsFront/validationRegister.js"></script> 
 </html>

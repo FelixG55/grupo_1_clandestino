@@ -15,7 +15,8 @@ let validateRegister = [
             const existingUser =
                 await db.User.findAll({
                     where: {email: email}
-                }) 
+                })
+                console.log(typeof existingUser);
             if (existingUser.length>0) {
                 throw new Error('Email ya registrado, utilice otro')
             }
@@ -30,7 +31,7 @@ let validateRegister = [
         .notEmpty().withMessage('Tienes que escoger una categoria'),
     check('image').custom((value, {req}) => {
         let file = req.file; 
-        let acceptedExtensions = ['.jpg','jpeg', '.png', '.gif'];
+        let acceptedExtensions = ['.jpg','.jpeg', '.png', '.gif'];
         if (!file) {
             throw new Error ('Tienes que elegir una imagen'); 
         }else{
