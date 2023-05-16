@@ -11,7 +11,6 @@ const location = (req, res) => {
 };
 
 
-
 module.exports = {
     index,
     location,};
