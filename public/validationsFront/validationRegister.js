@@ -108,22 +108,18 @@ window.addEventListener('load', function () {
         // Campo imagen
         let erroresImagen = ''
         let campoImagen = document.getElementById('image');
-        var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-        
-            if (!allowedExtensions.test(campoImagen.value)) {
-                erroresImagen ="La imagen debe ser en formato JPG, JPEG, PNG, GIF";
-            }
-        if (erroresImagen.length > 0 ) {
-            event.preventDefault();
-            let ulErrores = document.querySelector(".error-msg-image ul");
-            ulErrores.innerHTML = "";
-                ulErrores.innerHTML += `<li> ${erroresImagen} </li>`
-            ;
-        }else{
-            let ulErrores = document.querySelector(".error-msg-image ul");
-            ulErrores.innerHTML = "";
-        }
-    })
-})
+console.log(campoImagen);
+debugger
+// use the split() method to split the file name into its name and extension
+//const fileExtension = imageFileName.split(".").pop();
+
+
+
+        if (campoImagen.value) {
+            erroresImagen.push("La imagen debe ser en formato JPG, JPEG, PNG, GIF");
+        } 
+      
+    
+})})
 
 

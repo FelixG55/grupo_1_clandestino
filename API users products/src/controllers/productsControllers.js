@@ -14,7 +14,7 @@ const products = (req, res)=>{
                     name: product.name,
                     description: product.description,
                     category: product.categories,
-                    image: "/api/products/" + product.id
+                    detail: `http://localhost:3022/api/products/${product.id}`
                 }})
         DB.Product.findAll({
             attributes: ['categories_id',[sequelize.fn('COUNT',sequelize.col('categories_id')),'total']],

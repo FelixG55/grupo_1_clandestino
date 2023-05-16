@@ -6,8 +6,6 @@ const sequelize = db.sequelize;
 const {validationResult}= require('express-validator');
 const { DataTypes } = require('sequelize');
 
-let productsFilePath = path.join(__dirname, '../database/productos.json');
-let productsCartFilePath = path.join(__dirname, '../database/productsCart.json');
 
 // Renderiza la vista de Menu 
 const allProducts = (req, res) =>{
@@ -36,7 +34,7 @@ const postProducts = (req, res) =>{
             }
         }).then(category => {
             db.Product.create({
-                name: req.body.productName,
+                name: req.body.name,
                 description: req.body.description,
                 price: req.body.price,
                 categories_id: category[0].id,
@@ -136,21 +134,23 @@ const addProductCart = (req, res) => {
         let profile = req.session.userLogged;
         if (profile) {
             userid = profile.id
+            db.Sale.create(
+            {
+                user_id: userid,
+                date: Date()
+            }).then(sale =>{
+                db.DetailSale.create(
+                    {
+                       sale_id: sale.id, 
+                       product_id: req.params.id
+                    }
+                ).then(detailSale => {
+                    res.redirect('/productDelivery');
+            })
+            })
+        }else{
+            res.redirect('/login');
         }
-        db.Sale.create(
-        {
-            user_id: userid,
-            date: Date()
-        }).then(sale =>{
-            db.DetailSale.create(
-                {
-                   sale_id: sale.id, 
-                   product_id: req.params.id
-                }
-            ).then(detailSale => {
-                res.redirect('/productDelivery');
-        })
-        })
     };
 
 const deleteProductCart = (req,res) =>  {
