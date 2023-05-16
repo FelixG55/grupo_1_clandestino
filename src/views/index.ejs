@@ -13,7 +13,7 @@
                 </div>
                 <div class="letra-slogan">         
                     <h1>clandestino</h1>
-                    <h6>"slogan" 2023</h6>
+                    <h6>descubre las melodías y sabores del eje cafetero </h6>
                 </div>
             </div>           
         </section>
@@ -25,54 +25,104 @@
              </div>
         </section>
     
-        <section class="home">
-            <article class="menu">
-                    <div class="container-img">
-                        <img src="images/fondo10.png" alt="" class="img">
-                    </div>
-                    <div class="container-descripcion">
-                        <p>Menú</p>
-                        <h4>Nuestros platos</h4>
-                        <a href="#">menu</a>
-                    </div>
-                
-            </article>
-
-            <article class="tragos">
-                <div class="container-img">
-                    <img src="images/fondo10.png" alt="" class="img">
-                </div>
-                <div class="container-descripcion">
-                    <p>Bebidas</p>
-                    <h4>Tragos y Cervezas</h4>
-                    <a href="#">bebidas</a>
-                </div>
-            </article>
-      </section>
-      <section class="home">
-            <article class="delivery">
-                <div class="container-img">
-                    <img src="images/fondo10.png" alt="" class="img">
-                </div>
-                <div class="container-descripcion">
-                    <p></p>
-                    <h4>Take away y Delivery</h4>
-                    <a href="#">leer mas...</a>
-                </div>
-                
-            </article>
-
-            <article class="ubicacion">
-                <div class="container-img">
-                    <img src="images/fondo10.png" alt="" class="img">
-                </div>
-                <div class="container-descripcion">
-                    <p></p>
-                    <h4>¿Como llegar?</h4>
-                    <a href="#">leer mas...</a>
-                </div>
-            </article>
-        </section>
+        <div class="carousel" data-carousel>
+            <div class="carousel-buttons">
+              <button
+                class="carousel-button carousel-button_previous"
+                data-carousel-button-previous
+              >
+                <span class="fas fa-chevron-circle-left"></span>
+              </button>
+              <button
+                class="carousel-button carousel-button_next"
+                data-carousel-button-next
+              >
+                <span class="fas fa-chevron-circle-right"></span>
+              </button>
+            </div>
+            <div class="slides" data-carousel-slides-container>
+              <div class="slide">
+                <!-- imagen 1 carrusel -->
+                <img src="/images/comida1.png" alt="Pizzeta">
+                <h2>Slide 1 heading</h2>
+                <p>Slide 1 content
+              </div>
+              <div class="slide">
+                <!-- imagen 2 carrusel -->
+                <img src="/images/slide1.png" alt="Background Cerveza">
+                <h2>Slide 2 heading</h2>
+                <p>Slide 2 content
+              </div>
+              <div class="slide">
+                <!-- imagen 3 carrusel -->
+                <img src="/images/slide2.png" alt="Background Portavasos">
+                <h2>Slide 1 heading</h2>
+                <p>Slide 1 content
+              </div><div class="slide">
+                <!-- imagen 1 carrusel -->
+                <img src="/images/slide3.png" alt="Background">
+                <h2>Slide 1 heading</h2>
+                <p>Slide 1 content
+              </div><div class="slide">
+                <!-- imagen 1 carrusel -->
+                <img src="/images/slide4.png" alt="Clientes">
+                <h2>Slide 1 heading</h2>
+                <p>Slide 1 content
+              </div><div class="slide">
+                <!-- imagen 1 carrusel -->
+                <img src="/images/slide5.png" alt="Pasta">
+                <h2>Slide 1 heading</h2>
+                <p>Slide 1 content
+              </div><div class="slide">
+                <!-- imagen 1 carrusel -->
+                <img src="/images/slide6.png" alt="Logo Aviso">
+                <h2>Slide 1 heading</h2>
+                <p>Slide 1 content
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            function modulo(number, mod) {
+                let result = number % mod;
+                if (result < 0) {
+                    result += mod;
+                }
+                return result;
+            }
+    
+            function setUpCarousel(carousel) {
+                function handleNext() {
+                    currentSlide = modulo(currentSlide + 1, numSlides);
+                    changeSlide(currentSlide);
+                }
+    
+                function handlePrevious() {
+                    currentSlide = modulo(currentSlide - 1, numSlides);
+                    changeSlide(currentSlide);
+                }
+    
+                function changeSlide(slideNumber) {
+                    carousel.style.setProperty('--current-slide', slideNumber);
+                }
+    
+                // get elements
+                const buttonPrevious = carousel.querySelector('[data-carousel-button-previous]');
+                const buttonNext = carousel.querySelector('[data-carousel-button-next]');
+                const slidesContainer = carousel.querySelector('[data-carousel-slides-container]');
+    
+                // carousel state we need to remember
+                let currentSlide = 0;
+                const numSlides = slidesContainer.children.length;
+    
+                // set up events
+                buttonPrevious.addEventListener('click', handlePrevious);
+                buttonNext.addEventListener('click', handleNext);
+            }
+    
+            const carousels = document.querySelectorAll('[data-carousel]');
+            carousels.forEach(setUpCarousel);
+        </script>    
         <%- include('partials/footer.ejs') %>
 </body>
 </html>

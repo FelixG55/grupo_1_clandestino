@@ -130,9 +130,10 @@ body{
 }
 .container-principal div h6{
     font-family: 'Afterglow';
-    font-size: 25px;
-    letter-spacing: 2px;
+    font-size: 16px;
+    letter-spacing: 1px;
     color: rgb(255, 255, 255);
+
 }
 .container-nosotros{
     width: 100%;
@@ -510,3 +511,71 @@ section article div h4{
         min-width: 176px;
     }
 }*/
+.carousel {
+    --current-slide: 0;
+    /* Establecemos posición relativa para que la posición absoluta funcione correctamente para los botones */
+    position: relative;
+    overflow: hidden;  
+       
+  }
+  
+  .carousel-button {
+    /* Centramos verticalmente los botones */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    
+  
+    /* Estilo básico */
+    padding: 0;
+    margin: 0.5rem;
+    border-radius: 50%;
+    background-color: #ffc800;
+    border: none;
+  
+    font-size: 1.5rem;
+    cursor: pointer;
+  
+    transition: color 0.1s, background-color 0.1s;
+  }
+  
+  .carousel-button:hover {
+    color: whitesmoke;
+
+  }
+  
+  .carousel-button_next {
+    /* El botón de "siguiente" estará a la derecha */
+    right: 0;
+    background-color: #ffa200
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(calc(-100% * var(--current-slide)));
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido de la slide */
+    align-items: center; /* Centra verticalmente el contenido de la slide */
+  }
+  
+  /* Añadimos reglas para ajustar las imágenes */
+  .slide img {
+    max-width: 100%;
+    height: inherit;
+    object-fit: cover;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .carousel-button {
+      font-size: 2rem;
+      margin: 1rem;
+    }
+  }
