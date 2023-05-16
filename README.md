@@ -25,6 +25,9 @@ De aquí tomamos la idea de añadir una venta para explicarle al cliente: ¿Cóm
 5. https://uglyamerican.co/
 Esta página nos hizo pensar en la importancia de crear un Menú para llevar (DELIVERY) o menu domicilios. 
 
+6. https://diverxo.com/
+De acá sacamos la idea de agregar un video para hacer un poco más llamativa la página. 
+
 
 
 
