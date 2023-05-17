@@ -12,8 +12,8 @@
                 <p class="description"><%= product.description %></p>
                 <p class="price">$<%= product.price %></p>
                 <div>
-                    <button class="manito"> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
-                    <br><br>
+                    <!-- <button class="manito"> AGREGAR PRODUCTO  <i class="fas fa-shopping-bag"></i></button>
+                    <br><br> -->
                     <% if (profile && profile.admin == '1') { %>
                         <a href="/products/<%= product.id %>/edit">
                             <button class="manito"> Editar Producto  <i class="fas fa-shopping-bag"></i></button>

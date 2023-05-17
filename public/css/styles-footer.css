@@ -38,6 +38,8 @@ font-family: 'Source Sans Pro', sans-serif; */
     height: 100%;
     width: 25%;
     flex-grow: 2;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .contactos{
     width: 100%;
@@ -62,6 +64,8 @@ font-family: 'Source Sans Pro', sans-serif; */
     width: 25%;
     height: 100%;
     flex-grow: 2;
+    align-items: center;
+    justify-content: space-evenly;
 
 }
 .container-footer article div h2{
@@ -132,6 +136,8 @@ font-family: 'Source Sans Pro', sans-serif; */
 }
 .container-form-footer{
     width: 25%;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .form-footer{
     width: 100%;
