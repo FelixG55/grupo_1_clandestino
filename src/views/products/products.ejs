@@ -1,100 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header.ejs') %>
+
 <body>
-  <div class="container-reservation">
-    <div class="logo">
-      <a href="/"><img src="/images/buho.png" alt="logo"></a>
+    <h1 class="title">Menu</h1>
+    <div class="container">
+        <div class="card">
+            <h4>
+                Calamarada
+            </h4>
+            <img src="/images/hamb-negra" alt="Calamarada">
+            <p>
+                Pan brioche artesanal negro relleno de calamares
+                en panko acompañados de rúgula, tomates cherry,
+                queso mozarela y salsa alioli.
+            </p>
+        </div>
+        <div class="card">
+            <h4>
+                Hamburguesa
+            </h4>
+            <img src="/images/hamb-blanca" alt="Hamburguesa">
+            <p>
+                Pan brioche artesanal relleno de sobrebarriga
+                en reduccion de cerveza negra acompañado de aguacate,
+                maíz, suero costeño y chips de plátano.
+            </p>
+        </div>
+        <div class="card">
+            <h4>
+                Capitan Cosmico
+            </h4>
+            <img src="/images/cap-cosmico" alt="cap-cosmico">
+            <p>
+                Pan brioche artesanal relleno de pollo crocante,
+                tocineta ahumada, acompañado de pepinillos agridulces,
+                queso sabana en salsa ranch de la casa.
+            </p>
+        </div>
     </div>
-    <div class="reservation-text">
-        <p>
-            Formulario de edición de productos
-        </p>
-    </div> 
-    <form action="/products/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-      <div class="elem-group">
-        <input type="hidden" id="id" name="id" value="<%= product.id %>" pattern=[A-Z\sa-z]{3,20} >
-      </div>
-        <div class="elem-group">
-          <label for="name">Nombre del producto</label>
-          <input type="text" id="name" name="name" value="<%= locals.oldData ? oldData.name : product.name %>" 
-          class="<%= locals.errors && errors.name ? 'error-style': null %>">
+    <h1 class="title">Postres</h1>
+    <div class="container">
+        <div class="card">
+            <h4>
+                Pie de chocolate
+            </h4>
+            <img src="/images/pie-chocolate.jpeg" alt="pie-chocolate">
+            <p>Servido sobre la mejor masa tipo galleta crujiente,
+                relleno con la tradicional receta de chocolate y cubierto
+                con finas tiras de masa horneada, salen del horno dorados
+                y listos para disfrutarse.</p>
         </div>
-        <div class="error-msg">
-          <% if (locals.errors && errors.name) { %>
-              <%= errors.name.msg %>
-             <% } %>
+        <div class="card">
+            <h4>
+                Rosa mistica
+            </h4>
+            <img src="/images/rosa-mistica" alt="rosamistica">
+            <p>Bizcocho de almendra, mousse de mascarpone, compota de mora</p>
         </div>
-        <div class="elem-group">
-          <label for="text">Descripción del producto</label>
-          <input type="text" id="description" name="description" value="<%= locals.oldData ? oldData.description : product.description %>"
-          class="<%= locals.errors && errors.description ? 'error-style': null %>"> 
+        <div class="card">
+            <h4>
+                Tartaleta de limon
+            </h4>
+            <img src="/images/tartele-limon" alt="tartaleta-limon">
+            <p>Pastel con base de masa dulce con una capa de crema de 
+                limón y otra de merengue por encima.</p>
         </div>
-        <div class="error-msg">
-          <% if (locals.errors && errors.description) { %>
-              <%= errors.description.msg %>
-             <% } %>
+    </div>
+    <h1 class="title">Menus Ejecutivos</h1>
+    <div class="container">
+        <div class="card">
+            <h4>
+                Menu Italiano
+            </h4>
+            <img src="/images/menu-italiano.jpeg" alt="">
+            <p></p>
         </div>
-        <div class="elem-group">
-          <label for="price">Precio</label>
-          <input type="number" id="price" name="price" value="<%= locals.oldData ? oldData.price :product.price %>" 
-          class="<%= locals.errors && errors.price ? 'error-style': null %>">
+        <div class="card">
+            <h4>
+                Menu Arabe
+            </h4>
+            <img src="/images/menu-arabe.jpeg" alt="">
+            <p></p>
         </div>
-        <div class="error-msg">
-          <% if (locals.errors && errors.price) { %>
-              <%= errors.price.msg %>
-             <% } %>
-       </div>
-        <div class="elem-group">
-          <label for="category">Categoria</label>
-          <select id="category" name="category" class="<%= locals.errors && errors.category ? 'error-style': null %>" >
-              <option value="">Elige Categoria</option>
-              <% let categories = ['Sánduches', 'Hamburguesas', 'Acompañamientos', 'Bebidas', 'Cervezas artesanales','Cervezas del mundo', 'Entradas', 'Postres', 'Fuertes'] %>
-              <% for( const oneCategory of categories) { %>
-                <% if (!product.category) { %>
-                  <option value="<%= oneCategory %>"
-                      <%= oneCategory === product.categories.name ? 'selected' : null %> 
-                      ><%= oneCategory %></option>        
-                      <% } else { %>
-                        <option value="<%= oneCategory %>"
-                          <%= oneCategory === oldData.category ? 'selected' : null %> 
-                          ><%= oneCategory %></option>                  
-                        <% } %>
-                <% } %>
-          </select>
-          <div class="error-msg">
-            <% if (locals.errors && errors.category) { %>
-                <%= errors.category.msg %>
-               <% } %>
-         </div>
-          <div class="elem-group">
-          <label for="delivery">Delivery</label>
-          <select name="delivery" id="delivery" class="<%= locals.errors && errors.delivery ? 'error-style': null %>">
-            <option value="true">Si</option>
-            <option value="false">No</option>
-          </select>
-            </div>
-            <div class="error-msg">
-              <% if (locals.errors && errors.delivery) { %>
-                  <%= errors.delivery.msg %>
-                 <% } %>
-            </div>
+        
+    </div>
+    <div class="container">
+        <div class="card">
+            <h4>
+                Take Away
+            </h4>
+            <img src="/images/take-away.jpg" alt="">
+            <p>
+                Lunes a Viernes:
+                <br>
+                <br>
+                12:00 am - 02:30 pm
+                <br>
+                05:30 pm - 09:30 pm 
+                <br>
+                <br>
+                Sabados y Domingos:
+                <br>
+                <br>
+                12:00 pm - 2:30 pm
+                <br>
+                05:30 pm - 02:00 am
+
+            </p>
         </div>
-        <div class="elem-group">
-          <label for="image">Sube la imagen del producto</label>
-          <input type="file" id="image" name="image" value="<%= locals.oldData ? oldData.image :product.image %>"
-          class="<%= locals.errors && errors.image ? 'error-style': null %>" >
+        <div class="card">
+            <h4>
+                Happy Hours
+            </h4>
+            <img src="/images/happy-hour.png" alt="">
+            <p>
+                Jueves a Domingos:
+                <br>
+                <br>
+                05:30 pm - 09:00 pm
+            </p>
         </div>
-        <div class="error-msg">
-          <% if (locals.errors && errors.image) { %>
-              <%= errors.image.msg %>
-             <% } %>
-       </div>
-        <button type="submit">Enviar</button>
-      </form>   
-  </div>    
+    </div>
+    <br>
+    <%- include('../partials/footer.ejs') %>
 </body>
-<footer>
-<%- include('../partials/footer.ejs') %>
-</footer>
+
 </html>
