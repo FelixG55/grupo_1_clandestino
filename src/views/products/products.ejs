@@ -4,40 +4,125 @@
 <%- include('../partials/header.ejs') %>
 
 <body>
-    <h1 class="title">Menu</h1>
+    <h1 class="title">menú para consumir en clandestino</h1>
+    <div class="carousel" data-carousel>
+        <div class="carousel-buttons">
+            <button
+              class="carousel-button carousel-button_previous"
+              data-carousel-button-previous
+            >
+              <span class="fas fa-chevron-circle-left"></span>
+            </button>
+            <button
+              class="carousel-button carousel-button_next"
+              data-carousel-button-next
+            >
+              <span class="fas fa-chevron-circle-right"></span>
+            </button>
+        </div>
+        <div class="slides" data-carousel-slides-container>
+            <div class="slide">
+              <img src="/images/menuslide1.png" alt="Background Cerveza">
+              <h2>INICIO</h2>
+            </div>
+            <div class="slide">
+              <img src="/images/menuslide2.png" alt="Background Portavasos">
+              <h2>2</h2>
+            </div>
+            <div class="slide">
+              <img src="/images/menuslide3.png" alt="Background">
+              <h2>3</h2>
+            </div>
+            <div class="slide">
+              <img src="/images/menuslide4.png" alt="Clientes">
+              <h2>4</h2>
+            </div>
+            <div class="slide">
+              <img src="/images/menuslide5.png" alt="Pasta">
+              <h2>5</h2>
+            </div>
+            <div class="slide">
+              <img src="/images/menuslide6.png" alt="Logo Aviso">
+              <h2>FIN</h2>
+            </div>
+        </div>        
+    </div>
+    <script>
+        function modulo(number, mod) {
+            let result = number % mod;
+            if (result < 0) {
+                result += mod;
+            }
+            return result;
+        }
+
+        function setUpCarousel(carousel) {
+            function handleNext() {
+                currentSlide = modulo(currentSlide + 1, numSlides);
+                changeSlide(currentSlide);
+            }
+
+            function handlePrevious() {
+                currentSlide = modulo(currentSlide - 1, numSlides);
+                changeSlide(currentSlide);
+            }
+
+            function changeSlide(slideNumber) {
+                carousel.style.setProperty('--current-slide', slideNumber);
+            }
+
+            // get elements
+            const buttonPrevious = carousel.querySelector('[data-carousel-button-previous]');
+            const buttonNext = carousel.querySelector('[data-carousel-button-next]');
+            const slidesContainer = carousel.querySelector('[data-carousel-slides-container]');
+
+            // carousel state we need to remember
+            let currentSlide = 0;
+            const numSlides = slidesContainer.children.length;
+
+            // set up events
+            buttonPrevious.addEventListener('click', handlePrevious);
+            buttonNext.addEventListener('click', handleNext);
+        }
+
+        const carousels = document.querySelectorAll('[data-carousel]');
+        carousels.forEach(setUpCarousel);
+    </script>
+    <h5 class="recomendados">nuevos platos recomendados</h5>
     <div class="container">
         <div class="card">
             <h4>
-                Calamarada
+                menú del día 
             </h4>
-            <img src="/images/hamb-negra" alt="Calamarada">
-            <p>
-                Pan brioche artesanal negro relleno de calamares
-                en panko acompañados de rúgula, tomates cherry,
-                queso mozarela y salsa alioli.
+            <img src="/images/menúDelDía.png" alt="Menú del día">
+            <p>¡Ven y viaja con nosotros! 
+            Descrube la gastronomía del mundo probando nuestro exclusivo menú del día inspirado en sabores internacionales. 
+            Disponible solo en nuestras instalaciones, de lunes a viernes.             
             </p>
+            <p class="price">$15.900</p>
         </div>
         <div class="card">
             <h4>
-                Hamburguesa
+                steak fiorito
             </h4>
-            <img src="/images/hamb-blanca" alt="Hamburguesa">
-            <p>
-                Pan brioche artesanal relleno de sobrebarriga
-                en reduccion de cerveza negra acompañado de aguacate,
-                maíz, suero costeño y chips de plátano.
+            <img src="/images/IMG_1695.jpg" alt="Steak Fiorito">
+            <p>Filete de lomo ancho de res (200 gr.) en cocción de mantequilla y 
+               finas hierbas acompañado de puré cremoso 
+               y ensalada Fiorito de jamón serrano, queso azul, rúgula, tomates y cebolla morada.             
             </p>
+            <p class="price">$32.900</p>
         </div>
         <div class="card">
             <h4>
-                Capitan Cosmico
+                salmón tender
             </h4>
-            <img src="/images/cap-cosmico" alt="cap-cosmico">
+            <img src="/images/IMG_1689 2.jpg" alt="salmón tender">
             <p>
-                Pan brioche artesanal relleno de pollo crocante,
-                tocineta ahumada, acompañado de pepinillos agridulces,
-                queso sabana en salsa ranch de la casa.
+                Salmón sellado en aceite de oliva y sal gruesa, 
+                sobre una cama de puré de ripio de papa y aire de estragón 
+                y almendras acompañado de espinaca y tomate cherry.
             </p>
+            <p class="price">$35.900</p>
         </div>
     </div>
     <h1 class="title">Postres</h1>
@@ -68,51 +153,32 @@
                 limón y otra de merengue por encima.</p>
         </div>
     </div>
-    <h1 class="title">Menus Ejecutivos</h1>
+
+    
+
     <div class="container">
         <div class="card">
             <h4>
-                Menu Italiano
+                Nuestro Horario
             </h4>
-            <img src="/images/menu-italiano.jpeg" alt="">
-            <p></p>
-        </div>
-        <div class="card">
-            <h4>
-                Menu Arabe
-            </h4>
-            <img src="/images/menu-arabe.jpeg" alt="">
-            <p></p>
-        </div>
-        
-    </div>
-    <div class="container">
-        <div class="card">
-            <h4>
-                Take Away
-            </h4>
-            <img src="/images/take-away.jpg" alt="">
+            <img src="/images/calendar.png" alt="">
             <p>
                 Lunes a Viernes:
                 <br>
                 <br>
-                12:00 am - 02:30 pm
-                <br>
-                05:30 pm - 09:30 pm 
+                12:00 - 22:30 
                 <br>
                 <br>
                 Sabados y Domingos:
                 <br>
                 <br>
-                12:00 pm - 2:30 pm
-                <br>
-                05:30 pm - 02:00 am
+                12:00 - 02:30 
 
             </p>
         </div>
         <div class="card">
             <h4>
-                Happy Hours
+                Happy Hour
             </h4>
             <img src="/images/happy-hour.png" alt="">
             <p>
