@@ -25,8 +25,8 @@ font-family: 'Source Sans Pro', sans-serif; */
    background-size: cover;
    background-position: center center;
    
-}  
- .principal{
+}   
+  .principal{
     width: 100%;
     height:  100%;
     display: flex;
@@ -37,7 +37,7 @@ font-family: 'Source Sans Pro', sans-serif; */
     background-color: rgba(9, 9, 9, 0.553);
     position: relative;
     z-index: 10;
-}
+} 
 body{
     background-color: #212121;
     color: #ffff;

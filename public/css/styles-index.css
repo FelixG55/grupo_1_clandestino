@@ -1,7 +1,4 @@
  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
-/* font-family: 'Fira Sans', sans-serif;
-font-family: 'Roboto', sans-serif;
-font-family: 'Source Sans Pro', sans-serif; */
 @font-face {
     font-family: 'Afterglow';
     src: url('../fonts/Afterglow-Regular.ttf');
@@ -53,7 +50,6 @@ a:link{
     z-index: 10;
   }
 
-
 body{
     background-color: #040404;
     color: #ffff;
@@ -66,8 +62,7 @@ body{
     text-align: center;
     font-size: 40px;
     color: #f7bd00;
-    margin-top:  100px; ;
-    
+    margin-top:  100px;    
 }
 .container{
     width: 100%;
@@ -82,7 +77,6 @@ body{
     width: 330px;
     height: 430px;
     border-radius: 5px;
-    /* box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.11); */
     overflow: hidden;
     margin: 20px;
     text-align: center;
@@ -156,16 +150,15 @@ body{
     align-items: baseline;
     color: #ffc800;
 }
+
 #question{
     font-family:'Source Sans Pro', sans-serif;
 }
 
- .home{
+.home{
     width: 100%;
     display: flex;
      border-top: 2px solid rgba(144, 144, 144, 0.488);
-   /* border-left: 2px solid rgba(255, 255, 255, 0.488);
-    border-right: 2px solid rgba(255, 255, 255, 0.488); */
 } 
 .menu{
      /* background-color: rgb(34, 34, 34); */
@@ -220,7 +213,6 @@ section article{
    align-items: center;
 }
 
-
 section article div h4{
 
     color: rgb(255, 255, 255);
@@ -263,9 +255,7 @@ section article div h4{
         width: 100%;
         display: flex;
         flex-direction: column;
-         border-top: 2px solid rgba(144, 144, 144, 0.488);
-       /* border-left: 2px solid rgba(255, 255, 255, 0.488);
-        border-right: 2px solid rgba(255, 255, 255, 0.488); */
+        border-top: 2px solid rgba(144, 144, 144, 0.488);
     } 
 
     .home article{
@@ -291,6 +281,65 @@ section article div h4{
         justify-content: center;
         align-items: center;
     }
+}
+ 
+.carousel {
+    --current-slide: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    padding: 0;
+    margin: 0.5rem;
+    border-radius: 20%;
+    background-color: #FFC900;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.1s;
+  }
+  
+.carousel-button:hover {
+    color: white;
+    background-color: transparent; /* Cambiamos el fondo a transparente en el hover */
+  }
+  
+.carousel-button_next {
+    right: 0;
+  }
+  
+.slides {
+    display: flex;
+    transition: transform 0.5s;
+    transform: translateX(calc(-100% * var(--current-slide)));
+    align-items: center;
+    height: 100vh;
+  }
+  
+.slide {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  
+.slide h2, .slide p {
+    text-align: center;
+  }
+
+.slide h2 {
+    color: #FFC900;
 }
 
 @media (max-width: 574px){
@@ -322,94 +371,6 @@ section article div h4{
        align-items: center;
     }
 }
-    /*  
-
-    .container-form-footer{
-        display: none;
-    }
-    .container-footer article div h2{
-        font-size: 20px;  
-
-    }
-
-    .container-redes,.container-contacto{
-        width: 50%;
-        min-width: 140px;
-    }
-    .container-iconos, .contactos{
-        font-size: 15px;
-        width: 50%;
-        /* min-width: none; 
-    }
-
-    
-}
-
-@media (max-width: 773px){
-
-    .logo-footer, .container-logo-footer{
-       display: none;
-    }
-  
-    .container-contacto, .container-redes, .container-form-footer{
-        width: 33%;
-        min-width: 176px;
-    }
-}*/
-.carousel {
-    --current-slide: 0;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    padding: 0;
-    margin: 0.5rem;
-    border-radius: 20%;
-    background-color: #FFC900;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.1s;
-  }
-  
-  .carousel-button:hover {
-    color: white;
-    background-color: transparent; /* Cambiamos el fondo a transparente en el hover */
-  }
-  
-  .carousel-button_next {
-    right: 0;
-  }
-  
-  .slides {
-    display: flex;
-    transition: transform 0.5s;
-    transform: translateX(calc(-100% * var(--current-slide)));
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .slide {
-    flex: 0 0 100%;
-    text-align: center;
-  }
-  
-  .slide img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .slide h2, .slide p {
-    text-align: center;
-  }
   
   @media screen and (min-width: 768px) {
     .carousel-button {
