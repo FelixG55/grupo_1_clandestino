@@ -27,7 +27,11 @@ font-family: 'Source Sans Pro', sans-serif; */
 }
 h1{
     color:#ffc800;
-    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Afterglow';
+    padding: 80px;
+  
 }
 iframe{
     width:80%;
