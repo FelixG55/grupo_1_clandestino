@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"id":3,"productName":"Chancho Arriero","price":19900,"image":"chancho-arriero.jpg","quantity":1}]
+=======
+[{"id":2,"productName":"Capitán Cósmico","price":20000,"image":"capitan-cosmico.jpg","quantity":1}]
+>>>>>>> ef25bcd41cb0a581e2deaac74b13a7972a207291

@@ -7,11 +7,16 @@
             <img class="imagen" src="/images/imagen-register.jpg" alt="logo">
 
         </div>
-        <form action="/register" method="POST" enctype="multipart/form-data">
+        <form id="formRegister" action="/register" method="POST" enctype="multipart/form-data">
             <div class="container-form <%= locals.errors && errors.name? 'border-msg' : '' %>" >
                 <label for="name"></label>
                 <input placeholder="Nombre" type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null %>" >
             </div>
+            <section class="error-msg-name">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.name) { %>
                  <%= errors.name.msg %>
@@ -21,6 +26,11 @@
                 <label for="lastname"></label>
                 <input placeholder="Apellido" type="text" name="lastname" id="lastname" value="<%= locals.oldData ? oldData.lastname : null %>">
             </div>
+            <section class="error-msg-lastname">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.lastname) { %>
                     <%= errors.lastname.msg %>
@@ -30,6 +40,11 @@
                 <label for="email"></label>
                 <input placeholder="Email" type="text" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>">
             </div>
+            <section class="error-msg-Email">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.email) { %>
                     <%= errors.email.msg %>
@@ -39,6 +54,11 @@
                 <label for="password"></label>
                 <input placeholder="Contraseña" type="password" name="password" id="password" value="<%= locals.oldData ? oldData.password : null %>">
             </div>
+            <section class="error-msg-password">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.password) { %>
                     <%= errors.password.msg %>
@@ -60,6 +80,11 @@
                     <option value="0"<%= locals.oldData && (oldData.admin == '0') ? 'selected': null %>>No</option>
                 </select>
             </div>
+            <section class="error-msg-admin">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.admin) { %>
                     <%= errors.admin.msg %>
@@ -69,6 +94,11 @@
                 <label for="image">Sube la imagen del producto</label>
                 <input type="file" id="image" name="image">
             </div>
+            <section class="error-msg-image">
+                <ul>
+    
+                </ul>
+            </section>
             <div class="error-msg">
                 <% if (locals.errors && errors.image) { %>
                     <%= errors.image.msg %>
@@ -78,6 +108,6 @@
                 <button type="submit">Enviar</button>
             </div>
         </form>
-            
     </body>
+    <script src="/validationsFront/validationRegister.js"></script> 
 </html>
