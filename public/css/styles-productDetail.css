@@ -21,9 +21,9 @@ font-family: 'Source Sans Pro', sans-serif; */
     background-image: url(../images/fondo9.png ) ;
     background-position-x: 50%;
     background-position-y: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
    
 }   
   .principal{
@@ -44,13 +44,13 @@ body{
     width: 100%;
     height: 100%;
     letter-spacing: 0.3rem;
-    font-family:'Fira Sans', sans-serif'
+    font-family: 'Roboto'
 }
 .title{
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     color: #f7bd00;
-    margin-top:  100px; ;
+    font-family: 'Afterglow'
 }
 .container{
     width: 100%;
@@ -83,11 +83,11 @@ body{
 .container .card h4{
     color: #FFCB00;
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 22px;
     padding-bottom: 25px;
 }
 .container .card p{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .img-principal{
@@ -100,7 +100,7 @@ body{
 }
 .container-principal div h1{
     font-family: 'Afterglow';
-    font-size: 80px;
+    font-size: 60px;
     color: rgb(196, 196, 196);
   
 }
@@ -202,7 +202,7 @@ section article div h4{
 }
 .home article div p {
 
- color: aliceblue;
+ color: white;
 }
 .home article div a{
   display: flex;
@@ -228,6 +228,16 @@ section article div h4{
     background-color:#FFC900;
 }
 
+#recomendados {
+    display: flex;
+    font-size: 30px;
+    color: #FFC900;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Afterglow'
+}
+
 @media (max-width: 480px){
     .container-principal div h1{
         font-family: 'Oswald', sans-serif;
@@ -248,10 +258,9 @@ section article div h4{
         align-self: start;
     }
 
-    .recomendados {
-        font-family: 'Afterglow', sans-serif;
+    #recomendados {
         font-size: 30px;
-        color: #c4c4c4;
+        color: #FFC900;
         margin-top: 10px;
       }
 
@@ -288,11 +297,13 @@ section article div h4{
         align-items: center;
     }
 }
-
+/* css carousel */
 .carousel {
     --current-slide: 0;
     position: relative;
     overflow: hidden;
+    width: 80vw;
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
   }
   
   .carousel-button {
@@ -315,20 +326,19 @@ section article div h4{
     background-color: transparent;
   }
   
-  .carousel-button_next {
+  .carousel-button.carousel-button_next {
     right: 0;
   }
   
   .slides {
     display: flex;
     transition: transform 0.5s;
-    transform: translateX(calc(-100% * var(--current-slide)));
-    align-items: center;
+    transform: translateX(calc(-45% * var(--current-slide))); /* Modifica el valor para ajustar el ancho de los slides */
     height: 80vh; /* Ajusta la altura según tus necesidades */
   }
   
   .slide {
-    flex: 0 0 100%;
+    flex: 0 0 50%; /* Modifica el valor para ajustar el ancho de los slides */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -348,15 +358,32 @@ section article div h4{
   .slide h2,
   .slide p {
     text-align: center;
-    margin: 0; /* Quitamos los márgenes predeterminados */
-    padding: 0; /* Quitamos los rellenos predeterminados */
+    margin: 0;
+    padding: 0;
   }
   
   .slide h2 {
     color: white;
-    font-size: 1.4rem; /* Ajusta el tamaño de fuente según tus necesidades */
-    margin-top: -21px; /* Mueve el título hacia arriba ajustando el valor del margen negativo según tus necesidades */
+    font-size: 1.4rem;
+    margin-top: -21px;
   }
+/* css carousel fin*/
+/* css video */
+.video-foreground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto; 
+  }
+  
+  .video-background {
+    background: #000;
+    height: 100vh; 
+    width: 100%;
+    opacity: 0.5;
+  }
+/* css video fin */
 @media (max-width: 574px){
 
     .home{
