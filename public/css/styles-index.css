@@ -215,7 +215,7 @@ section article{
 
 section article div h4{
 
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 25px;
     font-family: 'Lato', sans-serif;
     padding-bottom: 7px;
@@ -223,7 +223,7 @@ section article div h4{
 }
 .home article div p {
 
- color: aliceblue;
+ color: white;
 }
 .home article div a{
   display: flex;
