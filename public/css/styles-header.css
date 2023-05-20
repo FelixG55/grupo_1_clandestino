@@ -6,15 +6,16 @@
 #anchor-header{
     color: #FFC900;
     text-decoration: none;
+    font-weight: 900;
 }
 header{
     display: flex;
     border:solid 1px black;
-    background-color: black;
-    color:white;
+    background-color: #040404;
     height: 100px;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Roboto';  
 }
 header img{
     height: 100px; 

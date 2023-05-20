@@ -14,8 +14,8 @@ font-family: 'Source Sans Pro', sans-serif; */
 }
 
 main{ 
-    background: #212121;
-    color: grey;
+    background: #040404;
+    color: white;
 }
 .logo{
     width: 300px;
@@ -107,7 +107,7 @@ i{
     background-color: #FFC800;
 }
 .description{
-    color: grey;
+    color: white;
 }
 /* CSS Carrito */
 .my-shoppingcart {
