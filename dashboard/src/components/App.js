@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import CategoriesInDB from './CategoriesInDb';
 import Home from './Home';
 import ContentWrapper from './ContentWrapper';
+import LastProductDB from './LastProductDB';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
            <Route path='/' element={<Home/>}/>
            <Route path='/pages' element={<CategoriesInDB/>}/>
            <Route path='/contentWrapper' element={<ContentWrapper/>}/>
-           {/* <Route path='/lastMovie' element={</>}/>  */}
+           {/* <Route path='/lastMovie' element={<LastProductDB/>}/>  */}
 
           </Routes>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/Cladestino _Logo-01.png';
 import { Link } from 'react-router-dom';
 
 function SideBar(){
@@ -23,7 +23,7 @@ function SideBar(){
                     <Link to={'/ContentWrapper'}>
                     <a className="nav-link" href="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i> 
-                        <span>Dashboard - DH movies</span></a>
+                        <span>Dashboard - Clandestino</span></a>
                     </Link>
                 </li>
 
