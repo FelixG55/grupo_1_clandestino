@@ -11,7 +11,7 @@ font-family: 'Source Sans Pro', sans-serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Afterglow';
+    /* font-family: 'Afterglow'; */
 }
 
 .container-principal{   
@@ -21,12 +21,12 @@ font-family: 'Source Sans Pro', sans-serif; */
     background-image: url(../images/fondo9.png ) ;
     background-position-x: 50%;
     background-position-y: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
    
-}  
- .principal{
+}   
+  .principal{
     width: 100%;
     height:  100%;
     display: flex;
@@ -37,20 +37,20 @@ font-family: 'Source Sans Pro', sans-serif; */
     background-color: rgba(9, 9, 9, 0.553);
     position: relative;
     z-index: 10;
-}
+} 
 body{
-    background-color: #212121;
+    background-color: #040404;
     color: #ffff;
     width: 100%;
     height: 100%;
     letter-spacing: 0.3rem;
-    font-family:'Fira Sans', sans-serif'
+    font-family: 'Roboto'
 }
 .title{
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     color: #f7bd00;
-    margin-top:  100px; ;
+    font-family: 'Afterglow'
 }
 .container{
     width: 100%;
@@ -83,11 +83,11 @@ body{
 .container .card h4{
     color: #FFCB00;
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 22px;
     padding-bottom: 25px;
 }
 .container .card p{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .img-principal{
@@ -100,7 +100,7 @@ body{
 }
 .container-principal div h1{
     font-family: 'Afterglow';
-    font-size: 80px;
+    font-size: 60px;
     color: rgb(196, 196, 196);
   
 }
@@ -202,7 +202,7 @@ section article div h4{
 }
 .home article div p {
 
- color: aliceblue;
+ color: white;
 }
 .home article div a{
   display: flex;
@@ -210,134 +210,6 @@ section article div h4{
    color: yellow;
   }
 
-  footer{
-    width: 100%  ;
-    height: 400px ;
-    background-color:  #FFC900 ;
-  }
-  .container-footer{
-    width: 100%  ;
-    height: 400px ;
-    display: flex;
-    justify-content: space-between;
-  }
-  .container-logo-footer{
-    display: flex;
-    align-items: center;
-    width: 25%;
-    flex-grow: 1;
-  }
-  .logo-footer{
-    width: 80%;
-    max-width: fit-content;
-    height: 150px ; 
-    flex-grow: 1;
-}
-
-
-.container-contacto{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 25%;
-    flex-grow: 2;
-}
-.contactos{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-size: 18px;
-}
-
-
-.mail-contacto{
-    margin-bottom: 12px;
-    align-self: center;
-}
-
-.container-redes{
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: 100%;
-    flex-grow: 2;
-
-}
-.container-footer article div h2{
-    font-size: 25px;  
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-iconos{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-size: 18px;
-    /* margin-left:70px; */
-}
-.container-redes .container-iconos a i{
-    padding:8px;
-    color: black;
-    text-decoration: none;
-}
-.container-redes .container-iconos a  .icono-twiter{
-   align-self: flex-start;
-}
-
-.container-footer article  form div label{
-    font-size: 25px;  
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold
-}
-.container-form-footer{
-    width: 25%;
-
-}
-.form-footer{
-  
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-size: 18px;
-}
-.container-inputs{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-}
-.container-footer article  form div input,textarea{
-    width: 60%;
-    padding: 4px;
-    margin: 6px;
-    border-radius: 3px;
-    border: #fff 1px solid;
-}
 .a-button{
     display: flex;
     width: 100%;
@@ -354,6 +226,16 @@ section article div h4{
 
 .copyright{
     background-color:#FFC900;
+}
+
+#recomendados {
+    display: flex;
+    font-size: 30px;
+    color: #FFC900;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Afterglow'
 }
 
 @media (max-width: 480px){
@@ -375,6 +257,12 @@ section article div h4{
         padding-bottom: 55px;
         align-self: start;
     }
+
+    #recomendados {
+        font-size: 30px;
+        color: #FFC900;
+        margin-top: 10px;
+      }
 
     .home{
         width: 100%;
@@ -409,6 +297,129 @@ section article div h4{
         align-items: center;
     }
 }
+/* css carousel */
+.carousel {
+    --current-slide: 0;
+    position: relative;
+    overflow: hidden;
+    width: 80vw;
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    padding: 0;
+    margin: 0.5rem;
+    border-radius: 20%;
+    background-color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.1s;
+  }
+  
+  .carousel-button:hover {
+    color: white;
+    background-color: transparent;
+  }
+  
+  .carousel-button.carousel-button_next {
+    right: 0;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s;
+    transform: translateX(calc(-45% * var(--current-slide))); /* Modifica el valor para ajustar el ancho de los slides */
+    height: 80vh; /* Ajusta la altura según tus necesidades */
+  }
+  
+  .slide {
+    flex: 0 0 50%; /* Modifica el valor para ajustar el ancho de los slides */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .slide h2,
+  .slide p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .slide h2 {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: -21px;
+  }
+/* css carousel fin*/
+/* css video */
+.video-foreground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto; 
+  }
+  
+  .video-background {
+    background: #000;
+    height: 100vh; 
+    width: 100%;
+    opacity: 0.5;
+  }
+/* css video fin */
+@media (max-width: 574px){
+
+    .home{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      border-top: 2px solid rgba(144, 144, 144, 0.488);
+ 
+    } 
+
+    .home article{
+        width: 100%;
+        height: 400px;
+        display: flex;
+       align-items: center;
+    }
+    .container-descripcion{
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(9, 9, 9, 0.645);
+        flex-direction: column;
+        justify-content: center;
+       align-items: center;
+    }
+}
+  
+  @media screen and (min-width: 768px) {
+    .carousel-button {
+      font-size: 2rem;
+      margin: 1rem;
+    }
+  }
 
 @media (max-width: 574px){
 
