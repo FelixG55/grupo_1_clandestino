@@ -1,4 +1,4 @@
-const path = require("path")
+
 const DB = require("../../database/models")
 const sequelize = require("sequelize")
 
@@ -58,18 +58,25 @@ const lastProduct = (req, res) =>{
         order: [ ['id', 'DESC' ]]
     })
     .then((lastProducts) =>{
-        console.log(lastProduct);
         res.json(lastProducts);
     })
+}
 
+const detailProducts = (req ,res) =>{
+
+    DB.Product.findAll({
+        include: [{association: "categories"}]
+    })
+    .then((lastProducts) =>{
+        res.json(lastProducts);
+    })
 }
-const categori = (req, res)=> {
-   
-}
+
+
 
 module.exports = {
     products,
     product,
     lastProduct,
-    categori
+    detailProducts,
 }
