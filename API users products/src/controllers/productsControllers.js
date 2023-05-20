@@ -1,13 +1,14 @@
 const path = require("path")
 const DB = require("../../database/models")
 const sequelize = require("sequelize")
+
 const products = (req, res)=>{
 
-        const countProducts = product.length
-        DB.Product.findAll( { 
+    DB.Product.findAll( { 
         include: [{association: "categories"}]
-         })
-        .then(product => {
+    })
+    .then(product => {
+            const countProducts = product.length
             const products = product.map(product=> {
                 return{
                     id: product.id,
@@ -49,63 +50,26 @@ const product = (req, res)=> {
      res.json(product)
     })
 }
+
+const lastProduct = (req, res) =>{
+
+    DB.Product.findAll({
+        limit: 1,
+        order: [ ['id', 'DESC' ]]
+    })
+    .then((lastProducts) =>{
+        console.log(lastProduct);
+        res.json(lastProducts);
+    })
+
+}
 const categori = (req, res)=> {
    
 }
-        // .then(name => {res.json(name)})
-        // .then(
-        //     (categories )=>{
-        //         DB.Category.findAll()})
-        //         .then(name => {res.json(name)})
-            
-      
-      
-        // const categories =   
-        //  DB.Category.findAll()
-        //  .then(name => {res.json(name)})
-
-
-
-    //   const arreglo = [{
-    //     resultado,
-    //     categories
-    //   }]
-    //   res.json(arreglo)
-
-      
-
-
-
-// db.Product.findAll({
-//     include: [{association: "categories"}]
-// })
-// .then(products => {
-//     db.DetailSale.findAll({
-//         attributes: ['product_id',[sequelize.fn('COUNT',sequelize.col('product_id')),'total_p']],
-//         group: ['product_id']
-//     }).then(detailSale =>{
-//         res.render(path.join(__dirname, '../views/products/productsDelivery'), {products,profile,detailSale,style:"styles-productCart"})
-//         })
-// })
-
-
-// const delivery = (req, res) => {
-//     let profile = req.session.userLogged;
-//     db.Product.findAll({
-//         include: [{association: "categories"}]
-//     })
-//     .then(products => {
-//         db.DetailSale.findAll({
-//             attributes: ['product_id',[sequelize.fn('COUNT',sequelize.col('product_id')),'total_p']],
-//             group: ['product_id']
-//         }).then(detailSale =>{
-//             res.render(path.join(__dirname, '../views/products/productsDelivery'), {products,profile,detailSale,style:"styles-productCart"})
-//             })
-//     })
-// };
 
 module.exports = {
     products,
     product,
+    lastProduct,
     categori
 }
