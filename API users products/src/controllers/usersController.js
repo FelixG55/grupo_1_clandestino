@@ -1,5 +1,6 @@
 const path = require("path")
 const DB = require("../../database/models")
+
 const usuarios = (req, res)=>{
 DB.User.findAll()
     .then( (users)=>{
