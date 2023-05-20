@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Tematica del sitio: Marketplace de comida\r Público objetivo: General",
   "main": "./src/app.js",
+  "proxy": "http://localhost:3022",
   "scripts": {
     "start": "node app.js",
     "test": "nodemon napp.js"
