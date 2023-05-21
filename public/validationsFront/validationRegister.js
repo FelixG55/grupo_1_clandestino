@@ -72,9 +72,9 @@ window.addEventListener('load', function () {
         let campoPassword = document.getElementById('password');
 
         if (campoPassword.value == "") {
-            erroresPassword.push("El campo password es obligatorio");
+            erroresPassword.push("El campo contraseña es obligatorio");
         } if (campoPassword.value.length < 8) {
-            erroresPassword.push("El campo password debe tener al menos ocho caracteres")
+            erroresPassword.push("El campo contraseña debe tener al menos ocho caracteres")
         };
         if (erroresPassword.length > 0) {
             event.preventDefault();

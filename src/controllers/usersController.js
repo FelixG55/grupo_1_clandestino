@@ -80,9 +80,9 @@ const writeFormLogin = function(req,res){
         db.User.findAll({
             where: {email: req.body.email}
         }).then(userToLogin => {
-            if (userToLogin) {
+            console.log(userToLogin);
+            if (userToLogin.length > 0) {
                 let okPassword = bcrypt.compareSync(req.body.password,userToLogin[0].password);
-                console.log(req.body.password);
                 if (okPassword) {
                     req.session.userLogged = userToLogin[0];
                     return res.redirect('/')
@@ -91,7 +91,7 @@ const writeFormLogin = function(req,res){
             return res.render(path.join(__dirname, '../views/login'),{
                 errors:{
                     password:{
-                        msg: 'Usuario o contraseña no vaálidos'
+                        msg: 'Usuario o contraseña no válidos'
                     }
                 },
                 style: "styles-login"
