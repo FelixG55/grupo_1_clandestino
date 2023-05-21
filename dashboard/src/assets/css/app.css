@@ -10468,6 +10468,15 @@ a.text-success:hover {
     color: #13855c !important
 }
 
+.text-orange {
+    color: orange !important
+}
+
+a.text-orange:focus,
+a.text-orange:hover {
+    color: orange !important
+}
+
 .text-info {
     color: #36b9cc !important
 }

@@ -18,7 +18,9 @@
                 <%= profile.name %>
                 <ul class="dropdown">
                     <li><a href="">Profile</a></li>
-                    <li><a href="/products/create/">ADD Product</a> </li>   
+                    <% if (profile.admin == '1') { %>
+                        <li><a href="/products/create/">ADD Product</a> </li>   
+                    <% } %>
                     <li><a href="/logout/">LOG OUT</a></li>                                
                 </ul>
             </li>        
