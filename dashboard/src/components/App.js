@@ -13,6 +13,7 @@ function App() {
            <Route path='/' element={<Home/>}/>
            <Route path='/pages' element={<CategoriesInDB/>}/>
            <Route path='/contentWrapper' element={<ContentWrapper/>}/>
+           <Route path='/LastProductDB' element={<LastProductDB/>}/>
            {/* <Route path='/lastMovie' element={<LastProductDB/>}/>  */}
 
           </Routes>

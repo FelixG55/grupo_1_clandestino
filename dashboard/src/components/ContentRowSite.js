@@ -4,38 +4,44 @@ import { useEffect } from 'react';
 import fetch from 'node-fetch';
 
 
-let user ={
-    color:   "success",
-    titulo: "Total de usuarios",
-    icono: "fas fa-award",
-}
 
-
-function ContentRowTop(){
+function ContentRowSite(){
     
     const [totalProducts, setTotalProducts] = useState(0);
     const [totalUsers, setTotalUsers] = useState(0);
     const [totalCategories, setTotalCategories] = useState(0);
+    const [productSales, setProductSales] = useState(0);
+    const [totalSales, setTotalSales] = useState(0);
+
+    const [totalSalesByProduct, setTotalSalesByProduct] = useState(0);
+
     
     let products = {
         total:  totalProducts,
         titulo: "Total de Productos",
-        icono: "fas fa-film",
+        icono: "fas fa-hamburger",
         color: "success"
     }
     
     let users = {
         total:  totalUsers,
         titulo: "Total de usuarios",
-        icono: "fas fa-film",
+        icono: "fas fa-users",
         color: "warning"
     }
     
     let categories = {
         total:  totalCategories,
         titulo: "Total de categorias",
-        icono: "fas fa-film",
+        icono: "fas fa-boxes",
         color: "primary"
+    }
+
+    let sellProduct ={
+        total : totalSales,
+        titulo: "Total de ventas",
+        icono: "fas fa-credit-card",
+        color: "secondary"    
     }
     
     useEffect(() => {
@@ -59,8 +65,21 @@ function ContentRowTop(){
         })
         
     }, [])
+
+    useEffect(() => {
+        fetch('api/sales')
+        .then(res =>{
+            return res.json();
+        })
+        .then(sales =>{
+            setTotalSales([sales.totalSales[0].total_sales])
+            setTotalSalesByProduct([sales.saleByProduct.total_p])
+            setProductSales([sales.saleByProduct.product_id])
+        })
+        
+    }, [])
     
-    const cardProps = [products,users,categories];
+    const cardProps = [products,users,categories,sellProduct];
     
     return (
         <React.Fragment>
@@ -75,4 +94,4 @@ function ContentRowTop(){
         </React.Fragment>
     )
 }
-export default ContentRowTop;
+export default ContentRowSite;

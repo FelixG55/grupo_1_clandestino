@@ -1,6 +1,6 @@
 import React from 'react';
 import CategoriesInDB from './CategoriesInDb';
-import ContentRowMovies from './ContentRowMovies';
+import ContentRowSite from './ContentRowSite';
 import LastProductDB from './LastProductDB';
 
 function ContentRowTop(){
@@ -13,7 +13,7 @@ function ContentRowTop(){
 					</div>
 				
 					{/*<!-- Content Row Movies-->*/}
-					<ContentRowMovies />
+					<ContentRowSite />
 					{/*<!-- End movies in Data Base -->*/}
 				
 					{/*<!-- Content Row Last Movie in Data Base -->*/}

@@ -72,6 +72,23 @@ const detailProducts = (req ,res) =>{
     })
 }
 
+const sales = (req,res) =>{
+
+    DB.DetailSale.findAll({
+        attributes: ['product_id',[sequelize.fn('COUNT',sequelize.col('product_id')),'total_p']],
+            group: ['product_id']
+    })
+    .then(salesByProduct => {
+            const saleByProduct = salesByProduct;
+            DB.DetailSale.findAll({
+                attributes: [[sequelize.fn('COUNT',sequelize.col('*')),'total_sales']],
+            })
+        .then(totalSales =>{
+        res.json({saleByProduct,totalSales});
+        })
+
+    })  
+}
 
 
 module.exports = {
@@ -79,4 +96,5 @@ module.exports = {
     product,
     lastProduct,
     detailProducts,
+    sales
 }

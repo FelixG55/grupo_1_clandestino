@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'ProductsCart';
+    let alias = 'DetailSale';
     let cols = {
         sale_id: {
             type: dataTypes.BIGINT(10),
@@ -13,12 +13,12 @@ module.exports = (sequelize, dataTypes) => {
     };
     
     let config = {
-        tableName: "productscart",
+        tableName: "detail_sale",
         timestamps: false
     }
-    const ProductsCart = sequelize.define(alias, cols, config); 
+    const DetailSale = sequelize.define(alias, cols, config); 
 
     //Aquí debes realizar lo necesario para crear las relaciones con el modelo (Movie)
  
-    return ProductsCart
+    return DetailSale
 };

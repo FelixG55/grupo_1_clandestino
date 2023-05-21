@@ -16,7 +16,7 @@
                     <div class="info-product">
                         <h4><%= products[detailSale[i].product_id-1].name %></h4>
                         <p class="price-cart">$<%= products[detailSale[i].product_id-1].price %></p>
-                        <a href=""><i class="fas fa-arrow-circle-left" id="arrow"></i></a>
+                        <a href="/products/restProductCart/<%= detailSale[i].product_id %>"><i class="fas fa-arrow-circle-left" id="arrow"></i></a>
                         <button id="number"> <%= detailSale[i].get().total_p %> </button> 
                         <a href="/products/addProductCart/<%= detailSale[i].product_id %>"><i class="fas fa-arrow-circle-right" id="arrow"></i></a> 
                         <a href="/products/deleteProductCart/<%= detailSale[i].product_id %>">   
@@ -45,8 +45,10 @@
                     </label>    
         </div>
             <div class="pay-cart">
-                <button id="add"><i class="fas fa-cart-plus"></i> añadir productos</button> 
-                <button id="pay"><i class="fas fa-coins"></i> PAGAR</button> 
+                <button id="add"><i class="fas fa-cart-plus"></i> añadir productos</button>
+                <a>
+                    <button id="pay"><i class="fas fa-coins"></i> PAGAR</button> 
+                </a>
             </div>				
 </aside>
 <!-- Acá termina el carrito -->
@@ -166,7 +168,65 @@
             <% } %>                          
         <% } %>
     </div>
-    
+<% for( let i = 0; i < products.length; i++ ) { %>
+        <% if (products[i].categories.name == 'Entradas') { %>                    
+    <h2>Entradas</h2>
+    <div class="product-container">
+                <a href="/products/<%= products[i].id %>">
+                    <div class="item">
+                        <h3><%= products[i].name %></h3>
+                        <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+                 </a>    
+                        <p class="description"><%= products[i].description %></p>
+                        <p class="price">$<%= products[i].price %></p>
+                <a href="/products/addProductCart/<%= products[i].id %>">
+                    
+                        <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+                </a>
+                    </div>
+     </div>
+            <% } %>                          
+<% } %>
+
+<% for( let i = 0; i < products.length; i++ ) { %>
+    <% if (products[i].categories.name == 'Postres') { %>                    
+<h2>Postres</h2>
+<div class="product-container">
+            <a href="/products/<%= products[i].id %>">
+                <div class="item">
+                    <h3><%= products[i].name %></h3>
+                    <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+             </a>    
+                    <p class="description"><%= products[i].description %></p>
+                    <p class="price">$<%= products[i].price %></p>
+            <a href="/products/addProductCart/<%= products[i].id %>">
+                
+                    <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+            </a>
+                </div>
+ </div>
+        <% } %>                          
+<% } %>
+
+<% for( let i = 0; i < products.length; i++ ) { %>
+    <% if (products[i].categories.name == 'Fuertes') { %>                    
+<h2>Fuertes</h2>
+<div class="product-container">
+            <a href="/products/<%= products[i].id %>">
+                <div class="item">
+                    <h3><%= products[i].name %></h3>
+                    <img src= "/images/delivery-products/productosDelivery/<%= products[i].image %>" alt= <%= products[i].name %>>
+             </a>    
+                    <p class="description"><%= products[i].description %></p>
+                    <p class="price">$<%= products[i].price %></p>
+            <a href="/products/addProductCart/<%= products[i].id %>">
+                
+                    <button class="manito">AGREGAR PRODUCTO<i class="fas fa-shopping-bag"></i></button> 
+            </a>
+                </div>
+ </div>
+        <% } %>                          
+<% } %>
 <!-- Acá termina la sección de todos los productos -->
 <%- include('../partials/footer.ejs') %>
 </main>
