@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const LastProductDB = () => {
@@ -32,7 +33,9 @@ const LastProductDB = () => {
 										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={require(`../assets/images/delivery-products/productosDelivery/${e.image}`)} alt={e.name}/>
 									</div>
 									<p>{e.description}</p>
+									<Link to={'/LastProductDB'}>
 									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+									</Link>
 								</div>
 									)
 								})

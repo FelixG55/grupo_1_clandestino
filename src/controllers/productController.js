@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 const sequelize = db.sequelize;
-const {validationResult}= require('express-validator');
+const {validationResult, body}= require('express-validator');
 const { DataTypes } = require('sequelize');
 
 
@@ -27,6 +27,7 @@ const postProducts = (req, res) =>{
             oldData: req.body,
             style: "styles-createProduct"
         });
+        console.log(req-body.category);
     }else{
         db.Category.findAll({
             where: {
@@ -118,7 +119,7 @@ const delivery = (req, res) => {
         include: [{association: "categories"}]
     })
     .then(products => {
-        db.DetailSale.findAll({
+        db.ProductsCart.findAll({
             attributes: ['product_id',[sequelize.fn('COUNT',sequelize.col('product_id')),'total_p']],
             group: ['product_id']
         }).then(detailSale =>{
@@ -144,7 +145,16 @@ const addProductCart = (req, res) => {
                        sale_id: sale.id, 
                        product_id: req.params.id
                     }
-                ).then(detailSale => {
+                )
+                .then(detailSale =>{
+                db.ProductsCart.create(
+                    {
+                        sale_id: sale.id, 
+                        product_id: req.params.id
+                    }
+                 )
+                })
+                .then(detailSale => {
                     res.redirect('/productDelivery');
             })
             })
@@ -155,32 +165,44 @@ const addProductCart = (req, res) => {
 
 const deleteProductCart = (req,res) =>  {
 
-    db.DetailSale.destroy({
+    db.ProductsCart.destroy({
         where: {product_id: req.params.id}
     }).then(deleteProduct =>{
-        console.log(req.params.id);
         res.redirect('/productDelivery');
     })
 }
 
 const restProductCart = (req,res) =>{
-
-    const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
-    rutaJson = path.join(__dirname,'../database/productsCart.json');
-
-        const {id} = req.params;
-        const productCart = productsCart.find(elem => elem.id == id);
-            productCart.quantity = productCart.quantity - 1;
-            let data = JSON.stringify(productsCart);
-            fs.writeFile(rutaJson, data, err => {
-                if (err) {
-                    console.error(err);
-                } else{
-                    res.redirect('/productDelivery');
+    let userid = null;
+    let profile = req.session.userLogged;
+    if (profile) {
+        userid = profile.id
+        db.Sale.create(
+        {
+            user_id: userid,
+            date: Date()
+        }).then(sale =>{
+                db.ProductsCart.findOne({
+                where: {product_id: req.params.id}
+            })
+            .then(row => {
+                if (row) {
+                    db.ProductsCart.destroy({
+                        where: {sale_id: row.sale_id}
+                    })
                 }
-            } );
+                console.log(row);
+            })
+            })
+            .then(detailSale => {
+                res.redirect('/productDelivery');
+        })
+    }else{
+        res.redirect('/login');
+    }
 
 }
+
 const sumProductCart = (req,res) =>{
 
     let userid = null;
@@ -198,9 +220,26 @@ const sumProductCart = (req,res) =>{
                    sale_id: sale.id, 
                    product_id: req.params.id
                 }
-            ).then(detailSale => {
+            )
+            .then(detailSale =>{
+                db.ProductsCart.create(
+                    {
+                        sale_id: sale.id, 
+                        product_id: req.params.id
+                    }
+                 )
+                })
+            .then(detailSale => {
                 res.redirect('/productDelivery');
         })
+        })
+}
+
+const buyProducts = (req,res) => {
+
+        db.ProductsCart.findAll()
+        .then(products =>{
+            console.log(products);
         })
 }
 module.exports = {
@@ -216,6 +255,7 @@ module.exports = {
     addProductCart,
     deleteProductCart,
     restProductCart,
-    sumProductCart
+    sumProductCart,
+    buyProducts
    
 };
