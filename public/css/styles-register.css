@@ -84,13 +84,11 @@ form div input{
     background-color: #040404 ;
     box-sizing: border-box;
 }
-
 .imagen{
     width: 70%;
     max-width: 400px;
 
 }
-
 .logo{
     display: flex;
     text-align: center;
@@ -98,7 +96,6 @@ form div input{
     display: block;
     margin-top: 100px;
 }
-
 .container-form {
     font-family: "Roboto";
     font-size: 1rem;
@@ -109,21 +106,9 @@ form div input{
     display: flex;
     max-width: 22%;
     padding: 8px;
-    margin: 20px auto;
+    margin: 5px auto;
 
 }
-/* Texto dentro de caja */
-.container-form input{
- text-align: left;
-}
-.label{
-    display: flex;
-    max-width: 22%;
-    padding: 8px;
-    margin: 20px auto;
-
-}
-
 form{
     text-align: center;
 }
@@ -137,7 +122,6 @@ form p {
    
 }
 
-
 form ::placeholder{
     font-family: "Roboto";
     font-size: 1.2em;
@@ -148,10 +132,22 @@ form ::placeholder{
 
 input{
     border: solid 1px #FFC800;
-   
-
+    width: 100%;
+    text-align: center;
+    outline: 0 none;
+    background-color: #FFC800;
+    color: #040404;
 }
-
+select {
+    background-color: #FFC800;
+}
+label{
+    background-color: #FFC800;
+    color: white;
+}
+option{
+    background-color: #FFC800;
+}
 .enviar{
     text-align: center;
 }
@@ -168,5 +164,10 @@ input{
     text-align: center;
     margin: 20px;
 }
-
-
+.error-msg{
+    color: #FFC800;
+    margin-bottom: 20px;
+}
+.border-msg{
+    border: solid 1px white;
+}
